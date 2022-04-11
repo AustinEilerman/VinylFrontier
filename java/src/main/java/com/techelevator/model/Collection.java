@@ -3,22 +3,18 @@ package com.techelevator.model;
 import java.util.List;
 
 public class Collection {
-    private List<Record> userCollection;
+    private int recordId;
     private String collectionName;
     private int collectionId;
 
 
-    public Collection(List<Record> userCollection, String collectionName) {
-        this.userCollection = userCollection;
+    public Collection(int recordId, String collectionName) {
+        this.recordId = recordId;
         this.collectionName = collectionName;
     }
 
-    public List<Record> getUserCollection() {
-        return userCollection;
-    }
+    public Collection() {
 
-    public void setUserCollection(List<Record> userCollection) {
-        this.userCollection = userCollection;
     }
 
     public String getCollectionName() {
@@ -28,6 +24,7 @@ public class Collection {
     public void setCollectionName(String collectionName) {
         this.collectionName = collectionName;
     }
+
     public int getCollectionId() {
         return collectionId;
     }
@@ -36,4 +33,11 @@ public class Collection {
         this.collectionId = collectionId;
     }
 
+    public int getRecordId() {
+        return recordId;
+    }
+
+    public void setRecordId(int recordId) {
+        this.recordId = recordId;
+    }
 }
