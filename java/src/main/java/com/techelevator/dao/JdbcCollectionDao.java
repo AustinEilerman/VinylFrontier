@@ -17,7 +17,7 @@ public class JdbcCollectionDao implements CollectionDao {
 
     @Override
     public Collection getCollection(int collectionId) {
-        final String sql = " SELECT collection_user_id, is_public, collection_name" +
+        final String sql = " SELECT collection_id, collection_user_id, is_public, collection_name" +
                 " FROM collections" +
                 " WHERE collection_id = ?;";
         SqlRowSet results = this.jdbcTemplate.queryForRowSet(sql, collectionId);
