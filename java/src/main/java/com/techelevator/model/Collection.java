@@ -3,14 +3,17 @@ package com.techelevator.model;
 import java.util.List;
 
 public class Collection {
-    private int recordId;
+    private int collectionUserId;
+    private boolean isPublic;
     private String collectionName;
     private int collectionId;
 
 
-    public Collection(int recordId, String collectionName) {
-        this.recordId = recordId;
+    public Collection(int collectionUserId, boolean isPublic, String collectionName, int collectionId) {
+        this.collectionUserId = collectionUserId;
+        this.isPublic = isPublic;
         this.collectionName = collectionName;
+        this.collectionId = collectionId;
     }
 
     public Collection() {
@@ -33,11 +36,19 @@ public class Collection {
         this.collectionId = collectionId;
     }
 
-    public int getRecordId() {
-        return recordId;
+    public int getCollectionUserId() {
+        return collectionUserId;
     }
 
-    public void setRecordId(int recordId) {
-        this.recordId = recordId;
+    public void setCollectionUserId(int collectionUserId) {
+        this.collectionUserId = collectionUserId;
+    }
+
+    public boolean isPublic() {
+        return isPublic;
+    }
+
+    public void setPublic(boolean aPublic) {
+        isPublic = aPublic;
     }
 }
