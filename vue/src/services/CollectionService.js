@@ -7,5 +7,9 @@ const http = axios.create({
 export default {
     createCollection(collection) {
         return http.post('/collections', collection);
+    },
+
+    getCollection(collectionId) {
+        return http.get(`/collections/${collectionId}`);
     }
 }

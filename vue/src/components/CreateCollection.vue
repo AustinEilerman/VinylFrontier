@@ -40,8 +40,15 @@ export default {
                     this.$router.push('/collections');
                 }
             });
-
         }
+    },
+    created() {
+        collectionService.getCollection(this.collectionId).then(response => {
+            if (response.status === 200) {
+                alert('Retrieved collection.');
+                this.$router.push(`/collections/${this.collectionId}`);
+            }
+        })
     }
 }
 </script>

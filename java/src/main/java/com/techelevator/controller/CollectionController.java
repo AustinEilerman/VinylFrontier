@@ -2,6 +2,7 @@ package com.techelevator.controller;
 
 import com.techelevator.dao.CollectionDao;
 import com.techelevator.model.Collection;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -19,6 +20,7 @@ public class CollectionController {
         return collectionDao.getCollection(id);
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(value = "/collections", method = RequestMethod.POST)
     public Collection createCollection(@RequestBody Collection newCollection) {
         return collectionDao.createCollection(newCollection);
