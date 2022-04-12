@@ -1,5 +1,6 @@
 package com.techelevator.model;
 
+import java.util.Date;
 import java.util.List;
 
 public class Record {
@@ -8,18 +9,19 @@ public class Record {
     private int recordId;
     private String title;
     private String artist;
-    private int genreId;
-    private int yearReleased;
+    private String genre;
+    private Date releaseDate;
     private int length;
     private String userNotes;
-    private String userRating;
+    private int userRating;
+    private int collectionId;
 
 
-    public Record(String title, String artist, int genreId, int userId) {
+    public Record(String title, String artist, String genre, int userId) {
         this.userId = userId;
         this.title = title;
         this.artist = artist;
-        this.genreId = genreId;
+        this.genre = genre;
     }
 
     public Record() {
@@ -41,12 +43,12 @@ public class Record {
         this.artist = artist;
     }
 
-    public int getGenreId() {
-        return genreId;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setGenreId(int genreId) {
-        this.genreId = genreId;
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
     public int getUserId() {
@@ -65,12 +67,12 @@ public class Record {
         this.recordId = recordId;
     }
 
-    public int getYearReleased() {
-        return yearReleased;
+    public Date getReleaseDate() {
+        return releaseDate;
     }
 
-    public void setYearReleased(int yearReleased) {
-        this.yearReleased = yearReleased;
+    public void setReleaseDate(Date releaseDate) {
+        this.releaseDate = releaseDate;
     }
 
     public int getLength() {
@@ -89,12 +91,16 @@ public class Record {
         this.userNotes = userNotes;
     }
 
-    public String getUserRating() {
+    public int getUserRating() {
         return userRating;
     }
 
-    public void setUserRating(String userRating) {
+    public void setUserRating(int userRating) {
         this.userRating = userRating;
     }
+
+    public int getCollectionId() { return collectionId; }
+
+    public void setCollectionId(int collectionId) { this.collectionId = collectionId; }
 }
 

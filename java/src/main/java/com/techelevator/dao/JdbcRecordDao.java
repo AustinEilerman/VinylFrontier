@@ -16,7 +16,9 @@ public class JdbcRecordDao implements RecordDao {
 
     @Override
     public Record getRecord(int recordId) {
-        final String sql = "";
+        final String sql = "SELECT * " +
+                            "FROM records " +
+                            "WHERE record.id = ?";
         SqlRowSet results = this.jdbcTemplate.queryForRowSet(sql, recordId);
         Record record = null;
         if (results.next()) {
@@ -27,11 +29,15 @@ public class JdbcRecordDao implements RecordDao {
 
     @Override
     public Record createRecord(Record newRecord) {
-        final String sql = "";
+        final String sql = "INSERT INTO records " +
+                "(record_user_id, record_title, record_artist, record_release_date, record_genre, record_length_in_sec) " +
+                            "VALUES (?, ?, ?, ?, ?) " +
+                            "RETURNING record_id;";
+
         Integer idAssigned = jdbcTemplate.queryForObject(sql, Integer.class,
                 newRecord.getTitle(),
                 newRecord.getArtist(),
-                newRecord.getYearReleased(),
+                newRecord.getReleaseDate(),
                 newRecord.getLength(),
                 newRecord.getUserNotes(),
                 newRecord.getUserRating()
@@ -43,12 +49,13 @@ public class JdbcRecordDao implements RecordDao {
         Record record = new Record();
 
         record.setRecordId(rowSet.getInt("record_id"));
-        record.setTitle(rowSet.getString("title"));
-        record.setArtist(rowSet.getString("artist"));
-        record.setYearReleased(rowSet.getInt("yearReleased"));
-        record.setLength(rowSet.getInt("length"));
-        record.setUserNotes(rowSet.getString("notes"));
-        record.setUserRating(rowSet.getString("rating"));
+        record.setTitle(rowSet.getString("record_title"));
+        record.setArtist(rowSet.getString("record_artist"));
+        record.setReleaseDate(rowSet.getDate("record_release_date"));
+        record.setLength(rowSet.getInt("record_length_in_sec"));
+        record.setUserNotes(rowSet.getString("record_user_description"));
+        record.setUserRating(rowSet.getInt("record_user_rating"));
+        record.setCollectionId(rowSet.getInt("record_collection_id"));
 
         return record;
     }

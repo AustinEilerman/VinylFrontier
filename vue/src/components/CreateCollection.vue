@@ -28,13 +28,13 @@ export default {
     },
     methods: {
         createCollection() {
-            // const newCollection = {
-            //     collectionId: this.collection.collectionId,
-            //     collectionUserId: this.collection.collectionUserId,
-            //     isPublic: this.collection.isPublic,
-            //     collectionName: this.collection.collectionName
-            // }
-            collectionService.createCollection(this.collection).then(response => {
+            const newCollection = {
+                collectionId: this.collection.collectionId,
+                collectionUserId: this.collection.collectionUserId,
+                isPublic: this.collection.isPublic,
+                collectionName: this.collection.collectionName
+            }
+            collectionService.createCollection(newCollection).then(response => {
                 if (response.status === 201) {
                     alert('New Collection successfully created.');
                     this.$router.push('/collections');
