@@ -17,7 +17,9 @@ public class JdbcCollectionDao implements CollectionDao {
 
     @Override
     public Collection getCollection(int collectionId) {
-        final String sql = "";
+        final String sql = " SELECT collection_user_id, is_public, collection_name" +
+                " FROM collections" +
+                " WHERE collection_id = ?;";
         SqlRowSet results = this.jdbcTemplate.queryForRowSet(sql, collectionId);
         Collection collection = null;
         if (results.next()) {
@@ -28,10 +30,13 @@ public class JdbcCollectionDao implements CollectionDao {
 
     @Override
     public Collection createCollection(Collection newCollection) {
-        final String sql = "";
+        final String sql = " INSERT INTO collections (collection_user_id, is_public, collection_name)" +
+                " VALUES (?,?,?)" +
+                " RETURNING collection_id;";
         Integer idAssigned = jdbcTemplate.queryForObject(sql, Integer.class,
-                newCollection.getCollectionName(),
-                newCollection.getRecordId()
+                newCollection.getCollectionUserId(),
+                newCollection.isPublic(),
+                newCollection.getCollectionName()
         );
         return this.getCollection(idAssigned);
     }
@@ -39,9 +44,10 @@ public class JdbcCollectionDao implements CollectionDao {
     private Collection mapRowToCollection(SqlRowSet rowSet) {
         Collection collection = new Collection();
 
-        collection.setCollectionName(rowSet.getString("collection_name"));
         collection.setCollectionId(rowSet.getInt("collection_id"));
-        collection.setRecordId(rowSet.getInt("record_id"));
+        collection.setCollectionUserId(rowSet.getInt("collection_user_id"));
+        collection.setPublic(rowSet.getBoolean("is_public"));
+        collection.setCollectionName(rowSet.getString("collection_name"));
 
         return collection;
     }
