@@ -6,7 +6,6 @@ DROP SEQUENCE IF EXISTS seq_collection_id;
 DROP TABLE IF EXISTS users;
 DROP SEQUENCE IF EXISTS seq_user_id;
 DROP TABLE IF EXISTS records_collections;
-DROP SEQUENCE IF EXISTS seq_records_collections;
 CREATE SEQUENCE seq_user_id
   INCREMENT BY 1
   NO MAXVALUE
@@ -28,7 +27,7 @@ CREATE TABLE users (
 	password_hash varchar(200) NOT NULL,
 	role varchar(50) NOT NULL,
 	is_premium BOOLEAN DEFAULT 'false',
-	CONSTRAINT PK_user PRIMARY KEY (user_id)
+	CONSTRAINT PK_user_id PRIMARY KEY (user_id)
 );
 CREATE TABLE collections (
 	collection_id int DEFAULT nextval('seq_collection_id'::regclass) NOT NULL,
