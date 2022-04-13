@@ -6,8 +6,8 @@
       <label for="collectionUserId">Collection User ID</label>
       <input type="number" v-model="collection.collectionUserId" /> <br />
       <label for="isPublic">Make Public?</label>
-      <input type="checkbox" v-model="collection.isPublic" /> <br />
-      <button type="submit" >
+      <input type="checkbox" v-model="collection.isPublic" v-on:change="isPublic = !isPublic" /> <br />
+      <button type="submit"  >
         Create Collection
       </button>
     </form>
@@ -25,9 +25,9 @@ export default {
   data() {
     return {
       collection: {
-        collectionUserId: 1,
+        collectionUserId: this.$store.state.user.username,
         collectionName: "",
-        public: true,
+        isPublic: false,
       },
     };
   },
