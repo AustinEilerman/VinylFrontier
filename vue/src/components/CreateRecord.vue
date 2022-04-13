@@ -28,24 +28,30 @@ export default {
         return {
             record: {
                 recordUserId: 1,
-                recordId: 300
+                recordId: 0,
+                recordTitle: '',
+                recordArtist: '',
+                recordGenre: '',
+                recordLength: 1,
+                userNotes: '',
+                userRating: 1
             }
         }
     },
     methods: {
         createRecord() {
-            const newRecord = {
-                recordUserId: this.recordUserId,
-                recordId: this.recordId,
-                recordTitle: this.record.recordTitle,
-                recordArtist: this.record.recordArtist,
-                recordGenre: this.record.recordGenre,
-                // releaseDate: this.record.releaseDate,
-                recordLength: this.record.recordLength,
-                userNotes: this.record.userNotes,
-                userRating: this.record.userRating
-            }
-            recordService.createRecord(newRecord).then(response => {
+            // const newRecord = {
+            //     recordUserId: this.recordUserId,
+            //     recordId: this.recordId,
+            //     recordTitle: this.record.recordTitle,
+            //     recordArtist: this.record.recordArtist,
+            //     recordGenre: this.record.recordGenre,
+            //     // releaseDate: this.record.releaseDate,
+            //     recordLength: this.record.recordLength,
+            //     userNotes: this.record.userNotes,
+            //     userRating: this.record.userRating
+            // }
+            recordService.createRecord(this.record).then((response) => {
                 if (response.status === 201) {
                     alert('New Record successfully created.');
                     this.$router.push('/records');
@@ -59,7 +65,7 @@ export default {
                 alert('Retrieved record.');
                 this.$router.push(`/records/${this.recordId}`);
             }
-        })
+        });
     }
 }
 </script>

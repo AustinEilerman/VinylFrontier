@@ -73,12 +73,12 @@ const router = new Router({
     },
     {
       path: "/records",
-    name: "addRecord",
-    component: Library,
-    meta: {
-      requiresAuth: false
-    }
-  }
+      name: "addRecord",
+      component: Library,
+      meta: {
+        requiresAuth: false
+      }
+   }
   ]
 })
 
