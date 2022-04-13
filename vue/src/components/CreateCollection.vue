@@ -25,7 +25,7 @@ export default {
   data() {
     return {
       collection: {
-        collectionUserId: this.$store.state.user.username,
+        collectionUserId: 1,
         collectionName: "",
         isPublic: false,
       },
