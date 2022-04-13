@@ -24,6 +24,29 @@ public class Record {
         this.genre = genre;
     }
 
+    public Record( int userId, String title, String artist, String genre, String releaseDate, int length, String userNotes, int userRating) {
+        this.userId = userId;
+        this.title = title;
+        this.artist = artist;
+        this.genre = genre;
+        this.releaseDate = releaseDate;
+        this.length = length;
+        this.userNotes = userNotes;
+        this.userRating = userRating;
+    }
+
+    public Record( int userId, String title, String artist, String genre, String releaseDate, int length, String userNotes, int userRating, int collectionId) {
+        this.userId = userId;
+        this.title = title;
+        this.artist = artist;
+        this.genre = genre;
+        this.releaseDate = releaseDate;
+        this.length = length;
+        this.userNotes = userNotes;
+        this.userRating = userRating;
+        this.collectionId = collectionId;
+    }
+
     public Record() {
     }
 
