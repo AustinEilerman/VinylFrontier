@@ -3,10 +3,8 @@
     <form v-on:submit.prevent="createCollection">
       <label for="collectionName">Collection Name </label>
       <input type="text" v-model="collection.collectionName" /> <br />
-      <label for="collectionUserId">Collection User ID</label>
-      <input type="number" v-model="collection.collectionUserId" /> <br />
       <label for="isPublic">Make Public?</label>
-      <input type="checkbox" v-model="collection.isPublic" v-on:change="isPublic = !isPublic" /> <br />
+      <input type="checkbox" v-model="collection.public" v-on:change="collection.public = !collection.public" /> <br />
       <button type="submit"  >
         Create Collection
       </button>
@@ -27,12 +25,13 @@ export default {
       collection: {
         collectionUserId: 1,
         collectionName: "",
-        isPublic: false,
+        public: false,
       },
     };
   },
   methods: {
     createCollection() {
+      this.collection.collectionUserId = this.$store.state.user.id;
       collectionService.createCollection(this.collection).then((response) => {
         if (response.status === 201) {
           alert("New Collection successfully created.");

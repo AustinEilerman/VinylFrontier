@@ -2,19 +2,19 @@
   <div>
       <form v-on:submit.prevent="createRecord">
           <label for="recordTitle">Record Title*:</label>
-          <input type="text" v-model="record.recordTitle" required="true"> <br>
+          <input type="text" v-model="record.title" required="true"> <br>
           <label for="recordArtist">Record Artist*:</label>
-          <input type="text" v-model="record.recordArtist" required="true"> <br>
+          <input type="text" v-model="record.artist" required="true"> <br>
           <label for="recordGenre">Genre*:</label>
-          <input type="text" v-model="record.recordGenre" required="true"> <br>
+          <input type="text" v-model="record.genre" required="true"> <br>
           <!-- <label for="releaseDate">Release Date:</label> -->
           <!-- <input type="date" v-model="record.releaseDate"> <br> -->
           <label for="recordLength">Length:</label>
-          <input type="number" v-model="record.recordLength"> <br>
+          <input type="number" v-model="record.length"> <br>
           <label for="userNotes">Notes:</label>
           <input type="textarea" v-model="record.userNotes"> <br>
           <label for="userRating">Rating:</label>
-          <input type="number" v-model="record.userRating" min=0, max=5>
+          <input type="number" v-model="record.userRating" min="0" max="5">
           <button type="submit">Add Record</button>
        </form>       
   </div>
@@ -27,14 +27,13 @@ export default {
     data() {
         return {
             record: {
-                recordUserId: 1,
-                recordId: 0,
-                recordTitle: '',
-                recordArtist: '',
-                recordGenre: '',
-                recordLength: 1,
-                userNotes: '',
-                userRating: 1
+                userId: 1,
+                title: "",
+                artist: "",
+                genre: "",
+                length: 1,
+                userNotes: "",
+                userRating: 1,
             }
         }
     },
@@ -51,6 +50,7 @@ export default {
             //     userNotes: this.record.userNotes,
             //     userRating: this.record.userRating
             // }
+            this.record.userId = this.$store.state.user.id;
             recordService.createRecord(this.record).then((response) => {
                 if (response.status === 201) {
                     alert('New Record successfully created.');
@@ -59,14 +59,14 @@ export default {
             });
         }
     },
-    created() {
-        recordService.getRecord(this.recordId).then(response => {
-            if (response.status === 200) {
-                alert('Retrieved record.');
-                this.$router.push(`/records/${this.recordId}`);
-            }
-        });
-    }
+    // created() {
+    //     recordService.getRecord(this.recordId).then(response => {
+    //         if (response.status === 200) {
+    //             alert('Retrieved record.');
+    //             this.$router.push(`/records/${this.recordId}`);
+    //         }
+    //     });
+    // }
 }
 </script>
 
