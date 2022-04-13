@@ -8,10 +8,13 @@ import org.junit.Test;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class JdbcRecordDaoTests extends BaseDaoTests {
 
-    protected static final Record testRecord = new Record("Test Record", "Test Guy", "Test Music", 1);
+    protected static final Record testRecord = new Record(1, "Test Record", "Test Guy", "Test Music");
 
     private JdbcRecordDao sut;
 

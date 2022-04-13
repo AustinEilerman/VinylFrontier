@@ -10,14 +10,14 @@ public class Record {
     private String title;
     private String artist;
     private String genre;
-    private Date releaseDate;
+    private String releaseDate;
     private int length;
     private String userNotes;
     private int userRating;
     private int collectionId;
 
 
-    public Record(String title, String artist, String genre, int userId) {
+    public Record( int userId, String title, String artist, String genre) {
         this.userId = userId;
         this.title = title;
         this.artist = artist;
@@ -67,11 +67,11 @@ public class Record {
         this.recordId = recordId;
     }
 
-    public Date getReleaseDate() {
+    public String getReleaseDate() {
         return releaseDate;
     }
 
-    public void setReleaseDate(Date releaseDate) {
+    public void setReleaseDate(String releaseDate) {
         this.releaseDate = releaseDate;
     }
 
