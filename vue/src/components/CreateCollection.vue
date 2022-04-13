@@ -1,58 +1,56 @@
 <template>
   <div>
-      <form v-on:submit.prevent="createCollection">
-          <label for="collectionName">Collection Name </label>
-          <input type="text" v-model="collection.collectionName"> <br>
-          <label for="collectionUserId">Collection User ID</label>
-          <input type="number" v-model="collection.collectionUserId"> <br>
-          <label for="isPublic">Make Public?</label>
-          <input type="checkbox" v-model="collection.isPublic"> <br>
-          <button type="submit" v-on:click="createCollection()">Create Collection</button>
-       </form>
-          
+    <form v-on:submit.prevent="createCollection">
+      <label for="collectionName">Collection Name </label>
+      <input type="text" v-model="collection.collectionName" /> <br />
+      <label for="collectionUserId">Collection User ID</label>
+      <input type="number" v-model="collection.collectionUserId" /> <br />
+      <label for="isPublic">Make Public?</label>
+      <input type="checkbox" v-model="collection.isPublic" /> <br />
+      <button type="submit" >
+        Create Collection
+      </button>
+    </form>
   </div>
 </template>
 
 <script>
-import collectionService from "@/services/CollectionService.js"
+import collectionService from "@/services/CollectionService.js";
 
 export default {
-    data() {
-        return {
-            collection: {
-                collectionUserId: 1,
-                collectionName: '',
-                public: true
-            }
-        }
+    props: {
+        // get user ID from current user
     },
-    methods: {
-        createCollection() {
-            const newCollection = {
-                collectionId: this.collection.collectionId,
-                collectionUserId: this.collection.collectionUserId,
-                isPublic: this.collection.isPublic,
-                collectionName: this.collection.collectionName
-            }
-            collectionService.createCollection(newCollection).then(response => {
-                if (response.status === 201) {
-                    alert('New Collection successfully created.');
-                    this.$router.push('/collections');
-                }
-            });
+
+  data() {
+    return {
+      collection: {
+        collectionUserId: 1,
+        collectionName: "",
+        public: true,
+      },
+    };
+  },
+  methods: {
+    createCollection() {
+      collectionService.createCollection(this.collection).then((response) => {
+        if (response.status === 201) {
+          alert("New Collection successfully created.");
+          this.$router.push("/collections");
         }
+      });
     },
-    created() {
-        collectionService.getCollection(this.collectionId).then(response => {
-            if (response.status === 200) {
-                alert('Retrieved collection.');
-                this.$router.push(`/collections/${this.collectionId}`);
-            }
-        })
-    }
-}
+  },
+  created() {
+    collectionService.getCollection(this.collectionId).then((response) => {
+      if (response.status === 200) {
+        alert("Retrieved collection.");
+        this.$router.push(`/collections/${this.collectionId}`);
+      }
+    });
+  },
+};
 </script>
 
 <style>
-
 </style>
