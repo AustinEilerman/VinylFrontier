@@ -15,7 +15,7 @@
           <input type="textarea" v-model="record.userNotes"> <br>
           <label for="userRating">Rating:</label>
           <input type="number" v-model="record.userRating" min=0, max=5>
-          <button type="submit" v-on:click="createRecord()">Add Record</button>
+          <button type="submit">Add Record</button>
        </form>       
   </div>
 </template>
@@ -28,7 +28,7 @@ export default {
         return {
             record: {
                 recordUserId: 1,
-                recordId: 3
+                recordId: 300
             }
         }
     },
