@@ -51,6 +51,15 @@ CREATE TABLE records (
 	CONSTRAINT fk_collection_id FOREIGN KEY (record_collection_id) REFERENCES collections(collection_id),
 	CONSTRAINT PK_record_id PRIMARY KEY (record_id)
 );
+
+CREATE TABLE records_collections (
+	record_id int NOT NULL,
+	collection_id int NOT NULL,
+	CONSTRAINT fk_records_collections_record_id FOREIGN KEY (record_id) REFERENCES records(record_id),
+	CONSTRAINT fk_records_collections_collection_id FOREIGN KEY (collection_id) REFERENCES collections(collection_id),
+	CONSTRAINT PK_records_collections PRIMARY KEY (record_id, collection_id)	
+);
+
 INSERT INTO users (username,password_hash,role) VALUES ('user','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
 INSERT INTO users (username,password_hash,role) VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN');
 COMMIT TRANSACTION;
