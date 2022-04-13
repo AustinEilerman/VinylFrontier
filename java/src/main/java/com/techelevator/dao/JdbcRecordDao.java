@@ -30,15 +30,14 @@ public class JdbcRecordDao implements RecordDao {
     @Override
     public Record createRecord(Record newRecord) {
         final String sql = "INSERT INTO records " +
-                "(record_user_id, record_title, record_artist, record_release_date, record_genre, record_length_in_sec) " +
-                            "VALUES (?, ?, ?, ?, ?, ?) " +
+                "(record_user_id, record_title, record_artist, record_genre, record_length_in_sec) " +
+                            "VALUES (?, ?, ?, ?, ?) " +
                             "RETURNING record_id;";
 
         Integer idAssigned = jdbcTemplate.queryForObject(sql, Integer.class,
                 newRecord.getUserId(),
                 newRecord.getTitle(),
                 newRecord.getArtist(),
-                newRecord.getReleaseDate(),
                 newRecord.getGenre(),
                 newRecord.getLength()
         );
@@ -51,7 +50,6 @@ public class JdbcRecordDao implements RecordDao {
         record.setRecordId(rowSet.getInt("record_id"));
         record.setTitle(rowSet.getString("record_title"));
         record.setArtist(rowSet.getString("record_artist"));
-        record.setReleaseDate(rowSet.getString("record_release_date"));
         record.setLength(rowSet.getInt("record_length_in_sec"));
         record.setUserNotes(rowSet.getString("record_user_description"));
         record.setUserRating(rowSet.getInt("record_user_rating"));

@@ -10,7 +10,6 @@ public class Record {
     private String title;
     private String artist;
     private String genre;
-    private String releaseDate;
     private int length;
     private String userNotes;
     private int userRating;
@@ -24,12 +23,11 @@ public class Record {
         this.genre = genre;
     }
 
-    public Record( int userId, String title, String artist, String genre, String releaseDate, int length, String userNotes, int userRating) {
+    public Record( int userId, String title, String artist, String genre, int length, String userNotes, int userRating) {
         this.userId = userId;
         this.title = title;
         this.artist = artist;
         this.genre = genre;
-        this.releaseDate = releaseDate;
         this.length = length;
         this.userNotes = userNotes;
         this.userRating = userRating;
@@ -40,7 +38,6 @@ public class Record {
         this.title = title;
         this.artist = artist;
         this.genre = genre;
-        this.releaseDate = releaseDate;
         this.length = length;
         this.userNotes = userNotes;
         this.userRating = userRating;
@@ -88,14 +85,6 @@ public class Record {
 
     public void setRecordId(int recordId) {
         this.recordId = recordId;
-    }
-
-    public String getReleaseDate() {
-        return releaseDate;
-    }
-
-    public void setReleaseDate(String releaseDate) {
-        this.releaseDate = releaseDate;
     }
 
     public int getLength() {

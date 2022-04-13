@@ -7,8 +7,8 @@
           <input type="text" v-model="record.recordArtist" required="true"> <br>
           <label for="recordGenre">Genre*:</label>
           <input type="text" v-model="record.recordGenre" required="true"> <br>
-          <label for="releaseDate">Release Date:</label>
-          <input type="date" v-model="record.releaseDate"> <br>
+          <!-- <label for="releaseDate">Release Date:</label> -->
+          <!-- <input type="date" v-model="record.releaseDate"> <br> -->
           <label for="recordLength">Length:</label>
           <input type="number" v-model="record.recordLength"> <br>
           <label for="userNotes">Notes:</label>
@@ -40,7 +40,7 @@ export default {
                 recordTitle: this.record.recordTitle,
                 recordArtist: this.record.recordArtist,
                 recordGenre: this.record.recordGenre,
-                releaseDate: this.record.releaseDate,
+                // releaseDate: this.record.releaseDate,
                 recordLength: this.record.recordLength,
                 userNotes: this.record.userNotes,
                 userRating: this.record.userRating
