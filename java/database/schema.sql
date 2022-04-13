@@ -5,6 +5,8 @@ DROP TABLE IF EXISTS collections;
 DROP SEQUENCE IF EXISTS seq_collection_id;
 DROP TABLE IF EXISTS users;
 DROP SEQUENCE IF EXISTS seq_user_id;
+DROP TABLE IF EXISTS records_collections;
+DROP SEQUENCE IF EXISTS seq_records_collections;
 CREATE SEQUENCE seq_user_id
   INCREMENT BY 1
   NO MAXVALUE
