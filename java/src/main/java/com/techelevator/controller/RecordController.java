@@ -21,7 +21,7 @@ public class RecordController {
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @RequestMapping(value = "/records", method = RequestMethod.POST)
+    @RequestMapping(value = "/add-record", method = RequestMethod.POST)
     public Record createRecord(@RequestBody Record newRecord) {
         return recordDao.createRecord(newRecord);
     }

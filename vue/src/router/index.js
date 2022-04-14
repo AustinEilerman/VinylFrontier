@@ -72,7 +72,7 @@ const router = new Router({
       }
     },
     {
-      path: "/records",
+      path: "/add-record",
       name: "addRecord",
       component: Library,
       meta: {

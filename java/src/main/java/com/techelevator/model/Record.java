@@ -33,7 +33,7 @@ public class Record {
         this.userRating = userRating;
     }
 
-    public Record( int userId, String title, String artist, String genre, String releaseDate, int length, String userNotes, int userRating, int collectionId) {
+    public Record( int userId, String title, String artist, String genre, int length, String userNotes, int userRating, int collectionId) {
         this.userId = userId;
         this.title = title;
         this.artist = artist;

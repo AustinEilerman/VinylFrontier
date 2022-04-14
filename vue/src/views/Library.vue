@@ -1,6 +1,6 @@
 <template>
   <div>
-      <h1> This is your library</h1>
+      <h1>Add a record to your library</h1>
       <create-record />
       
   </div>

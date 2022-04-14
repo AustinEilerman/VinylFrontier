@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export default {
     createRecord(record) {
-        return axios.post('/records', record);
+        return axios.post('/add-record', record);
     },
 
     getRecord(recordId) {
