@@ -62,6 +62,13 @@ public class JdbcRecordDao implements RecordDao {
         return records;
     }
 
+    @Override
+    public void addRecordToCollection(int recordId, int collectionId) {
+        final String sql = "INSERT INTO records_collections (record_id, collection_id) " +
+                "VALUES (?, ?);";
+        this.jdbcTemplate.update(sql, recordId, collectionId);
+    }
+
     private Record mapRowToRecord(SqlRowSet rowSet) {
         Record record = new Record();
 
@@ -71,7 +78,6 @@ public class JdbcRecordDao implements RecordDao {
         record.setLength(rowSet.getInt("record_length_in_sec"));
         record.setUserNotes(rowSet.getString("record_user_description"));
         record.setUserRating(rowSet.getInt("record_user_rating"));
-        record.setCollectionId(rowSet.getInt("record_collection_id"));
         record.setGenre(rowSet.getString("record_genre"));
 
         return record;
