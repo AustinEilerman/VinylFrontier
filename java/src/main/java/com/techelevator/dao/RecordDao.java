@@ -13,5 +13,4 @@ public interface RecordDao {
     List<Record> findAll();
 
     List<Record> getAllRecordsByCollectionId(int collectionId);
-
 }
