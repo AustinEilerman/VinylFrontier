@@ -1,21 +1,32 @@
 <template>
   <div>
       <form v-on:submit.prevent="createRecord">
-          <label for="recordTitle">Record Title*:</label>
-          <input type="text" v-model="record.title" required="true"> <br>
-          <label for="recordArtist">Record Artist*:</label>
-          <input type="text" v-model="record.artist" required="true"> <br>
-          <label for="recordGenre">Genre*:</label>
-          <input type="text" v-model="record.genre" required="true"> <br>
-          <!-- <label for="releaseDate">Release Date:</label> -->
-          <!-- <input type="date" v-model="record.releaseDate"> <br> -->
-          <label for="recordLength">Length:</label>
-          <input type="number" v-model="record.length"> <br>
-          <label for="userNotes">Notes:</label>
-          <input type="textarea" v-model="record.userNotes"> <br>
-          <label for="userRating">Rating:</label>
-          <input type="number" v-model="record.userRating" min="0" max="5">
-          <button type="submit">Add Record</button>
+          <div>
+            <label for="recordTitle">Record Title*:</label>
+            <input type="text" v-model="record.title" required="true">
+          </div>
+          <div>
+            <label for="recordArtist">Record Artist*:</label>
+            <input type="text" v-model="record.artist" required="true">
+          </div>
+          <div>
+            <label for="recordGenre">Genre*:</label>
+            <input type="text" v-model="record.genre" required="true">
+          </div>
+            <!-- <label for="releaseDate">Release Date:</label> -->
+            <!-- <input type="date" v-model="record.releaseDate"> <br> -->
+          <div>
+            <label for="recordLength">Length:</label>
+            <input type="number" v-model="record.length">
+          </div>
+          <div>
+            <label for="userNotes">Notes:</label>
+            <input type="textarea" v-model="record.userNotes">
+          </div>
+          <div>
+            <label for="userRating">Rating:</label>
+            <input type="number" v-model="record.userRating" min="0" max="5">
+          </div>
        </form>       
   </div>
 </template>
