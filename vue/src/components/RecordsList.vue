@@ -1,8 +1,10 @@
 <template>
   <div class= "record-list">
       <div class="record-display" v-for="record in records" v-bind:key="record.title">
-          {{ record.title}} ||
-      {{ record.artist }}
+        Title: {{ record.title}} <br>
+        Artist: {{ record.artist }} <br>
+        Genre: {{ record.genre }} <br>
+        Notes: {{ record.userNotes }}
       </div>
   </div>
 </template>
