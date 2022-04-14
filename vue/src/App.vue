@@ -1,12 +1,12 @@
 <template>
   <div id="app">
     <div id="nav"> 
-      <img class="logo" src="@/images/logoWIP.png" height="58"/>
-      <div id="links">
-        <router-link v-bind:to="{ name: 'home' }">Home</router-link>
-        <router-link v-bind:to="{ name: 'records' }" v-if="$store.state.token != ''">Library</router-link>
-        <router-link v-bind:to="{ name: 'collections' }" v-if="$store.state.token != ''">Collections</router-link>
-        <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
+      <img class="logo" src="@/images/logoWIP.png"/>
+      <div id="links" v-if="$store.state.token != ''">
+        <router-link v-bind:to="{ name: 'home' }">Dashboard</router-link>
+        <router-link v-bind:to="{ name: 'records' }">Library</router-link>
+        <router-link v-bind:to="{ name: 'collections' }">Collections</router-link>
+        <router-link v-bind:to="{ name: 'logout' }">Logout</router-link>
       </div>
       <div id="search" v-if="this.$route.name === 'login'">
         <input type="text" class="search-term" placeholder="Search Collections...">
@@ -32,15 +32,43 @@
 
 #logo {
   grid-area: logo;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  max-width: 30px;
+  height: auto;
+}
+
+img {
+  max-width: 350px;
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
 }
 
 #links {
-  background-color: rgba(255,255,255,0.8);
-  border-radius: 5px;
   grid-area: links;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#links > a{
+  text-decoration: none;
+  font-family: monospace, sans-serif;
+  background-color: white;
+  border-radius: 10px;
+  border: 2px solid black;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+#links > a:hover {
+  background-color: black;
+  border-color: white;
+  color: white;
 }
 
 #search {

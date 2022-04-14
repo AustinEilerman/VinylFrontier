@@ -103,7 +103,7 @@ body {
 #collections {
   font-size: 120pt;
   background-color: rgba(255,255,255,0.4);
-  margin-top: 65px;
+  margin-top: 110px;
   margin-right: 196px;
   border-radius: 20px;
 }
@@ -118,10 +118,11 @@ body {
   gap: 30px;
   height: 100vh;
   position: fixed;
-  top: 58px;
+  top: 110px;
   right: 0;
   padding-left: 10px;
   padding-right: 10px;
+  border-top-left-radius: 20px;
 }
 
 .form-signin > h1 {
