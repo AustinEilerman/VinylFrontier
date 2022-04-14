@@ -1,6 +1,7 @@
 <template>
   <div>
-      <form v-on:submit.prevent="createRecord">
+    <button v-show="showForm === false" v-on:click.prevent="showForm = true">Add New Record</button>
+      <form class="record-form"  v-on:submit.prevent="createRecord"  v-show="showForm">
           <div>
             <label for="recordTitle">Record Title*:</label>
             <input type="text" v-model="record.title" required="true">
@@ -46,7 +47,8 @@ export default {
                 length: 1,
                 userNotes: "",
                 userRating: 1,
-            }
+            },
+            showForm: false
         }
     },
     methods: {
