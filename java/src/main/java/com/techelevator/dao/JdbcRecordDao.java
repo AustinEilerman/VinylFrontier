@@ -62,6 +62,22 @@ public class JdbcRecordDao implements RecordDao {
         return records;
     }
 
+    @Override
+    public List<Record> getAllRecordsByCollectionId(int collectionId) {
+        List<Record> records = new ArrayList<>();
+        String sql = "SELECT * " +
+                "FROM records " +
+                "JOIN records_collections ON records.record_id = records_collections.record_id " +
+                "JOIN collections ON collections.collection_id = records_collections.collection_id " +
+                "WHERE collections.collection_id = ?;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, collectionId);
+        while (results.next()) {
+            Record record = mapRowToRecord(results);
+            records.add(record);
+        }
+        return records;
+    }
+
     private Record mapRowToRecord(SqlRowSet rowSet) {
         Record record = new Record();
 

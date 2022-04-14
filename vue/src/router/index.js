@@ -81,7 +81,7 @@ const router = new Router({
       }
     },
     {
-      path: "/add-record",
+      path: "/records",
       name: "addRecord",
       component: Library,
       meta: {

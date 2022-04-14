@@ -11,4 +11,6 @@ public interface RecordDao {
     Record createRecord(Record newRecord);
 
     List<Record> findAll();
+
+    List<Record> getAllRecordsByCollectionId(int collectionId);
 }
