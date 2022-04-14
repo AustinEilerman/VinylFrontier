@@ -26,4 +26,10 @@ public class RecordController {
         return recordDao.createRecord(newRecord);
     }
 
+    @GetMapping(value = "/records")
+    public Record[] getAllRecords() {
+      Record[] records = recordDao.findAll().toArray(new Record[0]);
+      return records;
+    }
+
 }

@@ -5,6 +5,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class JdbcRecordDao implements RecordDao {
 
@@ -47,7 +50,19 @@ public class JdbcRecordDao implements RecordDao {
         return this.getRecord(idAssigned);
     }
 
-        private Record mapRowToRecord(SqlRowSet rowSet) {
+    @Override
+    public List<Record> findAll() {
+        List<Record> records = new ArrayList<>();
+        String sql = "SELECT * FROM records;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+        while (results.next()) {
+            Record record = mapRowToRecord(results);
+            records.add(record);
+        }
+        return records;
+    }
+
+    private Record mapRowToRecord(SqlRowSet rowSet) {
         Record record = new Record();
 
         record.setRecordId(rowSet.getInt("record_id"));

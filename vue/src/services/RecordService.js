@@ -9,5 +9,9 @@ export default {
 
     getRecord(recordId) {
         return axios.get(`/records/${recordId}`);
+    },
+
+    getAllRecords() {
+        return axios.get('/records');
     }
 }
