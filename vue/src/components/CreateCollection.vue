@@ -1,15 +1,18 @@
 <template>
   <div>
-    <form v-on:submit.prevent="createCollection">
-      <label for="collectionName">Collection Name </label>
-      <input type="text" v-model="collection.collectionName" /> <br />
-      <label for="collectionUserId">Collection User ID</label>
-      <input type="number" v-model="collection.collectionUserId" /> <br />
-      <label for="isPublic">Make Public?</label>
-      <input type="checkbox" v-model="collection.isPublic" v-on:change="isPublic = !isPublic" /> <br />
-      <button type="submit"  >
-        Create Collection
-      </button>
+    <button v-show="showForm === false" v-on:click.prevent="showForm = true">Add New Collection</button>
+    <form class="collection-form" v-on:submit.prevent="createCollection" v-show="showForm">
+      <div>
+        <label for="collectionName">Collection Name:</label>
+        <input type="text" v-model="collection.collectionName" /> 
+      </div>
+      <div>
+        <label for="isPublic">Make Public?</label>
+        <input type="checkbox" v-model="collection.public" v-on:click="changePublicStatus($event)" />
+      </div>
+      <div>
+        <button type="submit">Create Collection</button>
+      </div>
     </form>
   </div>
 </template>
@@ -18,21 +21,19 @@
 import collectionService from "@/services/CollectionService.js";
 
 export default {
-    props: {
-        // get user ID from current user
-    },
-
   data() {
     return {
       collection: {
-        collectionUserId: 1,
+        collectionUserId: this.$store.state.user.id,
         collectionName: "",
-        isPublic: false,
+        public: false,
       },
+      showForm: false
     };
   },
   methods: {
     createCollection() {
+      this.collection.collectionUserId = this.$store.state.user.id;
       collectionService.createCollection(this.collection).then((response) => {
         if (response.status === 201) {
           alert("New Collection successfully created.");
@@ -40,6 +41,11 @@ export default {
         }
       });
     },
+    changePublicStatus(click) {
+      if (click.target.checked) {
+        this.collection.public = !this.collection.public;
+      }
+    }
   },
   created() {
     collectionService.getCollection(this.collectionId).then((response) => {

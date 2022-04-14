@@ -9,5 +9,9 @@ export default {
 
     getCollection(collectionId) {
         return axios.get(`/collections/${collectionId}`);
+    },
+
+    getAllCollections() {
+        return axios.get('/collections');
     }
 }

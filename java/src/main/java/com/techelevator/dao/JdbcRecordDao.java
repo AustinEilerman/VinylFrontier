@@ -5,6 +5,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class JdbcRecordDao implements RecordDao {
 
@@ -30,8 +33,9 @@ public class JdbcRecordDao implements RecordDao {
     @Override
     public Record createRecord(Record newRecord) {
         final String sql = "INSERT INTO records " +
-                "(record_user_id, record_title, record_artist, record_genre, record_length_in_sec) " +
-                            "VALUES (?, ?, ?, ?, ?) " +
+                "(record_user_id, record_title, record_artist, record_genre, record_length_in_sec," +
+                "record_user_description, record_user_rating) " +
+                            "VALUES (?, ?, ?, ?, ?, ?, ?) " +
                             "RETURNING record_id;";
 
         Integer idAssigned = jdbcTemplate.queryForObject(sql, Integer.class,
@@ -39,12 +43,26 @@ public class JdbcRecordDao implements RecordDao {
                 newRecord.getTitle(),
                 newRecord.getArtist(),
                 newRecord.getGenre(),
-                newRecord.getLength()
+                newRecord.getLength(),
+                newRecord.getUserNotes(),
+                newRecord.getUserRating()
         );
         return this.getRecord(idAssigned);
     }
 
-        private Record mapRowToRecord(SqlRowSet rowSet) {
+    @Override
+    public List<Record> findAll() {
+        List<Record> records = new ArrayList<>();
+        String sql = "SELECT * FROM records;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+        while (results.next()) {
+            Record record = mapRowToRecord(results);
+            records.add(record);
+        }
+        return records;
+    }
+
+    private Record mapRowToRecord(SqlRowSet rowSet) {
         Record record = new Record();
 
         record.setRecordId(rowSet.getInt("record_id"));

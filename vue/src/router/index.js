@@ -7,6 +7,7 @@ import Register from '../views/Register.vue'
 import store from '../store/index'
 import Collections from '@/views/Collections.vue'
 import Library from '@/views/Library.vue'
+// import RecordsList from '@/views/RecordsList.vue'
 
 Vue.use(Router)
 
@@ -64,6 +65,14 @@ const router = new Router({
       }
     },
     {
+      path: "/collections",
+      name: "getAllCollections",
+      component: Collections,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
       path: "/collections/:id",
       name: "collectionById",
       component: Collections,
@@ -72,12 +81,20 @@ const router = new Router({
       }
     },
     {
-      path: "/records",
+      path: "/add-record",
       name: "addRecord",
       component: Library,
       meta: {
         requiresAuth: false
       }
+   },
+   {
+     path: "/records",
+     name: "viewRecords",
+     component: Library,
+     meta: {
+      requiresAuth: false
+    }
    }
   ]
 })

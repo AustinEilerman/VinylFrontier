@@ -21,9 +21,15 @@ public class RecordController {
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @RequestMapping(value = "/records", method = RequestMethod.POST)
+    @RequestMapping(value = "/add-record", method = RequestMethod.POST)
     public Record createRecord(@RequestBody Record newRecord) {
         return recordDao.createRecord(newRecord);
+    }
+
+    @GetMapping(value = "/records")
+    public Record[] getAllRecords() {
+      Record[] records = recordDao.findAll().toArray(new Record[0]);
+      return records;
     }
 
 }
