@@ -26,4 +26,9 @@ export default {
   flex-direction: column;
   padding-bottom: 20px;
 }
+
+h1 {
+  text-align: center;
+}
+
 </style>

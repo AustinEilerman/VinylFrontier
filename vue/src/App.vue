@@ -4,8 +4,8 @@
       <img class="logo" src="@/images/logoWIP.png"/>
       <div id="links" v-if="$store.state.token != ''">
         <router-link v-bind:to="{ name: 'home' }">Dashboard</router-link>
-        <router-link v-bind:to="{ name: 'records' }">Library</router-link>
-        <router-link v-bind:to="{ name: 'collections' }">Collections</router-link>
+        <router-link v-bind:to="{ name: 'viewRecords' }">Library</router-link>
+        <router-link v-bind:to="{ name: 'getAllCollections' }">Collections</router-link>
         <router-link v-bind:to="{ name: 'logout' }">Logout</router-link>
       </div>
       <div id="search" v-if="this.$route.name === 'login'">
