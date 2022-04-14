@@ -6,6 +6,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class JdbcCollectionDao implements CollectionDao {
 
@@ -26,6 +29,18 @@ public class JdbcCollectionDao implements CollectionDao {
             collection = mapRowToCollection(results);
         }
         return collection;
+    }
+
+    @Override
+    public List<Collection> getAllCollections() {
+        List<Collection> collections = new ArrayList<>();
+        final String sql = " SELECT *" +
+                " FROM collections;";
+        SqlRowSet results = this.jdbcTemplate.queryForRowSet(sql);
+        while (results.next()) {
+            collections.add(mapRowToCollection(results));
+        }
+        return collections;
     }
 
     @Override

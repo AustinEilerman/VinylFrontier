@@ -5,6 +5,8 @@ import com.techelevator.model.Collection;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin
 public class CollectionController {
@@ -25,4 +27,10 @@ public class CollectionController {
     public Collection createCollection(@RequestBody Collection newCollection) {
         return collectionDao.createCollection(newCollection);
     }
+
+    @RequestMapping(value = "/collections", method = RequestMethod.GET)
+    public List<Collection> getAllCollections() {
+        return collectionDao.getAllCollections();
+    }
+    
 }

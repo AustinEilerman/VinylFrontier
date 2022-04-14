@@ -64,6 +64,14 @@ const router = new Router({
       }
     },
     {
+      path: "/collections",
+      name: "getAllCollections",
+      component: Collections,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
       path: "/collections/:id",
       name: "collectionById",
       component: Collections,
