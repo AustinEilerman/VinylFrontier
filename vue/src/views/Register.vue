@@ -5,7 +5,8 @@
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
       </div>
-      <label for="username" class="sr-only">Username</label>
+      <router-link :to="{ name: 'login' }" id="have-account">Already have an account?</router-link>
+      <label for="username" class="sr-only">Username:</label>
       <input
         type="text"
         id="username"
@@ -15,7 +16,7 @@
         required
         autofocus
       />
-      <label for="password" class="sr-only">Password</label>
+      <label for="password" class="sr-only">Password:</label>
       <input
         type="password"
         id="password"
@@ -32,9 +33,8 @@
         v-model="user.confirmPassword"
         required
       />
-      <router-link :to="{ name: 'login' }">Have an account?</router-link>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">
-        Create Account
+      <button id= "submit-button" class="btn btn-lg btn-primary btn-block" type="submit">
+        Blast Off!
       </button>
     </form>
   </div>
@@ -90,4 +90,40 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+
+.form-register {
+  background-color: rgba(255,255,255,0.8);
+  margin-top: 30vh;
+  margin-left: 15vw;
+  margin-right: 15vw;
+  border-radius: 20px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.form-register > h1 {
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  justify-content: center;
+}
+
+#have-account {
+  display: flex;
+  justify-content: center;
+}
+
+#submit-button {
+  display: flex;
+  margin-left: 200px;
+  margin-right: 200px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  justify-content: center;
+}
+
+</style>

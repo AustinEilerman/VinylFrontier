@@ -1,7 +1,23 @@
 <template>
   <div id="login" class="text-center">
+    <div id="collections">
+      PUBLIC COLLECTIONS
+      PUBLIC COLLECTIONS
+      PUBLIC COLLECTIONS
+      PUBLIC COLLECTIONS
+      PUBLIC COLLECTIONS
+      PUBLIC COLLECTIONS
+      PUBLIC COLLECTIONS
+      PUBLIC COLLECTIONS
+      PUBLIC COLLECTIONS
+      PUBLIC COLLECTIONS
+      PUBLIC COLLECTIONS
+      PUBLIC COLLECTIONS
+      PUBLIC COLLECTIONS
+      PUBLIC COLLECTIONS
+    </div>
     <form class="form-signin" @submit.prevent="login">
-      <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
+      <h1 class="h3 mb-3 font-weight-normal">Login</h1>
       <div
         class="alert alert-danger"
         role="alert"
@@ -31,8 +47,8 @@
         v-model="user.password"
         required
       />
-      <router-link :to="{ name: 'register' }">Need an account?</router-link>
       <button type="submit">Sign in</button>
+      <router-link :to="{ name: 'register' }">Register</router-link>
     </form>
   </div>
 </template>
@@ -74,3 +90,44 @@ export default {
   }
 };
 </script>
+
+<style>
+
+body {
+  background-image: url(https://cdn.pixabay.com/photo/2016/11/29/05/45/astronomy-1867616_1280.jpg);
+  background-attachment: fixed;
+  background-color: #000000;
+  background-size: cover;
+}
+
+#collections {
+  font-size: 120pt;
+  background-color: rgba(255,255,255,0.4);
+  margin-top: 65px;
+  margin-right: 196px;
+  border-radius: 20px;
+}
+
+.form-signin {
+  color: white;
+  font-family: verdana, sans-serif;
+  background-color: rgba(174,112,213,0.70);
+  grid-area: login;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  height: 100vh;
+  position: fixed;
+  top: 58px;
+  right: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.form-signin > h1 {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  font-size: 15pt;
+}
+</style>
