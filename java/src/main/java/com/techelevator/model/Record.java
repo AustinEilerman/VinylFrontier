@@ -13,7 +13,6 @@ public class Record {
     private int length;
     private String userNotes;
     private int userRating;
-    private int collectionId;
 
 
     public Record( int userId, String title, String artist, String genre) {
@@ -41,7 +40,6 @@ public class Record {
         this.length = length;
         this.userNotes = userNotes;
         this.userRating = userRating;
-        this.collectionId = collectionId;
     }
 
     public Record() {
@@ -110,9 +108,5 @@ public class Record {
     public void setUserRating(int userRating) {
         this.userRating = userRating;
     }
-
-    public int getCollectionId() { return collectionId; }
-
-    public void setCollectionId(int collectionId) { this.collectionId = collectionId; }
 }
 

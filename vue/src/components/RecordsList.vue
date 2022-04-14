@@ -2,7 +2,7 @@
   <div class= "record-list">
       <div class="record-display" v-for="record in records" v-bind:key="record.title">
           {{ record.title}} ||
-      {{ record.title }}
+      {{ record.artist }}
       </div>
   </div>
 </template>
