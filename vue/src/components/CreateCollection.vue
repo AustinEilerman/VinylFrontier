@@ -1,6 +1,7 @@
 <template>
   <div>
-    <form v-on:submit.prevent="createCollection">
+    <button v-show="showForm === false" v-on:click.prevent="showForm = true">Add New Collection</button>
+    <form class="collection-form" v-on:submit.prevent="createCollection" v-show="showForm">
       <div>
         <label for="collectionName">Collection Name:</label>
         <input type="text" v-model="collection.collectionName" /> 
@@ -27,6 +28,7 @@ export default {
         collectionName: "",
         public: false,
       },
+      showForm: false
     };
   },
   methods: {
