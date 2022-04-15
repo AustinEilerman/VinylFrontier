@@ -1,11 +1,11 @@
 BEGIN TRANSACTION;
-DROP TABLE IF EXISTS records;
+DROP TABLE IF EXISTS records CASCADE;
 DROP SEQUENCE IF EXISTS seq_record_id;
-DROP TABLE IF EXISTS collections;
+DROP TABLE IF EXISTS collections CASCADE;
 DROP SEQUENCE IF EXISTS seq_collection_id;
-DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users CASCADE;
 DROP SEQUENCE IF EXISTS seq_user_id;
-DROP TABLE IF EXISTS records_collections;
+DROP TABLE IF EXISTS records_collections CASCADE;
 CREATE SEQUENCE seq_user_id
   INCREMENT BY 1
   NO MAXVALUE
@@ -14,12 +14,12 @@ CREATE SEQUENCE seq_user_id
 CREATE SEQUENCE seq_record_id
   INCREMENT BY 1
   NO MAXVALUE
-  NO MINVALUE
+  MINVALUE 1000
   CACHE 1;
 CREATE SEQUENCE seq_collection_id
   INCREMENT BY 1
   NO MAXVALUE
-  NO MINVALUE
+  MINVALUE 2000
   CACHE 1;
 CREATE TABLE users (
 	user_id int DEFAULT nextval('seq_user_id'::regclass) NOT NULL,
@@ -27,6 +27,7 @@ CREATE TABLE users (
 	password_hash varchar(200) NOT NULL,
 	role varchar(50) NOT NULL,
 	is_premium BOOLEAN DEFAULT 'false',
+	
 	CONSTRAINT PK_user_id PRIMARY KEY (user_id)
 );
 CREATE TABLE collections (
@@ -40,16 +41,15 @@ CREATE TABLE collections (
 CREATE TABLE records (
 	record_id int DEFAULT nextval('seq_record_id'::regclass) NOT NULL,
 	record_user_id int NOT NULL,
-	record_collection_id int,
 	record_title varchar(50) NOT NULL,
 	record_artist varchar(50) NOT NULL,
 	record_release_date DATE,
-	record_genre varchar(50) NOT NULL,
+	record_genre varchar(255) NOT NULL,
 	record_user_description varchar(255),
 	record_user_rating int,
 	record_length_in_sec int,
+	record_art_url varchar (255),
 	CONSTRAINT fk_user_id FOREIGN KEY (record_user_id) REFERENCES users(user_id),
-	CONSTRAINT fk_collection_id FOREIGN KEY (record_collection_id) REFERENCES collections(collection_id),
 	CONSTRAINT PK_record_id PRIMARY KEY (record_id)
 );
 
@@ -63,6 +63,5 @@ CREATE TABLE records_collections (
 
 INSERT INTO users (username,password_hash,role) VALUES ('user','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
 INSERT INTO users (username,password_hash,role) VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN');
-ALTER TABLE records ALTER COLUMN record_genre TYPE character varying(255);
-ALTER TABLE records DROP COLUMN record_collection_id;
 COMMIT TRANSACTION;
+-- ABORT TRANSACTION;

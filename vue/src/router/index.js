@@ -81,7 +81,7 @@ const router = new Router({
       }
     },
     {
-      path: "/records/library",
+      path: "/library",
       name: "addRecord",
       component: Library,
       meta: {
@@ -89,7 +89,7 @@ const router = new Router({
       }
    },
    {
-     path: "/records/library",
+     path: "/library",
      name: "viewRecords",
      component: Library,
      meta: {
