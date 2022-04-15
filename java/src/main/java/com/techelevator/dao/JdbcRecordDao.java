@@ -79,12 +79,7 @@ public class JdbcRecordDao implements RecordDao {
         return records;
     }
 
-    @Override
-    public void addRecordToCollection(int recordId, int collectionId) {
-        final String sql = "INSERT INTO records_collections (record_id, collection_id) " +
-                "VALUES (?, ?);";
-        this.jdbcTemplate.update(sql, recordId, collectionId);
-    }
+
 
     private Record mapRowToRecord(SqlRowSet rowSet) {
         Record record = new Record();
