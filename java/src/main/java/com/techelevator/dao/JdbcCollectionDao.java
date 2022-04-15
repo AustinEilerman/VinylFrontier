@@ -44,6 +44,19 @@ public class JdbcCollectionDao implements CollectionDao {
     }
 
     @Override
+    public List<Collection> getCollectionsByUserId(int userId) {
+        List<Collection> collections = new ArrayList<>();
+        final String sql = " SELECT *" +
+                " FROM collections" +
+                " WHERE collection_user_id = ?;";
+        SqlRowSet results = this.jdbcTemplate.queryForRowSet(sql, userId);
+        while (results.next()) {
+            collections.add(mapRowToCollection(results));
+        }
+        return collections;
+    }
+
+    @Override
     public Collection createCollection(Collection newCollection) {
         final String sql = " INSERT INTO collections (collection_user_id, is_public, collection_name)" +
                 " VALUES (?,?,?)" +
