@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button v-show="showForm === false" v-on:click.prevent="showForm = true">Add New Collection</button>
+    <button v-if="(!showForm && canCreateCollection())" v-on:click.prevent="showForm = true">Add New Collection</button>
     <form class="collection-form" v-on:submit.prevent="createCollection" v-show="showForm">
       <div>
         <label for="collectionName">Collection Name:</label>
@@ -33,17 +33,19 @@ export default {
     };
   },
   methods: {
+
+    canCreateCollection() {
+      return this.$store.state.user.authorities[0].name === 'ROLE_PREMIUM' || this.collectionCounter === 0;
+    },
+
     createCollection() {
       this.collection.collectionUserId = this.$store.state.user.id;
-      if (this.$store.state.user.authorities[0].name === 'ROLE_PREMIUM' || this.collectionCounter === 0) {
+      if (this.canCreateCollection) {
          collectionService.createCollection(this.collection).then((response) => {
           if (response.status === 201) {
             console.log(this.collectionCounter);
             alert("New Collection successfully created.");
             location.reload();
-          }
-          else {
-            alert('You do not have permission to add another collection')
           }
       });
     }
@@ -54,14 +56,13 @@ export default {
       }
     }
   },
-  // created() {
-  //   collectionService.getCollection(this.collectionId).then((response) => {
-  //     if (response.status === 200) {
-  //       alert("Retrieved collection.");
-  //       this.$router.push(`/collections/${this.collectionId}`);
-  //     }
-  //   });
-  // },
+  created() {
+    collectionService.getAllCollections().then((response) => {
+      if (response.status === 200) {
+        this.collectionCounter = response.data.length;
+      }
+    });
+  },
 };
 </script>
 
