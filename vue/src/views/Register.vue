@@ -93,10 +93,11 @@ export default {
 <style>
 
 .form-register {
+  font-family: monospace, sans-serif;
   background-color: rgba(255,255,255,0.8);
   margin-top: 30vh;
-  margin-left: 15vw;
-  margin-right: 15vw;
+  margin-left: 30vw;
+  margin-right: 30vw;
   border-radius: 20px;
   padding-bottom: 30px;
   padding-left: 30px;
@@ -108,7 +109,7 @@ export default {
 
 .form-register > h1 {
   display: flex;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: monospace, sans-serif;
   justify-content: center;
 }
 
@@ -119,8 +120,8 @@ export default {
 
 #submit-button {
   display: flex;
-  margin-left: 200px;
-  margin-right: 200px;
+  margin-left: 180px;
+  margin-right: 180px;
   padding-top: 10px;
   padding-bottom: 10px;
   justify-content: center;

@@ -22,12 +22,12 @@
         class="alert alert-danger"
         role="alert"
         v-if="invalidCredentials"
-      >Invalid username and password!</div>
+      >Invalid username<br>and password!</div>
       <div
         class="alert alert-success"
         role="alert"
         v-if="this.$route.query.registration"
-      >Thank you for registering, please sign in.</div>
+      >Thank you for registering,<br>please sign in.</div>
       <label for="username" class="sr-only">Username</label>
       <input
         type="text"

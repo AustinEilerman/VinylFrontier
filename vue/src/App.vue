@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <div id="nav"> 
-      <img class="logo" src="@/images/logoWIP.png"/>
+    <div id="nav">
+      <a href="/login"> 
+        <img class="logo" src="@/images/logoWIP.png"/>
+      </a>
       <div id="links" v-if="$store.state.token != ''">
         <router-link v-bind:to="{ name: 'home' }">Dashboard</router-link>
         <router-link v-bind:to="{ name: 'viewRecords' }">Library</router-link>
