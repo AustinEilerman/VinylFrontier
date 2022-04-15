@@ -1,7 +1,9 @@
 package com.techelevator.controller;
 
 import com.techelevator.dao.RecordDao;
+import com.techelevator.dao.RecordsCollectionsDao;
 import com.techelevator.model.Record;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,9 +12,11 @@ import org.springframework.web.bind.annotation.*;
 public class RecordController {
 
     private RecordDao recordDao;
+    private RecordsCollectionsDao recordsCollectionsDao;
 
-    public RecordController(RecordDao recordDao) {
+    public RecordController(RecordDao recordDao, RecordsCollectionsDao recordsCollectionsDao) {
         this.recordDao = recordDao;
+        this.recordsCollectionsDao = recordsCollectionsDao;
     }
 
     @RequestMapping(value = "/records/{id}", method = RequestMethod.GET)
@@ -32,10 +36,10 @@ public class RecordController {
       return records;
     }
 
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    @RequestMapping(value = "/collections/{id}", method = RequestMethod.POST)
-    public void addRecordToCollection(@RequestBody int recordId, @PathVariable int id) {
-        recordDao.addRecordToCollection(recordId, id);
+    @ResponseStatus(HttpStatus.CREATED)
+    @RequestMapping(value = "/collections/{collectionId}", method = RequestMethod.POST)
+    public void addRecordToCollection(@RequestBody Record record, @PathVariable int collectionId) {
+        recordsCollectionsDao.addRecordToCollection(record.getRecordId(), collectionId);
     }
 
 }
