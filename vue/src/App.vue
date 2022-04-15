@@ -37,7 +37,7 @@ img {
   grid-area: logo;
   display: flex;
   align-items: center;
-  max-width: 31vw;
+  max-width: 27vw;
   height: auto;
   padding-top: 10px;
   padding-bottom: 10px;
