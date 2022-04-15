@@ -19,7 +19,7 @@ name: "record-list",
     };
   },
   created() {
-      recordService.getAllRecords().then((response) => {
+      recordService.getAllRecords(this.$store.state.user.id).then((response) => {
           this.records = response.data
       });
   }

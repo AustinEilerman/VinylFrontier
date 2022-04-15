@@ -27,6 +27,7 @@ CREATE TABLE users (
 	password_hash varchar(200) NOT NULL,
 	role varchar(50) NOT NULL,
 	is_premium BOOLEAN DEFAULT 'false',
+	
 	CONSTRAINT PK_user_id PRIMARY KEY (user_id)
 );
 CREATE TABLE collections (
