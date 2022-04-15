@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export default {
     createRecord(record) {
-        return axios.post('/:userId/library', record);
+        return axios.post('/library', record);
     },
 
     getRecord(recordId) {
@@ -12,6 +12,6 @@ export default {
     },
 
     getAllRecords(userId) {
-        return axios.get(`/${userId}/library`);
+        return axios.get(`/library/${userId}`);
     }
 }
