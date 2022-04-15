@@ -28,18 +28,25 @@ export default {
         collectionName: "",
         public: false,
       },
-      showForm: false
+      showForm: false,
+      collectionCounter: 0
     };
   },
   methods: {
     createCollection() {
       this.collection.collectionUserId = this.$store.state.user.id;
-      collectionService.createCollection(this.collection).then((response) => {
-        if (response.status === 201) {
-          alert("New Collection successfully created.");
-          this.$router.push("/collections");
-        }
+      if (this.$store.state.user.authorities[0].name === 'ROLE_PREMIUM' || this.collectionCounter === 0) {
+         collectionService.createCollection(this.collection).then((response) => {
+          if (response.status === 201) {
+            console.log(this.collectionCounter);
+            alert("New Collection successfully created.");
+            location.reload();
+          }
+          else {
+            alert('You do not have permission to add another collection')
+          }
       });
+    }
     },
     changePublicStatus(click) {
       if (click.target.checked) {
@@ -47,14 +54,14 @@ export default {
       }
     }
   },
-  created() {
-    collectionService.getCollection(this.collectionId).then((response) => {
-      if (response.status === 200) {
-        alert("Retrieved collection.");
-        this.$router.push(`/collections/${this.collectionId}`);
-      }
-    });
-  },
+  // created() {
+  //   collectionService.getCollection(this.collectionId).then((response) => {
+  //     if (response.status === 200) {
+  //       alert("Retrieved collection.");
+  //       this.$router.push(`/collections/${this.collectionId}`);
+  //     }
+  //   });
+  // },
 };
 </script>
 
