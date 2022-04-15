@@ -17,7 +17,6 @@ export default {
     created() {
         collectionService.getAllCollections().then(response => {
             this.collections = response.data;
-            this.$router.push("/collections");
         })
     }
 }
