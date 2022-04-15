@@ -2,8 +2,7 @@
   <div class="library">
     <h1>Your Library</h1>
     <records-list />
-      <h2>Add a record to your library</h2>
-      <create-record />
+    <create-record />
   </div>
 </template>
 
@@ -18,9 +17,10 @@ export default {
 
 <style>
 .library {
+  font-family: monospace, sans-serif;
   font-size: 40;
   background-color: rgba(255,255,255,0.8);
-  margin-top: 110px;
+  margin-top: 19vh;
   border-radius: 20px;
   display:flex;
   flex-direction: column;
@@ -28,7 +28,14 @@ export default {
 }
 
 h1 {
+  font-family: monospace, sans-serif;
   text-align: center;
 }
 
+.create-record {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+
+}
 </style>

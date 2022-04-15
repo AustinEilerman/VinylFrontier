@@ -16,19 +16,19 @@
       PUBLIC COLLECTIONS
       PUBLIC COLLECTIONS
     </div>
-    <form class="form-signin" @submit.prevent="login">
+    <form class="form-signin" @submit.prevent="login" v-if="$store.state.token == ''">
       <h1 class="h3 mb-3 font-weight-normal">Login</h1>
       <div
         class="alert alert-danger"
         role="alert"
         v-if="invalidCredentials"
-      >Invalid username and password!</div>
+      >Invalid username<br>and password!</div>
       <div
         class="alert alert-success"
         role="alert"
         v-if="this.$route.query.registration"
-      >Thank you for registering, please sign in.</div>
-      <label for="username" class="sr-only">Username</label>
+      >Thank you for<br>registering, please<br>sign in.</div>
+      <label for="username" class="sr-only">Username:</label>
       <input
         type="text"
         id="username"
@@ -38,7 +38,7 @@
         required
         autofocus
       />
-      <label for="password" class="sr-only">Password</label>
+      <label for="password" class="sr-only">Password:</label>
       <input
         type="password"
         id="password"
@@ -50,6 +50,9 @@
       <button type="submit">Sign in</button>
       <router-link :to="{ name: 'register' }">Register</router-link>
     </form>
+    <div class="signed-in" v-if="$store.state.token != ''">
+      You are signed in as {{this.$store.state.user.username}}.
+    </div>
   </div>
 </template>
 
@@ -101,34 +104,85 @@ body {
 }
 
 #collections {
-  font-size: 120pt;
+  font-size: 100pt;
   background-color: rgba(255,255,255,0.4);
-  margin-top: 110px;
-  margin-right: 196px;
+  margin-top: 19vh;
+  width: 76vw;
   border-radius: 20px;
 }
 
 .form-signin {
   color: white;
-  font-family: verdana, sans-serif;
+  font-family: monospace, sans-serif;
   background-color: rgba(174,112,213,0.70);
-  grid-area: login;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
   height: 100vh;
   position: fixed;
-  top: 110px;
+  top: 19vh;
   right: 0;
   padding-left: 10px;
   padding-right: 10px;
   border-top-left-radius: 20px;
+  width: 20vw;
+}
+
+.form-signin > input {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.form-signin > label {
+  margin-left: 10%;
+}
+
+.signed-in {
+  color: white;
+  font-family: monospace, sans-serif;
+  background-color: rgba(174,112,213,0.70);
+  height: 100vh;
+  position: fixed;
+  top: 19vh;
+  right: 0;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-top-left-radius: 20px;
+  justify-content: center;
+  padding-top: 40px;
+  width: 17vw;
 }
 
 .form-signin > h1 {
-  display: flex;
   justify-content: center;
   padding-top: 20px;
   font-size: 15pt;
 }
+
+.form-signin > a {
+  display: flex;
+  border: 2pt solid black;
+  border-radius: 10px;
+  text-decoration: none;
+  justify-content: center;
+  background-color: white;
+  margin-left: 30%;
+  margin-right: 30%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.form-signin > a:hover {
+  background-color: black;
+  border-color: white;
+  color: white;
+}
+
+.form-signin > button {
+  display: flex;
+  margin-left: 7vw;
+  margin-right: 7vw;
+  justify-content: center;
+}
+
 </style>

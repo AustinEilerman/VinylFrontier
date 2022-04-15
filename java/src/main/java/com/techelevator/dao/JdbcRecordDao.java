@@ -51,10 +51,10 @@ public class JdbcRecordDao implements RecordDao {
     }
 
     @Override
-    public List<Record> findAll() {
+    public List<Record> findAll(int userId) {
         List<Record> records = new ArrayList<>();
-        String sql = "SELECT * FROM records;";
-        SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+        String sql = "SELECT * FROM records WHERE record_user_id = ?;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userId);
         while (results.next()) {
             Record record = mapRowToRecord(results);
             records.add(record);

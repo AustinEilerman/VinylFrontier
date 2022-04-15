@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="create-record">
     <button v-show="showForm === false" v-on:click.prevent="showForm = true">Add New Record</button>
       <form class="record-form"  v-on:submit.prevent="createRecord"  v-show="showForm">
           <div>
@@ -18,7 +18,7 @@
             <!-- <input type="date" v-model="record.releaseDate"> <br> -->
           <div>
             <label for="recordLength">Length:</label>
-            <input type="number" v-model="record.length">
+            <input type="number" v-model="record.length" min = 0>
           </div>
           <div>
             <label for="userNotes">Notes:</label>
@@ -28,7 +28,7 @@
             <label for="userRating">Rating:</label>
             <input type="number" v-model="record.userRating" min = 0 max = 5>
           </div>
-          <button type="submit">Create Record</button>
+          <button type="submit">Save To Library</button>
        </form>       
   </div>
 </template>
@@ -57,20 +57,26 @@ export default {
             recordService.createRecord(this.record).then((response) => {
                 if (response.status === 201) {
                     alert('New Record successfully created.');
-                    this.$router.push('/add-record');
+                    this.$router.push({name: 'addRecord'});
                 }
             });
         }
     }
 }
 </script>
-
 <style>
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-}
+  form > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
 
+  form > button {
+    display: flex;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 2vh;
+  }
 </style>
