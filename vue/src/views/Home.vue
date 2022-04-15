@@ -20,7 +20,9 @@ export default {
 .home{
   font-size: 40;
   background-color: rgba(255,255,255,0.8);
-  margin-top: 110px;
+  margin-top: 115px;
+  margin-left: 29vw;
+  margin-right: 29vw;
   border-radius: 20px;
   display:flex;
   flex-direction: column;
@@ -36,8 +38,10 @@ export default {
 .dashboard-nav {
   font-family: monospace, sans-serif;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 .dashboard-nav > a {

@@ -30,18 +30,14 @@
   position: fixed;
   top: 0px;
   left: 0px;
-}
-
-#logo {
-  grid-area: logo;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  max-width: 30px;
-  height: auto;
+  height: 18vh;
 }
 
 img {
-  max-width: 350px;
+  grid-area: logo;
+  display: flex;
+  align-items: center;
+  max-width: 31vw;
   height: auto;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -80,5 +76,6 @@ img {
   align-items: center;
   padding-right: 20px;
   gap: 10px;
+  margin-left: 50px;
 }
 </style>
