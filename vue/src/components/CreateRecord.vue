@@ -57,7 +57,7 @@ export default {
             recordService.createRecord(this.record).then((response) => {
                 if (response.status === 201) {
                     alert('New Record successfully created.');
-                    this.$router.push('/add-record');
+                    this.$router.push({name: 'addRecord'});
                 }
             });
         }
