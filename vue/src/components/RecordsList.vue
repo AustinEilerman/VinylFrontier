@@ -38,6 +38,7 @@ name: "record-list",
 
 .record-display {
     border: 2px solid black;
+    background-color: rgba(255,255,255,0.8);
     border-radius: 20px;
     height: 200px;
     width: 200px;

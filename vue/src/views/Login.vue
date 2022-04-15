@@ -1,20 +1,7 @@
 <template>
   <div id="login" class="text-center">
     <div id="collections">
-      PUBLIC COLLECTIONS
-      PUBLIC COLLECTIONS
-      PUBLIC COLLECTIONS
-      PUBLIC COLLECTIONS
-      PUBLIC COLLECTIONS
-      PUBLIC COLLECTIONS
-      PUBLIC COLLECTIONS
-      PUBLIC COLLECTIONS
-      PUBLIC COLLECTIONS
-      PUBLIC COLLECTIONS
-      PUBLIC COLLECTIONS
-      PUBLIC COLLECTIONS
-      PUBLIC COLLECTIONS
-      PUBLIC COLLECTIONS
+      <collections-list/>
     </div>
     <form class="form-signin" @submit.prevent="login" v-if="$store.state.token == ''">
       <h1 class="h3 mb-3 font-weight-normal">Login</h1>
@@ -27,7 +14,7 @@
         class="alert alert-success"
         role="alert"
         v-if="this.$route.query.registration"
-      >Thank you for<br>registering, please<br>sign in.</div>
+      >Thank you for registering,<br> please sign in.</div>
       <label for="username" class="sr-only">Username:</label>
       <input
         type="text"
@@ -57,11 +44,12 @@
 </template>
 
 <script>
+import CollectionsList from '../components/CollectionsList.vue';
 import authService from "../services/AuthService";
 
 export default {
   name: "login",
-  components: {},
+  components: {CollectionsList},
   data() {
     return {
       user: {
@@ -104,10 +92,11 @@ body {
 }
 
 #collections {
-  font-size: 100pt;
+  font-family: monospace, sans-serif;
+  font-size: 40;
   background-color: rgba(255,255,255,0.4);
   margin-top: 19vh;
-  width: 76vw;
+  width: 77vw;
   border-radius: 20px;
 }
 
@@ -183,6 +172,13 @@ body {
   margin-left: 7vw;
   margin-right: 7vw;
   justify-content: center;
+}
+
+.alert.alert-success {
+  display: flex;
+  justify-content: center;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 </style>
