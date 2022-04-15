@@ -1,16 +1,20 @@
 <template>
   <div class="collections">
     <h1>Your Collections</h1>
-      <collections-list />
+      <!-- <collections-list /> Added collections by user Id below -->
+      <user-collections />
       <create-collection />
+      
+
   </div>
 </template>
 
 <script>
-import CollectionsList from '../components/CollectionsList.vue'
+// import CollectionsList from '../components/CollectionsList.vue'
 import CreateCollection from '../components/CreateCollection.vue'
+import UserCollections from '../components/UserCollections.vue'
 export default {
-  components: { CreateCollection, CollectionsList },
+  components: { CreateCollection, UserCollections },
 
 }
 </script>

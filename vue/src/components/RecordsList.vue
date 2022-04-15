@@ -7,13 +7,18 @@
         Artist: {{ record.artist }} <br>
         Genre: {{ record.genre }} <br>
         Notes: {{ record.userNotes }}
+        <add-record-to-collection />
       </div>
+      
   </div>
 </template>
 
 <script>
+
 import recordService from "@/services/RecordService.js"
+import AddRecordToCollection from './AddRecordToCollection.vue';
 export default {
+  components: { AddRecordToCollection },
 name: "record-list",
   data() {
     return {

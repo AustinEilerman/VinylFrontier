@@ -23,7 +23,7 @@ public class CollectionController {
         this.recordDao = recordDao;
     }
 
-    @RequestMapping(value = "/collections/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/collection/{id}", method = RequestMethod.GET)
     public Collection get(@PathVariable int id) {
         return collectionDao.getCollection(id);
     }
@@ -37,6 +37,11 @@ public class CollectionController {
     @RequestMapping(value = "/collections", method = RequestMethod.GET)
     public List<Collection> getAllCollections() {
         return collectionDao.getAllCollections();
+    }
+
+    @RequestMapping(value = "/collections/{collectionUserId}", method = RequestMethod.GET)
+    public List<Collection> getAllCollectionsByUserId(@PathVariable int collectionUserId) {
+        return collectionDao.getCollectionsByUserId(collectionUserId);
     }
 
     @RequestMapping(value = "/collection-{id}/records", method = RequestMethod.GET)
