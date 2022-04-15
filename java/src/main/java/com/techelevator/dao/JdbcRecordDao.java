@@ -89,6 +89,7 @@ public class JdbcRecordDao implements RecordDao {
         Record record = new Record();
 
         record.setRecordId(rowSet.getInt("record_id"));
+        record.setUserId(rowSet.getInt("record_user_id"));
         record.setTitle(rowSet.getString("record_title"));
         record.setArtist(rowSet.getString("record_artist"));
         record.setLength(rowSet.getInt("record_length_in_sec"));

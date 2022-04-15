@@ -40,7 +40,7 @@ export default {
     data() {
         return {
             record: {
-                userId: 1,
+                userId: this.$store.state.user.id,
                 title: "",
                 artist: "",
                 genre: "",

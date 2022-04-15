@@ -21,13 +21,13 @@ public class RecordController {
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @RequestMapping(value = "/records", method = RequestMethod.POST)
+    @RequestMapping(value = "/records/library/{user_id}", method = RequestMethod.POST)
     public Record createRecord(@RequestBody Record newRecord) {
         return recordDao.createRecord(newRecord);
     }
 
-    @GetMapping(value = "/records/{userId}")
-    public Record[] getAllRecords(@RequestBody int userId) {
+    @GetMapping(value = "/records/library/{userId}")
+    public Record[] getAllRecords(@PathVariable int userId) {
       Record[] records = recordDao.findAll(userId).toArray(new Record[0]);
       return records;
     }
