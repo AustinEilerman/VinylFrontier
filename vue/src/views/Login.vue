@@ -181,4 +181,11 @@ body {
   padding-right: 10%;
 }
 
+.alert.alert-danger {
+  display: flex;
+  justify-content: center;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
 </style>

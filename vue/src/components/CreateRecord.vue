@@ -28,6 +28,10 @@
             <label for="userRating">Rating:</label>
             <input type="number" v-model="record.userRating" min = 0 max = 5>
           </div>
+          <div>
+            <label for="recordArtUrl">Cover Art URL:</label>
+            <input type="text" v-model="record.coverArtUrl">
+          </div>
           <button type="submit">Save To Library</button>
        </form>       
   </div>
@@ -47,17 +51,18 @@ export default {
                 length: 1,
                 userNotes: "",
                 userRating: 1,
+                coverArtUrl: ""
             },
             showForm: false
         }
     },
     methods: {
         createRecord() {
-            this.record.userId = this.$store.state.user.id;
             recordService.createRecord(this.record).then((response) => {
                 if (response.status === 201) {
                     alert('New Record successfully created.');
                     this.$router.push({name: 'addRecord'});
+                    location.reload();
                 }
             });
         }
