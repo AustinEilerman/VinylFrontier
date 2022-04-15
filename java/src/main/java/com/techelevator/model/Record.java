@@ -13,7 +13,10 @@ public class Record {
     private int length;
     private String userNotes;
     private int userRating;
+    private String coverArtUrl;
 
+    public Record() {
+    }
 
     public Record( int userId, String title, String artist, String genre) {
         this.userId = userId;
@@ -22,7 +25,7 @@ public class Record {
         this.genre = genre;
     }
 
-    public Record( int userId, String title, String artist, String genre, int length, String userNotes, int userRating) {
+    public Record( int userId, String title, String artist, String genre, int length, String userNotes, int userRating, String coverArtUrl) {
         this.userId = userId;
         this.title = title;
         this.artist = artist;
@@ -30,19 +33,7 @@ public class Record {
         this.length = length;
         this.userNotes = userNotes;
         this.userRating = userRating;
-    }
-
-    public Record( int userId, String title, String artist, String genre, int length, String userNotes, int userRating, int collectionId) {
-        this.userId = userId;
-        this.title = title;
-        this.artist = artist;
-        this.genre = genre;
-        this.length = length;
-        this.userNotes = userNotes;
-        this.userRating = userRating;
-    }
-
-    public Record() {
+        this.coverArtUrl = coverArtUrl;
     }
 
     public String getTitle() {
@@ -108,5 +99,9 @@ public class Record {
     public void setUserRating(int userRating) {
         this.userRating = userRating;
     }
+
+    public String getCoverArtUrl() {return coverArtUrl;}
+
+    public void setCoverArtUrl(String coverArtUrl) {this.coverArtUrl = coverArtUrl;}
 }
 
