@@ -20,7 +20,7 @@ export default {
 .home{
   font-size: 40;
   background-color: rgba(255,255,255,0.8);
-  margin-top: 115px;
+  margin-top: 20vh;
   margin-left: 29vw;
   margin-right: 29vw;
   border-radius: 20px;

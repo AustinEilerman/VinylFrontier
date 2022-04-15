@@ -1,18 +1,17 @@
 <template>
-  <div>
+  <div class="create-collection">
     <button v-show="showForm === false" v-on:click.prevent="showForm = true">Add New Collection</button>
     <form class="collection-form" v-on:submit.prevent="createCollection" v-show="showForm">
       <div>
         <label for="collectionName">Collection Name:</label>
-        <input type="text" v-model="collection.collectionName" /> 
+        <input type="text" required v-model="collection.collectionName" /> 
       </div>
       <div>
         <label for="isPublic">Make Public?</label>
         <input type="checkbox" v-model="collection.public" v-on:click="changePublicStatus($event)" />
       </div>
-      <div>
-        <button type="submit">Create Collection</button>
-      </div>
+      
+      <button type="submit">Create Collection</button>
     </form>
   </div>
 </template>
