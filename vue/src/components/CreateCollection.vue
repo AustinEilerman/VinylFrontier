@@ -1,18 +1,17 @@
 <template>
-  <div>
+  <div class="create-collection">
     <button v-show="showForm === false" v-on:click.prevent="showForm = true">Add New Collection</button>
     <form class="collection-form" v-on:submit.prevent="createCollection" v-show="showForm">
       <div>
         <label for="collectionName">Collection Name:</label>
-        <input type="text" v-model="collection.collectionName" /> 
+        <input type="text" required v-model="collection.collectionName" /> 
       </div>
       <div>
         <label for="isPublic">Make Public?</label>
         <input type="checkbox" v-model="collection.public" v-on:click="changePublicStatus($event)" />
       </div>
-      <div>
-        <button type="submit">Create Collection</button>
-      </div>
+      
+      <button type="submit">Create Collection</button>
     </form>
   </div>
 </template>
@@ -28,18 +27,27 @@ export default {
         collectionName: "",
         public: false,
       },
-      showForm: false
+      showForm: false,
+      collectionCounter: 0
     };
   },
   methods: {
+
+    canCreateCollection() {
+      return this.$store.state.user.authorities[0].name === 'ROLE_PREMIUM' || this.collectionCounter === 0;
+    },
+
     createCollection() {
       this.collection.collectionUserId = this.$store.state.user.id;
-      collectionService.createCollection(this.collection).then((response) => {
-        if (response.status === 201) {
-          alert("New Collection successfully created.");
-          this.$router.push("/collections");
-        }
+      if (this.canCreateCollection) {
+         collectionService.createCollection(this.collection).then((response) => {
+          if (response.status === 201) {
+            console.log(this.collectionCounter);
+            alert("New Collection successfully created.");
+            location.reload();
+          }
       });
+    }
     },
     changePublicStatus(click) {
       if (click.target.checked) {
@@ -48,10 +56,9 @@ export default {
     }
   },
   created() {
-    collectionService.getCollection(this.collectionId).then((response) => {
+    collectionService.getAllCollections().then((response) => {
       if (response.status === 200) {
-        alert("Retrieved collection.");
-        this.$router.push(`/collections/${this.collectionId}`);
+        this.collectionCounter = response.data.length;
       }
     });
   },

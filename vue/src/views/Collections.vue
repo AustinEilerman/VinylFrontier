@@ -1,7 +1,8 @@
 <template>
-  <div class="create-collection">
-      <create-collection />
+  <div class="collections">
+    <h1>Your Collections</h1>
       <collections-list />
+      <create-collection />
   </div>
 </template>
 
@@ -15,13 +16,19 @@ export default {
 </script>
 
 <style>
-.create-collection {
+.collections {
+  font-family: monospace, sans-serif;
   font-size: 40;
   background-color: rgba(255,255,255,0.8);
-  margin-top: 110px;
+  margin-top: 20vh;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   padding-bottom: 20px;
+}
+
+.create-collection {
+  display: flex;
+  justify-content: center;
 }
 </style>
