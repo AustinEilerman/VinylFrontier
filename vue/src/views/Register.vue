@@ -33,6 +33,10 @@
         v-model="user.confirmPassword"
         required
       />
+      <div>
+        <label for="premium">Upgrade to Premium?</label>
+        <input type="checkbox" v-model="user.role" true-value="premium" false-value="user" v-on:click="changeUserRole($event)" />
+      </div>
       <button id= "submit-button" class="btn btn-lg btn-primary btn-block" type="submit">
         Blast Off!
       </button>
@@ -86,6 +90,12 @@ export default {
       this.registrationErrors = false;
       this.registrationErrorMsg = 'There were problems registering this user.';
     },
+
+    changeUserRole(click) {
+      if (click.target.click) {
+        this.user.role = 'premium';
+      }
+    }
   },
 };
 </script>
