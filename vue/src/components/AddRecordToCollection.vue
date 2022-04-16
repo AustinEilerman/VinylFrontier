@@ -43,7 +43,6 @@ export default {
   margin-top: 10px;
 }
 
-
 select {
   color: black;
   font-family: monospace, sans-serif;
