@@ -80,6 +80,7 @@ export default {
 
   form > button {
     display: flex;
+    color: #551A8B;
     margin-left: 10vw;
     margin-right: 10vw;
     margin-top: 2vh;
@@ -93,6 +94,7 @@ export default {
 
   button {
     display: flex;
+    color: #551A8B;
     margin-top: 2vh;
     font-family: monospace, sans-serif;
     background-color: white;
