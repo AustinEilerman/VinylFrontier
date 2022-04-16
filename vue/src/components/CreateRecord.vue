@@ -1,6 +1,6 @@
 <template>
   <div class="create-record">
-    <button v-show="showForm === false" v-on:click.prevent="showForm = true">Add New Record</button>
+    <button class="add-record" v-show="showForm === false" v-on:click.prevent="showForm = true">Add New Record</button>
       <form class="record-form"  v-on:submit.prevent="createRecord"  v-show="showForm">
           <div>
             <label for="recordTitle">Record Title*:</label>
@@ -32,7 +32,8 @@
             <label for="recordArtUrl">Cover Art URL:</label>
             <input type="text" v-model="record.coverArtUrl">
           </div>
-          <button type="submit">Save To Library</button>
+          <button class="submit-buttons" type="submit">Save To Library</button>
+          <button class= "submit-buttons" type="button" v-on:click.prevent="showForm = false">Cancel</button>
        </form>       
   </div>
 </template>
@@ -78,12 +79,12 @@ export default {
     margin-top: 10px;
   }
 
-  form > button {
-    display: flex;
+  .submit-buttons {
+    gap: 10px;
     color: #551A8B;
-    margin-left: 10vw;
-    margin-right: 10vw;
-    margin-top: 2vh;
+    margin-left: 40px;
+    margin-top: 10px;
+    margin-right: 50px;
     font-family: monospace, sans-serif;
     background-color: white;
     border: 2px solid black;
@@ -92,7 +93,7 @@ export default {
     margin-right: 10px;
   }
 
-  button {
+  .add-record {
     display: flex;
     color: #551A8B;
     margin-top: 2vh;
