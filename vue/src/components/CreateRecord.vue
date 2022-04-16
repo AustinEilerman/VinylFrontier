@@ -83,5 +83,22 @@ export default {
     margin-left: 10vw;
     margin-right: 10vw;
     margin-top: 2vh;
+    font-family: monospace, sans-serif;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 10px;
+  }
+
+  button {
+    display: flex;
+    margin-top: 2vh;
+    font-family: monospace, sans-serif;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 10px;
   }
 </style>
