@@ -5,7 +5,7 @@
         Add to Collection
       </button>
       <div class="dropdown-content">
-        <form v-show="showForm">
+        <form v-show="showForm" v-on:submit.prevent="addRecordToCollection">
           <label>Select Collection</label>
           <select v-model="selectedCollection">
             <option v-bind:value="collection.collectionId"
@@ -14,7 +14,7 @@
               {{ collection.collectionName }}
             </option>
           </select>
-          <button type="submit" v-on:submit.prevent="addRecordToCollection">Add Collection</button>
+          <button type="submit" >Add Collection</button>
         </form>
       </div>
     </div>
