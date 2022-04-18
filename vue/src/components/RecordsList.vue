@@ -21,20 +21,14 @@
 
 <script>
 
-import recordService from "@/services/RecordService.js"
 import AddRecordToCollection from './AddRecordToCollection.vue';
 export default {
   components: { AddRecordToCollection },
-name: "record-list",
+  name: "record-list",
   data() {
     return {
-      records: [],
+      records: this.$store.state.currentUserRecords,
     };
-  },
-  created() {
-      recordService.getAllRecords(this.$store.state.user.id).then((response) => {
-          this.records = response.data
-      });
   }
 }
 </script>
