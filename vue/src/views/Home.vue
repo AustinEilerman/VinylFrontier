@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="dashboard">
     <h1>Welcome back, {{this.$store.state.user.username}}!</h1>
     <h2>You are now viewing your dashboard.</h2>
     <div class = "dashboard-nav">
@@ -25,7 +25,7 @@ export default {
     recordService.getAllRecords(this.$store.state.user.id)
     .then((response) => 
       {
-        this.records = response.data
+        this.records = response.data;
       }
     )
 
@@ -44,7 +44,7 @@ export default {
 </script>
 
 <style>
-.home{
+.dashboard{
   font-size: 40;
   background-color: rgba(255,255,255,0.8);
   margin-top: 20vh;
@@ -56,7 +56,7 @@ export default {
   padding-bottom: 20px;
 }
 
-.home > h1, h2 {
+.dashboard > h1, h2 {
   font-family: monospace, sans-serif;
   display: flex;
   justify-content: center;

@@ -48,6 +48,10 @@ export default new Vuex.Store({
     },
     SET_USER_COLLECTIONS(state, collections) {
       state.currentUserCollections = collections;
+    },
+    ADD_RECORD_TO_LIBRARY(state, record) {
+      state.currentUserCollections.push(record);
     }
+    ADD_RECORD_TO
   }
 })

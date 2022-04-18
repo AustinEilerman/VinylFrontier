@@ -24,28 +24,16 @@
 
 <script>
 import collectionService from "@/services/CollectionService.js";
-//import recordService from '@/services/RecordService.js';
 
 export default {
-
-   props: ["record"],
+  props: ["record"],
   data() {
-
     return {
-      collections: [],
-      
+      collections: this.$store.state.currentUserCollections,
       showForm: false,
       selectedCollection: -1
     };
   },
-  created() {
-    collectionService
-      .getCollectionByUserId(this.$store.state.user.id)
-      .then((response) => {
-        this.collections = response.data;
-      });
-  },
-
   methods: {
     addRecordToCollection() {
       collectionService.addRecordToCollection(this.selectedCollection, this.record.recordId).then((response) => {

@@ -1,5 +1,5 @@
 <template>
-  <div id="login" class="text-center">
+  <div id="home" class="text-center">
     <div id="collections">
       <collections-list/>
     </div>
@@ -67,7 +67,7 @@ export default {
           if (response.status == 200) {
             this.$store.commit("SET_AUTH_TOKEN", response.data.token);
             this.$store.commit("SET_USER", response.data.user);
-            this.$router.push("/");
+            this.$router.push("/dashboard");
           }
         })
         .catch(error => {
