@@ -10,8 +10,36 @@
 </template>
 
 <script>
+import recordService from "@/services/RecordService.js";
+import collectionService from "@/services/CollectionService.js"
+
 export default {
-  name: "home"
+  name: "home",
+  data() {
+    return {
+      records: [],
+      collections: [],
+    };
+  },
+  created() {
+    recordService.getAllRecords(this.$store.state.user.id)
+    .then((response) => 
+      {
+        this.records = response.data
+      }
+    )
+
+    this.$store.commit('SET_USER_RECORDS', this.records);
+
+    collectionService.getCollectionByUserId(this.$store.state.user.id)
+    .then((response) =>
+      {
+        this.collections = response.data;
+      }
+    )
+
+    this.$store.commit('SET_USER_COLLECTIONS', collectionService.getCollection);
+  }
 };
 </script>
 

@@ -23,10 +23,8 @@ export default new Vuex.Store({
   state: {
     token: currentToken || '',
     user: currentUser || {},
-    library: [],
-    collections: []
-
-    
+    currentUserCollections: [],
+    currentUserRecords: []
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
@@ -44,6 +42,12 @@ export default new Vuex.Store({
       state.token = '';
       state.user = {};
       axios.defaults.headers.common = {};
+    },
+    SET_USER_RECORDS(state, records) {
+      state.currentUserRecords = records;
+    },
+    SET_USER_COLLECTIONS(state, collections) {
+      state.currentUserCollections = collections;
     }
   }
 })
