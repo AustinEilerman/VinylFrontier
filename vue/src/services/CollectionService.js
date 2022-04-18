@@ -19,7 +19,7 @@ export default {
         return axios.get('/collections');
     },
 
-    addRecordToCollection(collectionId) {
-        return axios.post(`/collections/${collectionId}`)
+    addRecordToCollection(collectionId, record) {
+        return axios.post(`/collections/${collectionId}`, record)
     }
 }

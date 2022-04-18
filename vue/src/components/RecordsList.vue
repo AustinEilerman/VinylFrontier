@@ -11,7 +11,7 @@
             <p>Artist: {{ record.artist }}</p>
             <p>Genre: {{ record.genre }}</p>
             <p>Notes: {{record.userNotes}}</p>
-            <add-record-to-collection/>
+            <add-record-to-collection v-bind:record="record"/>
           </div>
         </div>
       </div>
