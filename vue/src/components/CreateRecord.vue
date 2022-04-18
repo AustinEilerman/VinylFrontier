@@ -1,6 +1,6 @@
 <template>
   <div class="create-record">
-    <button class="add-record" v-show="showForm === false" v-on:click.prevent="showForm = true">Add New Record</button>
+    <button class="add-record" v-if="(!showForm && canCreateRecord())" v-on:click.prevent="showForm = true">Add New Record</button>
       <form class="record-form"  v-on:submit.prevent="createRecord"  v-show="showForm">
           <div>
             <label for="recordTitle">Record Title*:</label>
@@ -54,7 +54,8 @@ export default {
                 userRating: 1,
                 coverArtUrl: ""
             },
-            showForm: false
+            showForm: false,
+            recordCounter: 0
         }
     },
     methods: {
@@ -66,8 +67,18 @@ export default {
                     location.reload();
                 }
             });
-        }
-    }
+        },
+        canCreateRecord() {
+          return this.$store.state.user.authorities[0].name === 'ROLE_PREMIUM' || this.recordCounter < 25;
+        }       
+    },
+    created() {
+    recordService.getAllRecords(this.$store.state.user.id).then((response) => {
+      if (response.status === 200) {
+        this.recordCounter = response.data.length;
+      }
+    });
+  }
 }
 </script>
 <style>
