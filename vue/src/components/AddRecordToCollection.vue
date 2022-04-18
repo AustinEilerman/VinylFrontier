@@ -5,17 +5,16 @@
         Add to Collection
       </button>
       <div class="dropdown-content">
-        <form v-show="showForm" v-on:submit.prevent="addRecordToCollection">
+        <form v-show="showForm">
           <label>Select Collection</label>
           <select v-model="selectedCollection">
             <option v-bind:value="collection.collectionId"
               v-for="collection in collections"
-              v-bind:key="collection.collectionId"
-            >
+              v-bind:key="collection.collectionId">
               {{ collection.collectionName }}
             </option>
           </select>
-          <button type="submit">Add to Collection</button>
+          <button type="submit" v-on:submit.prevent="addRecordToCollection">Add Collection</button>
         </form>
       </div>
     </div>
@@ -27,13 +26,11 @@ import collectionService from "@/services/CollectionService.js";
 //import recordService from '@/services/RecordService.js';
 
 export default {
-
-   props: ["record"],
+  props: ["record"],
   data() {
 
     return {
       collections: [],
-      
       showForm: false,
       selectedCollection: 0
     };
