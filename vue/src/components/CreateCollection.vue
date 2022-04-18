@@ -100,4 +100,15 @@ form > div {
     padding: 10px;
     margin-right: 10px;
   }
+
+  .add-collection:hover {
+    background-color: black;
+    color: white;
+    border-color: white;
+  }
+  .submit-buttons:hover {
+    background-color: black;
+    color: white;
+    border-color: white;
+  }
 </style>

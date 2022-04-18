@@ -5,7 +5,6 @@
     <div class = "dashboard-nav">
       <router-link :to="{ name: 'addCollection' }">Create Collection</router-link>
       <router-link :to="{ name: 'addRecord' }">Add Record To Library</router-link>
-      <!-- <router-link :to="{ name: 'upgradeUser' }">Upgrade To Premium</router-link> -->
     </div>
   </div>
 </template>
