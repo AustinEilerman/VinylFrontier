@@ -31,6 +31,7 @@ export default new Vuex.Store({
     currentUserCollections: [],
     currentUserRecords: [],
     activeRecord: {},
+    activeCollection: [],// do we need this?
     allCollections: [],
   },
   mutations: {
@@ -76,5 +77,10 @@ export default new Vuex.Store({
     ADD_COLLECTION_TO_COLLECTIONS(state, collection) {
       state.currentUserCollections.push(collection);
     },
+    
+    //   ADD_RECORD_TO_COLLECTION(state, payload) {
+    //     let collection = state.currentUserCollections.find(c => c.collectionId === payload.collectionId);
+    //     collection.push(payload.record);
+    // },
   }
 })

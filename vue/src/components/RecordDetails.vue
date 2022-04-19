@@ -24,9 +24,10 @@
 <script>
 import DeleteRecord from "./DeleteRecord.vue";
 // import UpdateNotes from './UpdateNotes.vue'
+import AddRecordToCollection from "../components/AddRecordToCollection.vue";
 import recordService from "../services/RecordService.js";
 export default {
-  components: { DeleteRecord /*,UpdateNotes*/ },
+  components: { DeleteRecord, AddRecordToCollection /*,UpdateNotes*/ },
   methods: {
     updateRecord(record) {
       recordService
