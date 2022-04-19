@@ -35,7 +35,7 @@ export default {
   methods: {
 
     canCreateCollection() {
-      return this.$store.state.user.authorities[0].name === 'ROLE_PREMIUM' || this.$store.state.userNumberOfCollections === 0;
+      return this.$store.state.user.authorities[0].name === 'ROLE_PREMIUM' || this.$store.state.currentUserCollections.length === 0;
     },
 
     createCollection() {
