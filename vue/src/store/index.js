@@ -74,9 +74,9 @@ export default new Vuex.Store({
       state.currentUserCollections.push(collection);
     },
     
-      ADD_RECORD_TO_COLLECTION(state, record, collectionId) {
-        let collection = state.currentUserCollections.find(c => c.collectionId === collectionId);
-        collection.push(record);
-    },
+    //   ADD_RECORD_TO_COLLECTION(state, payload) {
+    //     let collection = state.currentUserCollections.find(c => c.collectionId === payload.collectionId);
+    //     collection.push(payload.record);
+    // },
   }
 })

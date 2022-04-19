@@ -11,7 +11,7 @@
       <div class="dropdown-content">
         <form v-show="showForm" v-on:submit.prevent="addToCollection">
           <label>Select Collection</label>
-          <select v-model="selectedCollection">
+          <select v-model="selectedCollectionId">
             <option
               v-bind:value="collection.collectionId"
               v-for="collection in collections"
@@ -44,11 +44,14 @@ export default {
   methods: {
     addToCollection() {
       collectionService
-        .addRecordToCollection(this.collectionId, this.record)
+        .addRecordToCollection(this.selectedCollectionId, this.record)
         .then((response) => {
           if (response.status === 201) {
            alert("Record successfully added to collection.");
-          this.$store.commit("ADD_RECORD_TO_COLLECTION", this.record);
+          //  let payload = {};
+          //  payload.record = this.record;
+          //  payload.collectionId = this.selectedCollectionId;
+          // this.$store.commit("ADD_RECORD_TO_COLLECTION", payload);
           }
         });
     },
