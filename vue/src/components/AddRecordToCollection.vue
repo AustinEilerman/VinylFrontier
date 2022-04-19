@@ -7,7 +7,7 @@
       <div class="dropdown-content">
         <form v-show="showForm" v-on:submit.prevent="addRecordToCollection">
           <label>Select Collection</label>
-          <select v-model="this.selectedCollectionId">
+          <select v-model="selectedCollection">
             <option v-bind:value="collection.collectionId"
               v-for="collection in collections"
               v-bind:key="collection.collectionId"
