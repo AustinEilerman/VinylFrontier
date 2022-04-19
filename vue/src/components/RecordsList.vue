@@ -1,6 +1,6 @@
 <template>
   <div class= "record-list">
-    <div class="record-display" v-for="record in records" v-bind:key="record.title">
+    <div class="record-display" v-for="record in records" v-bind:key="record.recordId">
       <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
@@ -12,11 +12,11 @@
             <p>Artist: {{ record.artist }}</p>
             <p>Genre: {{ record.genre }}</p>
             <p v-on:click.prevent="showForm = true" class="note-button">Notes: {{record.userNotes}}</p>
-            <form v-show="showForm">
+            <form v-show="showForm" v-on:submit.prevent="updateRecord(record)">
               <div class ="noteText">
                  <input name="noteText" type="text"/>
               </div>
-              <button v-on:click="updateRecord(record)">Save</button>
+              <button type="submit">Save</button>
             </form>
             <add-record-to-collection v-bind:record="record"/>
           </div>

@@ -92,8 +92,8 @@ public class JdbcRecordDao implements RecordDao {
 
     @Override
     public void updateRecordNotes(String updatedRecord, int recordId) {
-        String sql = "UPDATE records SET record_user_description = ?" +
-                " WHERE record_id = ?;";
+        String sql =    "UPDATE records SET record_user_description = ?" +
+                        "WHERE record_id = ?;";
         this.jdbcTemplate.update(sql, updatedRecord, recordId);
     }
 
