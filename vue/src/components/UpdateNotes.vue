@@ -2,11 +2,10 @@
   <div>
     <form>
       <div class ="noteText">
-        <label for="noteText">Notes</label>
         <input name="noteText" type="text" v-model="userNotes"/>
-        </div>
+      </div>
       <button type="submit" v-on:click="updateNote()">Update Note</button>
-      </form>
+    </form>
   </div>
 </template>
 
@@ -15,6 +14,7 @@ import recordService from "../services/RecordService.js";
 
 export default {
   name: 'update-notes',
+  props: ["recordId"],
   data() {
     return {
       userNotes: ""
@@ -30,7 +30,6 @@ export default {
       recordService.updateRecordNote(this.recordId, record).then(response => {
         if (response.status === 200) {
           alert('Note successfully updated');
-          this.$router.push('/library');
         }
       });
     }
@@ -39,7 +38,7 @@ export default {
     recordService
       .getRecord(this.recordId)
       .then(response => {
-        this.$store.commit("SET_USER_RECORDS", response.data);
+        this.$store.commit("SET_ACTIVE_RECORD", response.data);
         this.userNotes = response.data.userNotes;
       })
       .catch(error => {
