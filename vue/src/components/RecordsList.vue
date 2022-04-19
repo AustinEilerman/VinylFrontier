@@ -11,7 +11,13 @@
             <h1>{{record.title}}</h1>
             <p>Artist: {{ record.artist }}</p>
             <p>Genre: {{ record.genre }}</p>
-            <p>Notes: {{record.userNotes}}</p>
+            <p v-on:click.prevent="showForm = true" class="note-button">Notes: {{record.userNotes}}</p>
+            <form v-show="showForm">
+              <div class ="noteText">
+                 <input name="noteText" type="text"/>
+              </div>
+              <button v-on:click="updateRecord(record)">Save</button>
+            </form>
             <add-record-to-collection v-bind:record="record"/>
           </div>
         </div>
@@ -21,18 +27,32 @@
 </template>
 
 <script>
-
+import recordService from '../services/RecordService.js';
 import AddRecordToCollection from './AddRecordToCollection.vue';
 import DeleteRecord from './DeleteRecord.vue';
 export default {
   components: { AddRecordToCollection, DeleteRecord },
+
+
   name: "record-list",
   data() {
     return {
       records: this.$store.state.currentUserRecords,
-    };
+      showForm: false
+    }
+  },
+  methods: {
+    updateRecord(record) {
+      recordService.updateRecordNote(record.recordId, record).then(response => {
+        if (response.status === 200) {
+          alert('Note updated')
+        }
+      });
+        
+      }
+      
+    }
   }
-}
 </script>
 
 <style>
@@ -112,5 +132,9 @@ export default {
   padding: 0;
   max-width: 17vw;
   max-height: auto;
+}
+
+.note-button:hover {
+  cursor: pointer;
 }
 </style>
