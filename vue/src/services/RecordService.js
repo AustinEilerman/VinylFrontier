@@ -17,5 +17,9 @@ export default {
 
     updateRecordNote(recordId, record) {
         return axios.put(`/library/${recordId}`, record)
+    },
+
+    deleteRecord(recordId) {
+        return axios.delete(`/delete/${recordId}`);
     }
 }

@@ -9,6 +9,8 @@ public interface RecordDao {
 
     Record createRecord(Record newRecord);
 
+    void deleteRecord(int recordId);
+
     List<Record> findAll(int userId);
 
     List<Record> getAllRecordsByCollectionId(int collectionId);

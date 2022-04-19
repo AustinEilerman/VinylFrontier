@@ -51,6 +51,17 @@ public class JdbcRecordDao implements RecordDao {
         return this.getRecord(idAssigned);
     }
 
+
+    @Override
+    public void deleteRecord(int recordId) {
+         String sql = "DELETE FROM records_collections " +
+                      "WHERE record_id = ?";
+         jdbcTemplate.update(sql, recordId);
+         sql =   "DELETE FROM records " +
+                 "WHERE record_id = ?";
+         jdbcTemplate.update(sql, recordId);
+    }
+
     @Override
     public List<Record> findAll(int userId) {
         List<Record> records = new ArrayList<>();

@@ -14,7 +14,7 @@
               {{ collection.collectionName }}
             </option>
           </select>
-          <button type="submit" >Add Collection</button>
+          <button type="submit">Add Collection</button>
         </form>
       </div>
     </div>
@@ -28,10 +28,8 @@ export default {
   props: ["record"],
   data() {
     return {
-
       collections: this.$store.state.currentUserCollections,
       records: this.$store.state.currentUserRecords,
-
       showForm: false,
       selectedCollectionId: -1
     };

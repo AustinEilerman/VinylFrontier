@@ -6,6 +6,7 @@ import com.techelevator.model.Record;
 
 import org.apache.coyote.Request;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -18,6 +19,12 @@ public class RecordController {
     public RecordController(RecordDao recordDao, RecordsCollectionsDao recordsCollectionsDao) {
         this.recordDao = recordDao;
         this.recordsCollectionsDao = recordsCollectionsDao;
+    }
+
+    @PreAuthorize("isAuthenticated()")
+    @RequestMapping(value = "/delete/{recordId}", method = RequestMethod.DELETE)
+    public void deleteRecord(@PathVariable int recordId) {
+        recordDao.deleteRecord(recordId);
     }
 
     @RequestMapping(value = "/records/{id}", method = RequestMethod.GET)

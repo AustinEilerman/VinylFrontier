@@ -7,6 +7,7 @@
             <img class="album-art" v-bind:src="record.coverArtUrl" v-bind:alt="record.title">
           </div>
           <div class="flip-card-back">
+            <delete-record v-bind:record="record"/>
             <h1>{{record.title}}</h1>
             <p>Artist: {{ record.artist }}</p>
             <p>Genre: {{ record.genre }}</p>
@@ -22,8 +23,9 @@
 <script>
 
 import AddRecordToCollection from './AddRecordToCollection.vue';
+import DeleteRecord from './DeleteRecord.vue';
 export default {
-  components: { AddRecordToCollection },
+  components: { AddRecordToCollection, DeleteRecord },
   name: "record-list",
   data() {
     return {

@@ -30,8 +30,6 @@ export default new Vuex.Store({
     user: currentUser || {},
     currentUserCollections: [],
     currentUserRecords: [],
-    userNumberOfRecords: 0,
-    userNumberOfCollections: 0,
     activeRecord: {},
     allCollections: [],
   },
@@ -56,12 +54,6 @@ export default new Vuex.Store({
     UPDATE_ALL_COLLECTIONS(state, collections) {
       state.allCollections = collections;
     },
-    UPDATE_NUMBER_OF_RECORDS(state) {
-      state.userNumberOfRecords = state.currentUserRecords.length;
-    },
-    UPDATE_NUMBER_OF_COLLECTIONS(state) {
-      state.userNumberOfCollections = state.currentUserCollections.length;
-    },
     SET_ACTIVE_RECORD(state, record) {
       state.activeRecord = record;
     },
@@ -70,6 +62,9 @@ export default new Vuex.Store({
     },
     SET_USER_COLLECTIONS(state, collections) {
       state.currentUserCollections = collections;
+    },
+    DELETE_RECORD_FROM_LIBRARY(state, record) {
+      state.currentUserRecords.pop(record);
     },
     ADD_RECORD_TO_LIBRARY(state, record) {
       state.currentUserRecords.push(record);

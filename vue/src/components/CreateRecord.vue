@@ -69,17 +69,11 @@ export default {
             });
         },
         canCreateRecord() {
-          return this.$store.state.user.authorities[0].name === 'ROLE_PREMIUM' || this.recordCounter < 25;
+          return this.$store.state.user.authorities[0].name === 'ROLE_PREMIUM' || this.$store.state.currentUserRecords.length < 25;
         }       
     },
-    created() {
-    recordService.getAllRecords(this.$store.state.user.id).then((response) => {
-      if (response.status === 200) {
-        this.recordCounter = response.data.length;
-      }
-    });
-  }
 }
+
 </script>
 <style>
   form > div {
