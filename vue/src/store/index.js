@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
-// import recordService from "@/services/RecordService.js"
-// import collectionService from "@/services/CollectionService.js";
+import createPersistedState from 'vuex-persistedstate'
+
 
 Vue.use(Vuex)
 
@@ -20,11 +20,20 @@ if(currentToken != null) {
 }
 
 export default new Vuex.Store({
+  plugins: [createPersistedState(
+    {
+      storage: window.sessionStorage,
+    }
+    )],
   state: {
     token: currentToken || '',
     user: currentUser || {},
     currentUserCollections: [],
-    currentUserRecords: []
+    currentUserRecords: [],
+    userNumberOfRecords: 0,
+    userNumberOfCollections: 0,
+    activeRecord: {},
+    allCollections: [],
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
@@ -42,6 +51,19 @@ export default new Vuex.Store({
       state.token = '';
       state.user = {};
       axios.defaults.headers.common = {};
+      sessionStorage.clear();
+    },
+    UPDATE_ALL_COLLECTIONS(state, collections) {
+      state.allCollections = collections;
+    },
+    UPDATE_NUMBER_OF_RECORDS(state) {
+      state.userNumberOfRecords = state.currentUserRecords.length;
+    },
+    UPDATE_NUMBER_OF_COLLECTIONS(state) {
+      state.userNumberOfCollections = state.currentUserCollections.length;
+    },
+    SET_ACTIVE_RECORD(state, record) {
+      state.activeRecord = record;
     },
     SET_USER_RECORDS(state, records) {
       state.currentUserRecords = records;
@@ -50,8 +72,10 @@ export default new Vuex.Store({
       state.currentUserCollections = collections;
     },
     ADD_RECORD_TO_LIBRARY(state, record) {
-      state.currentUserCollections.push(record);
-    }
-    ADD_RECORD_TO
+      state.currentUserRecords.push(record);
+    },
+    ADD_COLLECTION_TO_COLLECTIONS(state, collection) {
+      state.currentUserCollections.push(collection);
+    },
   }
 })

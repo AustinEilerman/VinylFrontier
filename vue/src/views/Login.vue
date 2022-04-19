@@ -1,6 +1,7 @@
 <template>
   <div id="home" class="text-center">
     <div id="collections">
+      <h1>Public Collections</h1>
       <collections-list/>
     </div>
     <form class="form-signin" @submit.prevent="login" v-if="$store.state.token == ''">
@@ -52,6 +53,9 @@ export default {
   components: {CollectionsList},
   data() {
     return {
+      records: [],
+      collections: [],
+      allCollections: [],
       user: {
         username: "",
         password: ""
@@ -94,7 +98,7 @@ body {
 #collections {
   font-family: monospace, sans-serif;
   font-size: 40;
-  background-color: rgba(255,255,255,0.4);
+  background-color: rgba(255,255,255,0.6);
   margin-top: 19vh;
   width: 77vw;
   border-radius: 20px;
@@ -186,6 +190,11 @@ body {
   justify-content: center;
   padding-left: 10%;
   padding-right: 10%;
+}
+
+#collections > h1 {
+  padding-top: 40px;
+  color: white;
 }
 
 </style>

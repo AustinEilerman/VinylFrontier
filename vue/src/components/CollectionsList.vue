@@ -1,27 +1,29 @@
 <template>
   <div class="collection-container">
-      <div class="collection-display" v-show="collection.public === true" v-for="collection in collections" v-bind:key="collection.collectionId">
+      <div class="collection-display" v-show="collection.public === true" v-for="collection in allCollections" v-bind:key="collection.collectionId">
           {{ collection.collectionName }}
       </div>
   </div>
 </template>
 
 <script>
-import collectionService from '@/services/CollectionService.js';
+import collectionService from "@/services/CollectionService";
+
 export default {
     data() {
         return {
-            collections: []
+            allCollections: [],
         }
     },
     created() {
-        collectionService.getAllCollections().then(response => {
-            this.collections = response.data;
-        })
+        collectionService.getAllCollections().then((response) => 
+            {
+                this.allCollections = response.data;
+                this.$store.commit('UPDATE_ALL_COLLECTIONS', this.allCollections);
+            }
+        )
     }
 }
-
-
 </script>
 
 <style>

@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="dropdown">
-      <button v-show="showForm === false" v-on:click.prevent="showForm = true">
+      <button id="add-to-collection" v-show="showForm === false" v-on:click.prevent="showForm = true">
         Add to Collection
       </button>
       <div class="dropdown-content">
         <form v-show="showForm" v-on:submit.prevent="addRecordToCollection">
           <label>Select Collection</label>
-          <select v-model="this.selectedCollection">
+          <select v-model="this.selectedCollectionId">
             <option v-bind:value="collection.collectionId"
               v-for="collection in collections"
               v-bind:key="collection.collectionId"
@@ -30,15 +30,16 @@ export default {
   data() {
     return {
       collections: this.$store.state.currentUserCollections,
+      records: this.$store.state.currentUserRecords,
       showForm: false,
-      selectedCollection: -1
+      selectedCollectionId: -1
     };
   },
   methods: {
     addRecordToCollection() {
-      collectionService.addRecordToCollection(this.selectedCollection, this.record.recordId).then((response) => {
+      collectionService.addRecordToCollection(this.selectedCollectionId, this.record.recordId).then((response) => {
         if (response.status === 201) {
-          alert("Record successfully added.");
+          alert("Record successfully added to collection.");
           location.reload();
         }
       });
@@ -48,17 +49,23 @@ export default {
 </script>
 
 <style>
+.dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
 .dropdown-content {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  margin-top: 10px;
 }
 
 select {
-  color: black;
+  color: white;
   font-family: monospace, sans-serif;
-  background-color: white;
+  background-color: black;
+}
+
+#add-to-collection {
+  display: flex;
+  justify-content: center;
 }
 </style>

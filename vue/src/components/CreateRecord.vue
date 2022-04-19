@@ -62,9 +62,9 @@ export default {
         createRecord() {
             recordService.createRecord(this.record).then((response) => {
                 if (response.status === 201) {
+                    this.$store.commit("ADD_RECORD_TO_LIBRARY", this.record);
                     alert('New Record successfully created.');
-                    this.$router.push({name: 'addRecord'});
-                    location.reload();
+                    this.$router.push("/library");
                 }
             });
         },
@@ -114,5 +114,11 @@ export default {
     border-radius: 10px;
     padding: 10px;
     margin-right: 10px;
+  }
+
+  .add-record:hover {
+    color: white;
+    background-color: black;
+    border-color: white;
   }
 </style>

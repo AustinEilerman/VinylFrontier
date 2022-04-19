@@ -35,7 +35,7 @@ export default {
   methods: {
 
     canCreateCollection() {
-      return this.$store.state.user.authorities[0].name === 'ROLE_PREMIUM' || this.collectionCounter === 0;
+      return this.$store.state.user.authorities[0].name === 'ROLE_PREMIUM' || this.$store.state.userNumberOfCollections === 0;
     },
 
     createCollection() {
@@ -43,25 +43,19 @@ export default {
       if (this.canCreateCollection) {
          collectionService.createCollection(this.collection).then((response) => {
           if (response.status === 201) {
-            console.log(this.collectionCounter);
+            this.$store.commit("ADD_COLLECTION_TO_COLLECTIONS", this.collection);
+            this.$store.commit("UPDATE_NUMBER_OF_COLLECTIONS");
             alert("New Collection successfully created.");
             location.reload();
           }
-      });
-    }
+          });
+      }
     },
     changePublicStatus(click) {
       if (click.target.checked) {
         this.collection.public = !this.collection.public;
       }
     }
-  },
-  created() {
-    collectionService.getAllCollections().then((response) => {
-      if (response.status === 200) {
-        this.collectionCounter = response.data.length;
-      }
-    });
   },
 };
 </script>

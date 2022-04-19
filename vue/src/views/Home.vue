@@ -25,20 +25,23 @@ export default {
     recordService.getAllRecords(this.$store.state.user.id)
     .then((response) => 
       {
+        //if code 200
         this.records = response.data;
+        this.$store.commit('SET_USER_RECORDS', this.records);
       }
     )
-
-    this.$store.commit('SET_USER_RECORDS', this.records);
-
-    collectionService.getCollectionByUserId(this.$store.state.user.id)
+    collectionService.getAllCollections().then((response) => {
+      this.allCollections = response.data;
+      this.$store.commit('UPDATE_ALL_COLLECTIONS', this.allCollections);
+    })
+    collectionService.getCollectionsByUserId(this.$store.state.user.id)
     .then((response) =>
       {
+        //if ^
         this.collections = response.data;
+        this.$store.commit('SET_USER_COLLECTIONS', this.collections);
       }
     )
-
-    this.$store.commit('SET_USER_COLLECTIONS', collectionService.getCollection);
   }
 };
 </script>
@@ -46,7 +49,7 @@ export default {
 <style>
 .dashboard{
   font-size: 40;
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(255,255,255,0.6);
   margin-top: 20vh;
   margin-left: 29vw;
   margin-right: 29vw;

@@ -7,18 +7,13 @@
 </template>
 
 <script>
-import collectionService from '@/services/CollectionService.js';
+
 export default {
     data() {
         return {
-            collections: []
+            collections: this.$store.state.currentUserCollections,
         }
     },
-    created() {
-        collectionService.getCollectionByUserId(this.$store.state.user.id).then(response => {
-            this.collections = response.data;
-        })
-    }
 }
 </script>
 

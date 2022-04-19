@@ -1,8 +1,8 @@
 <template>
   <div class="library">
     <h1>Your Library</h1>
-    <records-list />
     <create-record />
+    <records-list />
   </div>
 </template>
 
@@ -19,7 +19,7 @@ export default {
 .library {
   font-family: monospace, sans-serif;
   font-size: 40;
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(255,255,255,0.6);
   margin-top: 20vh;
   border-radius: 20px;
   display:flex;
@@ -36,6 +36,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items:center;
-
+  padding-bottom: 30px;
 }
+
 </style>

@@ -104,7 +104,7 @@ export default {
 
 .form-register {
   font-family: monospace, sans-serif;
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(255,255,255,0.6);
   margin-top: 30vh;
   margin-left: 30vw;
   margin-right: 30vw;

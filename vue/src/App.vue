@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <div id="nav">
-      <a href="/"> 
+      <router-link :to="{ name: 'home' }"> 
         <img class="logo" src="@/images/logoWIP.png"/>
-      </a>
+      </router-link>
       <div id="links" v-if="$store.state.token != ''">
         <router-link v-bind:to="{ name: 'dashboard' }">Dashboard</router-link>
         <router-link v-bind:to="{ name: 'viewRecords' }">Library</router-link>
@@ -22,30 +22,25 @@
 <style>
 #nav {
   background-color: rgba(174,112,213);
-  display: grid;
+  display: flex;
+  justify-content: space-around;
   width: 100%;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas: 
-        "logo logo links links search";
   position: fixed;
   top: 0px;
   left: 0px;
   height: 18vh;
+  z-index: 3;
 }
 
-img {
-  grid-area: logo;
+.logo {
+  margin-left: -10%;
   display: flex;
-  align-items: center;
-  max-width: 27vw;
-  height: auto;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 20px;
+  padding-top: 1.5vh;
+  max-height: 80%;
+  object-fit: cover;
 }
 
 #links {
-  grid-area: links;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -70,7 +65,6 @@ img {
 }
 
 #search {
-  grid-area: search;
   display: flex;
   justify-content: flex-end;
   align-items: center;
