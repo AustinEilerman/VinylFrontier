@@ -6,19 +6,12 @@
           <div class="flip-card-front">
             <img class="album-art" v-bind:src="record.coverArtUrl" v-bind:alt="record.title">
           </div>
-          <div class="flip-card-back">
-            <delete-record v-bind:record="record"/>
-            <h1>{{record.title}}</h1>
-            <p>Artist: {{ record.artist }}</p>
-            <p>Genre: {{ record.genre }}</p>
-            <p v-on:click.prevent="showForm = true" class="note-button">Notes: {{record.userNotes}}</p>
-            <form v-show="showForm" v-on:submit.prevent="updateRecord(record)">
-              <div class ="noteText">
-                 <input name="noteText" type="text"/>
-              </div>
-              <button type="submit">Save</button>
-            </form>
-            <add-record-to-collection v-bind:record="record"/>
+          <div class="flip-card-back" v-on:click="setActiveRecord(record)">
+            <router-link v-if="record" :to="{ name: 'recordDetails', params: {id: record.recordId}}">
+              <h1>{{record.title}}</h1>
+              <p>Artist: {{ record.artist }}</p>
+              <p>Genre: {{ record.genre }}</p>
+            </router-link>
           </div>
         </div>
       </div>
@@ -27,31 +20,19 @@
 </template>
 
 <script>
-import recordService from '../services/RecordService.js';
-import AddRecordToCollection from './AddRecordToCollection.vue';
-import DeleteRecord from './DeleteRecord.vue';
 export default {
-  components: { AddRecordToCollection, DeleteRecord },
-
-
   name: "record-list",
   data() {
     return {
       records: this.$store.state.currentUserRecords,
-      showForm: false
+      // record: this.$store.state.activeRecord,
     }
   },
   methods: {
-    updateRecord(record) {
-      recordService.updateRecordNote(record.recordId, record).then(response => {
-        if (response.status === 200) {
-          alert('Note updated')
-        }
-      });
-        
-      }
-      
+    setActiveRecord(record) {
+      this.$store.commit('SET_ACTIVE_RECORD', record);
     }
+  }
   }
 </script>
 
@@ -100,21 +81,21 @@ export default {
 
 
 .flip-card-back {
-  font-size: 9pt;
+  font-size: 2vh;
   background-color: rgba(0,0,0,0.6);
   font-family: monospace, sans-serif;
   color: white;
   transform: rotateY(180deg);
 }
 
-.flip-card-back > p {
+.flip-card-back > a > p {
   padding-left: 2em;
   padding-right: 2em;
   overflow-wrap: normal;
 }
 
-.flip-card-back > h1 {
-  font-size: 16pt;
+.flip-card-back > a > h1 {
+  font-size: 3vh;
 }
 
 .record-list {
@@ -137,4 +118,17 @@ export default {
 .note-button:hover {
   cursor: pointer;
 }
+
+.flip-card-back > a {
+  text-decoration: none;
+}
+
+.flip-card-back > a:visited {
+  color: white;
+}
+
+.flip-card-back > a:link {
+  color: white;
+}
+
 </style>

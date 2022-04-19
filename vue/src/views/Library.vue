@@ -11,7 +11,6 @@ import CreateRecord from '../components/CreateRecord.vue'
 import RecordsList from '../components/RecordsList.vue'
 export default {
   components: { CreateRecord, RecordsList},
-
 }
 </script>
 
