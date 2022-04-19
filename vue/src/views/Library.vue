@@ -18,6 +18,7 @@ export default {
       this.records = response.data;
       this.$store.commit("SET_USER_RECORDS", this.records);
     });
+    this.$store.commit("SET_ACTIVE_RECORD", {});
   },
 }
 </script>

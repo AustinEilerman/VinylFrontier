@@ -23,6 +23,7 @@ export default {
                 this.$store.commit("DELETE_RECORD_FROM_LIBRARY", this.record);
                     alert('Record successfully deleted.');
                     this.$router.push("/library");
+                    location.reload();
             })
         }
     },
