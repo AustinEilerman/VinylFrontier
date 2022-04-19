@@ -64,7 +64,11 @@ export default new Vuex.Store({
       state.currentUserCollections = collections;
     },
     DELETE_RECORD_FROM_LIBRARY(state, record) {
-      state.currentUserRecords.pop(record);
+      let recordId = record.recordId;
+      let index = state.currentUserRecords.findIndex((element) => {
+        return element.recordId == recordId;
+      });
+      state.currentUserRecords.splice(index, 1);
     },
     ADD_RECORD_TO_LIBRARY(state, record) {
       state.currentUserRecords.push(record);

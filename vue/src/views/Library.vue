@@ -9,8 +9,16 @@
 <script>
 import CreateRecord from '../components/CreateRecord.vue'
 import RecordsList from '../components/RecordsList.vue'
+import recordService from '../services/RecordService.js'
 export default {
   components: { CreateRecord, RecordsList},
+  created() {
+    recordService.getAllRecords(this.$store.state.user.id).then((response) => {
+      //if code 200
+      this.records = response.data;
+      this.$store.commit("SET_USER_RECORDS", this.records);
+    });
+  },
 }
 </script>
 
