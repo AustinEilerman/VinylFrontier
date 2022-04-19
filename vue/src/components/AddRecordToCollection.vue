@@ -10,12 +10,11 @@
           <select v-model="selectedCollection">
             <option v-bind:value="collection.collectionId"
               v-for="collection in collections"
-              v-bind:key="collection.collectionId"
-            >
+              v-bind:key="collection.collectionId">
               {{ collection.collectionName }}
             </option>
           </select>
-          <button type="submit">Add to Collection</button>
+          <button type="submit" >Add Collection</button>
         </form>
       </div>
     </div>
@@ -29,8 +28,10 @@ export default {
   props: ["record"],
   data() {
     return {
+
       collections: this.$store.state.currentUserCollections,
       records: this.$store.state.currentUserRecords,
+
       showForm: false,
       selectedCollectionId: -1
     };
