@@ -34,14 +34,20 @@ public class CollectionController {
         return collectionDao.createCollection(newCollection);
     }
 
-    @RequestMapping(value = "/collections", method = RequestMethod.GET)
-    public List<Collection> getAllCollections() {
-        return collectionDao.getAllCollections();
-    }
+//    @RequestMapping(value = "/collections", method = RequestMethod.GET)
+//    public List<Collection> getAllCollections(
+//    ) {
+//        return collectionDao.getAllCollections();
+//    }
 
-    @RequestMapping(value = "/collections/{collectionUserId}", method = RequestMethod.GET)
-    public List<Collection> getAllCollectionsByUserId(@PathVariable int collectionUserId) {
-        return collectionDao.getCollectionsByUserId(collectionUserId);
+    @RequestMapping(value = "/collections", method = RequestMethod.GET)
+    public List<Collection> getAllCollectionsByUserId(@RequestParam (required = false) Integer userId) {
+        if (userId == null) {
+            return collectionDao.getAllCollections();
+        }
+        else {
+            return collectionDao.getCollectionsByUserId(userId);
+        }
     }
 
     @RequestMapping(value = "/collection-{id}/records", method = RequestMethod.GET)

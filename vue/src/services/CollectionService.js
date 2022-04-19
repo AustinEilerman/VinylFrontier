@@ -12,7 +12,7 @@ export default {
     },
 
     getCollectionsByUserId(userId) {
-        return axios.get(`/collections/${userId}`);
+        return axios.get(`/collections?userId=${userId}`);
     },
 
     getAllCollections() {
