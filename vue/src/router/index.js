@@ -7,7 +7,7 @@ import Register from '../views/Register.vue'
 import store from '../store/index'
 import Collections from '@/views/Collections.vue'
 import Library from '@/views/Library.vue'
-// import RecordsList from '@/views/RecordsList.vue'
+import RecordDetails from '@/views/RecordDetails.vue'
 
 Vue.use(Router)
 
@@ -98,8 +98,8 @@ const router = new Router({
    },
     {
       path: "/library/:id",
-      name: "updateNote",
-      components: Library,
+      name: "recordDetails",
+      component: RecordDetails,
       meta: {
         requiresAuth: false
       }
