@@ -2,15 +2,18 @@
   <div class="library">
     <h1>Your Library</h1>
     <records-list />
+    <update-notes />
     <create-record />
+    
   </div>
 </template>
 
 <script>
 import CreateRecord from '../components/CreateRecord.vue'
 import RecordsList from '../components/RecordsList.vue'
+import UpdateNotes from '../components/UpdateNotes.vue'
 export default {
-  components: { CreateRecord, RecordsList },
+  components: { CreateRecord, RecordsList, UpdateNotes },
 
 }
 </script>

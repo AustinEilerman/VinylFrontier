@@ -13,5 +13,9 @@ export default {
 
     getAllRecords(userId) {
         return axios.get(`/library/${userId}`);
+    },
+
+    updateRecordNote(recordId, record) {
+        return axios.put(`/library/${recordId}`, record)
     }
 }

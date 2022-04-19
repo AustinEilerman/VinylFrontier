@@ -10,12 +10,11 @@
           <select v-model="selectedCollection">
             <option v-bind:value="collection.collectionId"
               v-for="collection in collections"
-              v-bind:key="collection.collectionId"
-            >
+              v-bind:key="collection.collectionId">
               {{ collection.collectionName }}
             </option>
           </select>
-          <button type="submit">Add to Collection</button>
+          <button type="submit" >Add Collection</button>
         </form>
       </div>
     </div>
@@ -27,13 +26,11 @@ import collectionService from "@/services/CollectionService.js";
 //import recordService from '@/services/RecordService.js';
 
 export default {
-
-   props: ["record"],
+  props: ["record"],
   data() {
 
     return {
       collections: [],
-      
       showForm: false,
       selectedCollection: 0
     };

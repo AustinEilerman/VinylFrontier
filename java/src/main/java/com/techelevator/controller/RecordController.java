@@ -4,6 +4,7 @@ import com.techelevator.dao.RecordDao;
 import com.techelevator.dao.RecordsCollectionsDao;
 import com.techelevator.model.Record;
 
+import org.apache.coyote.Request;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,9 +37,16 @@ public class RecordController {
       return records;
     }
 
+    @RequestMapping(value = "/library/{id}", method = RequestMethod.PUT)
+    public void updateRecordNote(@PathVariable int id, @RequestBody Record record) {
+        this.recordDao.updateRecordNotes(record.getUserNotes(), id);
+    }
+
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(value = "/collections/{collectionId}", method = RequestMethod.POST)
-    public void addRecordToCollection(@RequestBody Record record, @PathVariable int collectionId) {
+    public void addRecordToCollection( @PathVariable int collectionId, @RequestBody Record record) {
+        int recordId = record.getRecordId();
+        System.out.println(recordId);
         recordsCollectionsDao.addRecordToCollection(record.getRecordId(), collectionId);
     }
 

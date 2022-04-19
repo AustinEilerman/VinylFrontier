@@ -94,8 +94,17 @@ const router = new Router({
      component: Library,
      meta: {
       requiresAuth: false
+      }
+   },
+    {
+      path: "/library/:id",
+      name: "updateNote",
+      components: Library,
+      meta: {
+        requiresAuth: false
+      }
     }
-   }
+   
   ]
 })
 
