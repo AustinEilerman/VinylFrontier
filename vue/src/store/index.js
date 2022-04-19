@@ -77,6 +77,10 @@ export default new Vuex.Store({
     ADD_COLLECTION_TO_COLLECTIONS(state, collection) {
       state.currentUserCollections.push(collection);
     },
+    UPDATE_NOTE_IN_RECORD(state, curRecord) {
+      let record = state.currentUserRecords.find(r => r.recordId === curRecord.recordId);
+      record.userNotes = curRecord.userNotes;
+    }
     
     //   ADD_RECORD_TO_COLLECTION(state, payload) {
     //     let collection = state.currentUserCollections.find(c => c.collectionId === payload.collectionId);

@@ -44,9 +44,9 @@ public class RecordController {
       return records;
     }
 
-    @RequestMapping(value = "/library/{id}", method = RequestMethod.PUT)
-    public void updateRecordNote(@PathVariable int id, @RequestBody Record record) {
-        this.recordDao.updateRecordNotes(record.getUserNotes(), id);
+    @RequestMapping(value = "/library/{recordId}", method = RequestMethod.PUT)
+    public void updateRecordNote(@PathVariable int recordId, @RequestBody Record record) {
+        this.recordDao.updateRecordNotes(record.getUserNotes(), recordId);
     }
 
     @ResponseStatus(HttpStatus.CREATED)

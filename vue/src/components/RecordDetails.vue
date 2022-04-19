@@ -12,6 +12,7 @@
     <delete-record v-bind:record="record" />
     <!-- <update-notes/> -->
     <add-record-to-collection v-bind:record="record" />
+    <update-notes v-bind:record="record"/>
     <!-- <form v-show="showForm" v-on:submit.prevent="updateRecord(record)">
             <div class ="noteText">
                  <input name="noteText" type="text"/>
@@ -23,11 +24,11 @@
 
 <script>
 import DeleteRecord from "./DeleteRecord.vue";
-// import UpdateNotes from './UpdateNotes.vue'
+import UpdateNotes from './UpdateNotes.vue'
 import AddRecordToCollection from "../components/AddRecordToCollection.vue";
 import recordService from "../services/RecordService.js";
 export default {
-  components: { DeleteRecord, AddRecordToCollection /*,UpdateNotes*/ },
+  components: { DeleteRecord, AddRecordToCollection, UpdateNotes },
   methods: {
     updateRecord(record) {
       recordService
