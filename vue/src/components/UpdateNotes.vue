@@ -32,6 +32,7 @@ export default {
           alert('Note successfully updated');
           this.$store.commit("UPDATE_NOTE_IN_RECORD", record);
         }
+        location.reload();
       });
     }
   },

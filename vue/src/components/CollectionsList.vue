@@ -5,11 +5,6 @@
               {{ collection.collectionName }}
               </router-link>
       </div>
-            <router-link v-if="record" :to="{ name: 'recordDetails', params: {id: record.recordId}}">
-              <h1>{{ record.title }}</h1>
-              <p>Artist: {{ record.artist }}</p>
-              <p>Genre: {{ record.genre }}</p>
-            </router-link>
   </div>
 </template>
 
