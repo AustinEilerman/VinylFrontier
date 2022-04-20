@@ -30,7 +30,6 @@
 <script>
 import collectionService from "@/services/CollectionService.js";
 
-
 export default {
   props: ["record"],
   data() {
@@ -47,24 +46,11 @@ export default {
         .addRecordToCollection(this.selectedCollectionId, this.record)
         .then((response) => {
           if (response.status === 201) {
-           alert("Record successfully added to collection.");
-          //  let payload = {};
-          //  payload.record = this.record;
-          //  payload.collectionId = this.selectedCollectionId;
-          // this.$store.commit("ADD_RECORD_TO_COLLECTION", payload);
+            alert("Record successfully added to collection.");
           }
         });
     },
-    // addRecordToCollection() {
-    //   collectionService.addRecordToCollection(this.selectedCollectionId, this.record.recordId).then((response) => {
-    //     if (response.status === 201) {
-    //       alert("Record successfully added to collection.");
-    //       location.reload();
-    //     }
-    //   });
-    // },
   },
-  
 };
 </script>
 
