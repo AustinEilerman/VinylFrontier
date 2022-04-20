@@ -20,15 +20,15 @@ INSERT INTO records(record_user_id, record_title, record_artist, record_genre, r
 (102, 'On the Beach', 'Neil Young', 'Folk Rock', 2380, 4, 'https://upload.wikimedia.org/wikipedia/en/3/34/Neil_Young_-_On_the_Beach.png'),
 (102, 'Dookie', 'Green Day', 'Punk Rock', 2374, 5, 'https://upload.wikimedia.org/wikipedia/en/thumb/4/4b/Green_Day_-_Dookie_cover.jpg/220px-Green_Day_-_Dookie_cover.jpg'),
 (102, 'Kicking Against the Pricks', 'Nick Cave & the Bad Seeds', 'Post Punk', 2728, 4, 'https://upload.wikimedia.org/wikipedia/en/e/e5/Kickingagainstthepricks.jpeg'),
-(102, 'Designing a Nervous Breakdown', 'The Anniversary', 'Indie Rock', 2399, 3, 'https://upload.wikimedia.org/wikipedia/en/8/84/Designing_a_Nervous_Breakdown_album_cover.jpg');
-(100, 'Can I Heat?', 'Cosmic Boy', 1600, 5, 'https://hiphopkr.com/wp-content/uploads/2020/01/cosmic-boy-can-i-heat.jpg');
-(100, 'Nectar', 'Joji', 3180, 5, 'https://dailytargum.imgix.net/images/55c8ea14-b88c-46a2-9b39-23b5b2d325f8.png');
-(100, 'Starboy', 'The Weeknd', 4140, 4, 'https://m.media-amazon.com/images/I/819e05qxPEL._SL1500_.jpg');
-(100, 'GINGER', 'BROCKHAMPTON', 2640, 4, 'https://i.pinimg.com/originals/3e/67/21/3e6721d83478bb63f2fd0ddce5e0b9bc.jpg');
-(100, 'DAMN','Kendrick Lamar', 3300, 5, 'https://m.media-amazon.com/images/I/71FvMBLmheL._SL1200_.jpg');
-(104, 'The End Is Not the End', 'House of Heroes', 3300, 5, 'https://m.media-amazon.com/images/I/91eXiiyvPFL._SL1500_.jpg');
-(104, 'Californication', 'Red Hot Chili Peppers', 2380, 5, 'https://m.media-amazon.com/images/I/81x1drakpHS._SL1500_.jpg');
-(104, 'Led Zeppelin IV', 'Led Zeppelin', 3600, 4, 'https://static.metacritic.com/images/products/music/1/e27fcd31b1e3738b78e9ea34a9663f57.jpg');
+(102, 'Designing a Nervous Breakdown', 'The Anniversary', 'Indie Rock', 2399, 3, 'https://upload.wikimedia.org/wikipedia/en/8/84/Designing_a_Nervous_Breakdown_album_cover.jpg'),
+(100, 'Can I Heat?', 'Cosmic Boy', 1600, 5, 'https://hiphopkr.com/wp-content/uploads/2020/01/cosmic-boy-can-i-heat.jpg'),
+(100, 'Nectar', 'Joji', 3180, 5, 'https://dailytargum.imgix.net/images/55c8ea14-b88c-46a2-9b39-23b5b2d325f8.png'),
+(100, 'Starboy', 'The Weeknd', 4140, 4, 'https://m.media-amazon.com/images/I/819e05qxPEL._SL1500_.jpg'),
+(100, 'GINGER', 'BROCKHAMPTON', 2640, 4, 'https://i.pinimg.com/originals/3e/67/21/3e6721d83478bb63f2fd0ddce5e0b9bc.jpg'),
+(100, 'DAMN','Kendrick Lamar', 3300, 5, 'https://m.media-amazon.com/images/I/71FvMBLmheL._SL1200_.jpg'),
+(104, 'The End Is Not the End', 'House of Heroes', 3300, 5, 'https://m.media-amazon.com/images/I/91eXiiyvPFL._SL1500_.jpg'),
+(104, 'Californication', 'Red Hot Chili Peppers', 2380, 5, 'https://m.media-amazon.com/images/I/81x1drakpHS._SL1500_.jpg'),
+(104, 'Led Zeppelin IV', 'Led Zeppelin', 3600, 4, 'https://static.metacritic.com/images/products/music/1/e27fcd31b1e3738b78e9ea34a9663f57.jpg'),
 (104, '?', 'XXXTENTACION', 2400, 4, 'https://images.genius.com/0152d9262bbd6ca0edebe7013285a1d8.640x640x1.jpg');
 
 /* Setup for collections. */
