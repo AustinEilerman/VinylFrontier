@@ -44,7 +44,9 @@ export default {
       if (this.canCreateCollection) {
          collectionService.createCollection(this.collection).then((response) => {
           if (response.status === 201) {
+
             this.collectionId = response.data;
+
             this.$store.commit("ADD_COLLECTION_TO_COLLECTIONS", this.collection);
             this.$store.commit("UPDATE_NUMBER_OF_COLLECTIONS");
             alert("New Collection successfully created.");
