@@ -22,7 +22,7 @@ public class CollectionController {
         this.collectionDao = collectionDao;
         this.recordDao = recordDao;
     }
-
+// commented out 4/19 9pm by jeremy, are we using this path? conflicting path with getRecordsByCollectionId in recordController
     @RequestMapping(value = "/collection/{id}", method = RequestMethod.GET)
     public Collection get(@PathVariable int id) {
         return collectionDao.getCollection(id);
@@ -34,12 +34,6 @@ public class CollectionController {
         return collectionDao.createCollection(newCollection);
     }
 
-//    @RequestMapping(value = "/collections", method = RequestMethod.GET)
-//    public List<Collection> getAllCollections(
-//    ) {
-//        return collectionDao.getAllCollections();
-//    }
-
     @RequestMapping(value = "/collections", method = RequestMethod.GET)
     public List<Collection> getAllCollectionsByUserId(@RequestParam (required = false) Integer userId) {
         if (userId == null) {
@@ -49,7 +43,7 @@ public class CollectionController {
             return collectionDao.getCollectionsByUserId(userId);
         }
     }
-
+// was this an attempt to view records in a collection?
     @RequestMapping(value = "/collection-{id}/records", method = RequestMethod.GET)
     public List<Record> getRecordsForCollection(@PathVariable int collectionId) {
         return recordDao.getAllRecordsByCollectionId(collectionId);
