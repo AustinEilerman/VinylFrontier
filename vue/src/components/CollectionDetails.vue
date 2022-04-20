@@ -1,6 +1,6 @@
 <template>
-  <div class= "library">
-      <h1>{{collections.collectionName}}</h1>
+  <div class= "collection-details">
+    
     <records-list v-bind:records="records" />
   </div>
 </template>
@@ -44,7 +44,7 @@ export default {
 </script>
 
 <style>
-.library {
+.collection-details {
   font-family: monospace, sans-serif;
   font-size: 40;
   background-color: rgba(255,255,255,0.6);

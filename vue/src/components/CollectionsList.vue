@@ -1,10 +1,12 @@
 <template>
   <div class="collection-container">
-      <div class="collection-display" v-bind:allCollections="collections" v-on:click="setActiveRecord(record)" v-show="collection.public === true" v-for="collection in allCollections" v-bind:key="collection.collectionId">
-          {{ collection.collectionName }}
+      <div class="collection-display" v-bind:allCollections="collections" v-show="collection.public === true" v-for="collection in allCollections" v-bind:key="collection.collectionId">
+           <router-link :to="{ name: 'collectionDetails', params: {collectionId: collection.collectionId }}">
+              {{ collection.collectionName }}
+              </router-link>
       </div>
             <router-link v-if="record" :to="{ name: 'recordDetails', params: {id: record.recordId}}">
-              <h1>{{record.title}}</h1>
+              <h1>{{ record.title }}</h1>
               <p>Artist: {{ record.artist }}</p>
               <p>Genre: {{ record.genre }}</p>
             </router-link>
