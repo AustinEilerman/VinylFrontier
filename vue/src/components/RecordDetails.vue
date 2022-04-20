@@ -2,23 +2,17 @@
   <div class="record-details">
     <img v-bind:src="record.coverArtUrl" />
     <h1>{{ record.title }}</h1>
-    <p>{{ record.artist }}</p>
-    <p>{{ record.genre }}</p>
-    <p>{{ record.length }}</p>
-    <p v-on:click.prevent="showForm = true" class="note-button">
-      Notes: {{ record.userNotes }}
+    <p>Artist: {{ record.artist }}</p>
+    <p>Genre: {{ record.genre }}</p>
+    <p>Runtime: {{ (record.length)/60 }} Minutes</p>
+    <p>
+      Notes: <update-notes v-bind:record="record"/>
     </p>
-    <p>{{ record.userRating }}</p>
-    <delete-record v-bind:record="record" />
-    <!-- <update-notes/> -->
-    <add-record-to-collection v-bind:record="record" />
-    <update-notes v-bind:record="record"/>
-    <!-- <form v-show="showForm" v-on:submit.prevent="updateRecord(record)">
-            <div class ="noteText">
-                 <input name="noteText" type="text"/>
-            </div>
-            <button type="submit">Save</button>
-        </form> -->
+    <p>Rating: {{ record.userRating }} out of 5</p>
+    <div id="user-controls">
+        <delete-record v-bind:record="record" />
+        <add-record-to-collection v-bind:record="record" />
+    </div>
   </div>
 </template>
 
@@ -58,18 +52,27 @@ export default {
 <style>
 .record-details {
   font-family: monospace, sans-serif;
-  font-size: 40;
+  font-size: 5vh;
   background-color: rgba(255,255,255,0.6);
   margin-top: 20vh;
   border-radius: 20px;
   display:flex;
   flex-direction: column;
+  align-items: center;
   padding-bottom: 20px;
 }
 
 .record-details > img {
   display: flex;
-  width: 50vw;
+  width: 37vw;
+  align-items: center;
+  padding-top: 7vh;
+}
+
+#user-controls {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
+  gap: 10vw;
 }
 </style>

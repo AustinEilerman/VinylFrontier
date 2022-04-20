@@ -1,10 +1,10 @@
 <template>
   <div>
-    <form>
+    <form id="update-notes">
       <div class ="noteText">
-        <input name="noteText" type="text" v-model="userNotes"/>
+        <input name="noteText" type="text" default="record.userNotes" v-model="userNotes"/>
       </div>
-      <button type="submit" v-on:click="updateNote()">Update Note</button>
+      <button type="submit" v-on:click="updateNote()">Update Notes</button>
     </form>
   </div>
 </template>
@@ -54,5 +54,12 @@ export default {
 </script>
 
 <style>
-
+input[type="text"] {
+  font-size: 5vh;
+  
+}
+#update-notes {
+  display: flex;
+  font-family: monospace, sans-serif;
+}
 </style>
