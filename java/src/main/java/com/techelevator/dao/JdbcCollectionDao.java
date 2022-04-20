@@ -62,6 +62,7 @@ public class JdbcCollectionDao implements CollectionDao {
                 " VALUES (?,?,?)" +
                 " RETURNING collection_id;";
         Integer idAssigned = jdbcTemplate.queryForObject(sql, Integer.class,
+
                 newCollection.getCollectionUserId(),
                 newCollection.isPublic(),
                 newCollection.getCollectionName()
