@@ -22,10 +22,10 @@
 <script>
 export default {
   name: "record-list",
+  props: ['records'],
   data() {
     return {
-      records: this.$store.state.currentUserRecords,
-      // record: this.$store.state.activeRecord,
+    
     }
   },
   methods: {

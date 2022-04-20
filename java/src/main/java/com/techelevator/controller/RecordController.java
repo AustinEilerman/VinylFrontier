@@ -64,7 +64,6 @@ public class RecordController {
     public Record[] getRecordsByCollectionId(@PathVariable int collectionId) {
         Record[] records = recordDao.getAllRecordsByCollectionId(collectionId).toArray(new Record[0]);
         return records;
-
     }
 
 }
