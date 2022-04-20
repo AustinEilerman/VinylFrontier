@@ -60,9 +60,9 @@ public class RecordController {
         recordsCollectionsDao.addRecordToCollection(record.getRecordId(), collectionId);
     }
 
-    @RequestMapping(value = "/collections/{id}/records", method = RequestMethod.GET)
-    public Record[] getRecordsByCollectionId(@PathVariable int id) {
-        Record[] records = recordDao.getAllRecordsByCollectionId(id).toArray(new Record[0]);
+    @RequestMapping(value = "/collections/{collectionId}/records", method = RequestMethod.GET)
+    public Record[] getRecordsByCollectionId(@PathVariable int collectionId) {
+        Record[] records = recordDao.getAllRecordsByCollectionId(collectionId).toArray(new Record[0]);
         return records;
 
     }
