@@ -21,5 +21,9 @@ export default {
 
     addRecordToCollection(collectionId, record) {
         return axios.post(`/collections/${collectionId}`, record)
+    },
+
+    getRecordsInCollection(collectionId) {
+        return axios.get(`/collections/${collectionId}/records`);
     }
 }

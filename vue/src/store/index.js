@@ -29,6 +29,7 @@ export default new Vuex.Store({
     token: currentToken || '',
     user: currentUser || {},
     currentUserCollections: [],
+    currentRecordsInCollection: [],
     currentUserRecords: [],
     activeRecord: {},
     activeCollection: [],// do we need this?
@@ -80,11 +81,10 @@ export default new Vuex.Store({
     UPDATE_NOTE_IN_RECORD(state, curRecord) {
       let record = state.currentUserRecords.find(r => r.recordId === curRecord.recordId);
       record.userNotes = curRecord.userNotes;
-    }
-    
-    //   ADD_RECORD_TO_COLLECTION(state, payload) {
-    //     let collection = state.currentUserCollections.find(c => c.collectionId === payload.collectionId);
-    //     collection.push(payload.record);
-    // },
+    },
+    LOAD_RECORDS_IN_COLLECTION(state, record) {
+      state.currentRecordsInCollection.push(record);
+    },
+   
   }
 })

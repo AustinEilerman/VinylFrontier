@@ -1,7 +1,9 @@
 <template>
   <div class="collection-container">
       <div class="collection-display" v-for="collection in collections" v-bind:key="collection.collectionId">
-          {{ collection.collectionName }}
+          <router-link :to="{ name: 'collectionDetails', params: {collectionId: collection.collectionId }}">
+              {{ collection.collectionName }}
+              </router-link>
       </div>
   </div>
 </template>
@@ -9,6 +11,7 @@
 <script>
 
 export default {
+    props: ['collectionDetails'],
     data() {
         return {
             collections: this.$store.state.currentUserCollections,

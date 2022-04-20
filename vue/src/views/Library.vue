@@ -1,7 +1,7 @@
 <template>
   <div class="library">
     <h1>Your Library</h1>
-    <records-list />
+    <records-list v-bind:records="$store.state.currentUserRecords"/>
     <create-record />
   </div>
 </template>
