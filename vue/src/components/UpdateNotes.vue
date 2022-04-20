@@ -31,8 +31,8 @@ export default {
         if (response.status === 200) {
           alert('Note successfully updated');
           this.$store.commit("UPDATE_NOTE_IN_RECORD", record);
-          location.go();
         }
+        location.reload();
       });
     }
   },

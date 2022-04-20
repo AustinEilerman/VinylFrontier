@@ -26,19 +26,19 @@
 import DeleteRecord from "./DeleteRecord.vue";
 import UpdateNotes from './UpdateNotes.vue'
 import AddRecordToCollection from "../components/AddRecordToCollection.vue";
-import recordService from "../services/RecordService.js";
+//import recordService from "../services/RecordService.js";
 export default {
   components: { DeleteRecord, AddRecordToCollection, UpdateNotes },
   methods: {
-    updateRecord(record) {
-      recordService
-        .updateRecordNote(record.recordId, record)
-        .then((response) => {
-          if (response.status === 200) {
-            alert("Note updated");
-          }
-        });
-    },
+    // updateRecord(record) {
+    //   recordService
+    //     .updateRecordNote(record.recordId, record)
+    //     .then((response) => {
+    //       if (response.status === 200) {
+    //         alert("Note updated");
+    //       }
+    //     });
+    // },
   },
   data() {
     return {
