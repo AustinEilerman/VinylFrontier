@@ -9,7 +9,7 @@
       Notes: <update-notes v-bind:record="record"/>
     </p>
     <p>Rating: {{ record.userRating }} out of 5</p>
-    <div id="user-controls">
+    <div id="user-controls" v-if="record.userId == this.$store.state.user.id">
         <delete-record v-bind:record="record" />
         <add-record-to-collection v-bind:record="record" />
     </div>
@@ -73,6 +73,7 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: baseline;
   gap: 10vw;
 }
 </style>

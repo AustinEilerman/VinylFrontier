@@ -1,5 +1,5 @@
 <template>
-  <div id="delete-record">
+  <div id="delete-record" v-if="record.userId == this.$store.state.user.id">
       <form v-on:submit.prevent="deleteRecord()">
         <button type="submit">Delete Record</button>
       </form>

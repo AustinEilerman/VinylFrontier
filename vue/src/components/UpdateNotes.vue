@@ -4,7 +4,7 @@
       <div class ="noteText">
         <input name="noteText" type="text" default="record.userNotes" v-model="userNotes"/>
       </div>
-      <button type="submit" v-on:click="updateNote()">Update Notes</button>
+      <button type="submit" v-on:click="updateNote()" v-if="record.userId == this.$store.state.user.id">Update Notes</button>
     </form>
   </div>
 </template>
@@ -31,7 +31,6 @@ export default {
         if (response.status === 200) {
           alert('Note successfully updated');
           this.$store.commit("UPDATE_NOTE_IN_RECORD", record);
-          location.go();
         }
       });
     }
@@ -54,12 +53,16 @@ export default {
 </script>
 
 <style>
-input[type="text"] {
+.noteText > input[type="text"] {
   font-size: 5vh;
-  
+  font-family: monospace, sans-serif;
 }
 #update-notes {
   display: flex;
+  gap: 40px;
   font-family: monospace, sans-serif;
+}
+#update-notes > button {
+margin-top: 10px;
 }
 </style>

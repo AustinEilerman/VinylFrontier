@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="record.userId == this.$store.state.user.id">
     <div class="dropdown">
       <button
         id="add-to-collection"
@@ -20,7 +20,7 @@
               {{ collection.collectionName }}
             </option>
           </select>
-          <button type="submit">Add Collection</button>
+          <button type="submit">Add to Collection</button>
         </form>
       </div>
     </div>
