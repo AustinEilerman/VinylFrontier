@@ -15,11 +15,11 @@ INSERT INTO records(record_user_id, record_title, record_artist, record_genre, r
 (103, 'Lemonade', 'Beyonce', 'Funk/Soul', 1600, 5, 'https://i.discogs.com/ZKlVmncrWPj7inH8QlfToVET7Y3ZNRNV6x979KhFEUM/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTg0ODY3/MTQtMTQ3NzU3NTAx/MC02OTY5LmpwZWc.jpeg'),
 (103, 'Rumours', 'Fleetwood Mac', 'Pop Rock', 1800, 4, 'https://i.discogs.com/0RwbFkhFsRb6qNlIqNCR2EjpmrsBOlb8NFwI431feKg/rs:fit/g:sm/q:90/h:576/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzNTUy/ODM2LTE2NDQxNDk2/NDEtODM4OS5qcGVn.jpeg'),
 (103, 'My Beautiful Twisted Fantasy', 'Kanye West', 'Hip Hop', 1750, 5, 'https://i.discogs.com/r6S_JASQEvRM9DmFL0ltzIuYsKX0AAOBPebbJ6sHoQc/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI1NjA2/NTEtMTI5MDQ3NTM1/OS5qcGVn.jpeg'),
-(103, 'I Love You, Honeybear', 'Father John Misty', 'Folk', 2600, 5, 'https://i.discogs.com/eWM_-z0UAtUXZAbj_LM3XpywpVbsuqduE4hQb_LCkmM/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTY2MzYy/OTQtMTU2MjYyMzc2/OC05MjQzLmpwZWc.jpeg');
-(102, 'Flood', 'They Might be Giants', 'Alternative Rock', 2604, 4, 'https://upload.wikimedia.org/wikipedia/en/3/34/Flood_album_cover.jpg');
-(102, 'On the Beach', 'Neil Young', 'Folk Rock', 2380, 4, 'https://upload.wikimedia.org/wikipedia/en/3/34/Neil_Young_-_On_the_Beach.png');
-(102, 'Dookie', 'Green Day', 'Punk Rock', 2374, 5, 'https://upload.wikimedia.org/wikipedia/en/thumb/4/4b/Green_Day_-_Dookie_cover.jpg/220px-Green_Day_-_Dookie_cover.jpg');
-(102, 'Kicking Against the Pricks', 'Nick Cave & the Bad Seeds', 'Post Punk', 2728, 4, 'https://upload.wikimedia.org/wikipedia/en/e/e5/Kickingagainstthepricks.jpeg');
+(103, 'I Love You, Honeybear', 'Father John Misty', 'Folk', 2600, 5, 'https://i.discogs.com/eWM_-z0UAtUXZAbj_LM3XpywpVbsuqduE4hQb_LCkmM/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTY2MzYy/OTQtMTU2MjYyMzc2/OC05MjQzLmpwZWc.jpeg'),
+(102, 'Flood', 'They Might be Giants', 'Alternative Rock', 2604, 4, 'https://upload.wikimedia.org/wikipedia/en/3/34/Flood_album_cover.jpg'),
+(102, 'On the Beach', 'Neil Young', 'Folk Rock', 2380, 4, 'https://upload.wikimedia.org/wikipedia/en/3/34/Neil_Young_-_On_the_Beach.png'),
+(102, 'Dookie', 'Green Day', 'Punk Rock', 2374, 5, 'https://upload.wikimedia.org/wikipedia/en/thumb/4/4b/Green_Day_-_Dookie_cover.jpg/220px-Green_Day_-_Dookie_cover.jpg'),
+(102, 'Kicking Against the Pricks', 'Nick Cave & the Bad Seeds', 'Post Punk', 2728, 4, 'https://upload.wikimedia.org/wikipedia/en/e/e5/Kickingagainstthepricks.jpeg'),
 (102, 'Designing a Nervous Breakdown', 'The Anniversary', 'Indie Rock', 2399, 3, 'https://upload.wikimedia.org/wikipedia/en/8/84/Designing_a_Nervous_Breakdown_album_cover.jpg');
 
 /* Setup for collections. */
