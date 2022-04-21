@@ -1,7 +1,7 @@
 <template>
   <div class= "collection-details">
     <h1>{{collection.collectionName}}</h1>
-    <p>This is a {{publicOrPrivate}} collection.</p>
+    <p>This is a {{publicPrivate()}} collection.</p>
     <records-list v-bind:records="records"/>
   </div>
 </template>
@@ -20,7 +20,6 @@ export default {
             collectionId: this.$route.params.collectionId,
             records: [],
             collection: {},
-            publicOrPrivate: "",
         }
     },
     methods: {
@@ -39,17 +38,16 @@ export default {
         },
         publicPrivate() {
           let status = this.collection.public;
-          if (!status) {
-            this.publicOrPrivate = "public";
-          } else if (status) {
-            this.publicOrPrivate = "private";
+          if (status === true) {
+            return "public";
+          } else if (status === false) {
+            return "private";
           }
         }
     },
     created() {
         this.getRecordsInCollection();
         this.getCollection();
-        this.publicPrivate();
     }
 }
 

@@ -65,6 +65,10 @@ export default {
   justify-content: center;
 }
 
+.dashboard > h2 {
+  text-align: center;
+}
+
 .dashboard-nav {
   font-family: monospace, sans-serif;
   display: flex;

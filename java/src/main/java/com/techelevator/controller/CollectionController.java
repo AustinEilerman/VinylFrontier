@@ -22,7 +22,7 @@ public class CollectionController {
         this.collectionDao = collectionDao;
         this.recordDao = recordDao;
     }
-// commented out 4/19 9pm by jeremy, are we using this path? conflicting path with getRecordsByCollectionId in recordController
+
     @RequestMapping(value = "/collection/{id}", method = RequestMethod.GET)
     public Collection get(@PathVariable int id) {
         return collectionDao.getCollection(id);
