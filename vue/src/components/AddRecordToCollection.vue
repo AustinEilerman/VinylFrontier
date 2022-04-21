@@ -38,6 +38,7 @@ export default {
       records: this.$store.state.currentUserRecords,
       showForm: false,
       selectedCollectionId: -1,
+      errorMsg: ""
     };
   },
   methods: {
@@ -47,6 +48,14 @@ export default {
         .then((response) => {
           if (response.status === 201) {
             alert("Record successfully added to collection.");
+            this.$router.push(`/collections/${this.selectedCollectionId}/records`);
+          }
+        })
+         .catch(error => {
+          if (error.response && error.response.status === 500) {
+            alert(
+              "Error: Collection already contains record, you cannot add it again!"
+            );
             this.$router.push(`/collections/${this.selectedCollectionId}/records`);
           }
         });
@@ -93,5 +102,28 @@ select {
 #add-to-collection {
   display: flex;
   justify-content: center;
+}
+
+button {
+  display: flex;
+  border: 2pt solid black;
+  border-radius: 10px;
+  text-decoration: none;
+  justify-content: center;
+  background-color: white;
+  font-family: monospace, sans-serif;
+  color: #551A8B;
+  margin-left: 30%;
+  margin-right: 30%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 7vw;
+  margin-right: 7vw;
+}
+
+button:hover {
+  background-color: black;
+  border-color: white;
+  color: white;
 }
 </style>

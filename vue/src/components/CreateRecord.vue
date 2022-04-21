@@ -27,7 +27,7 @@
       <!-- <label for="releaseDate">Release Date:</label> -->
       <!-- <input type="date" v-model="record.releaseDate"> <br> -->
       <div>
-        <label for="recordLength">Length:</label>
+        <label for="recordLength">Length In Seconds:</label>
         <input type="number" v-model="record.length" min="0" />
       </div>
       <div>
