@@ -56,7 +56,7 @@ INSERT INTO records(record_user_id, record_title, record_artist, record_genre, r
 					
 -- Standard User					
 -- INSERT INTO records(record_user_id, record_title, record_artist, record_genre, record_length_in_sec, record_user_rating, record_art_url) VALUES
--- -- ();
+-- ();
 
 /* Setup for collections. */
 INSERT INTO collections(collection_user_id, is_public, collection_name)
