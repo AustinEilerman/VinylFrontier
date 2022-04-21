@@ -38,6 +38,7 @@ export default {
       records: this.$store.state.currentUserRecords,
       showForm: false,
       selectedCollectionId: -1,
+      errorMsg: ""
     };
   },
   methods: {
@@ -47,6 +48,14 @@ export default {
         .then((response) => {
           if (response.status === 201) {
             alert("Record successfully added to collection.");
+            this.$router.push(`/collections/${this.selectedCollectionId}/records`);
+          }
+        })
+         .catch(error => {
+          if (error.response && error.response.status === 500) {
+            alert(
+              "Error: Collection already contains record, you cannot add it again!"
+            );
             this.$router.push(`/collections/${this.selectedCollectionId}/records`);
           }
         });
