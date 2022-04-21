@@ -85,4 +85,27 @@ select {
   display: flex;
   justify-content: center;
 }
+
+button {
+  display: flex;
+  border: 2pt solid black;
+  border-radius: 10px;
+  text-decoration: none;
+  justify-content: center;
+  background-color: white;
+  font-family: monospace, sans-serif;
+  color: #551A8B;
+  margin-left: 30%;
+  margin-right: 30%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 7vw;
+  margin-right: 7vw;
+}
+
+button:hover {
+  background-color: black;
+  border-color: white;
+  color: white;
+}
 </style>
