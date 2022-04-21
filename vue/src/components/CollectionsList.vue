@@ -35,16 +35,34 @@ export default {
     justify-content: space-evenly;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 50px;
 }
 
 .collection-display {
     border: 2px solid black;
-    background-color: rgba(255,255,255,0.8);
+    background-color: white;
     border-radius: 20px;
-    height: 200px;
-    width: 200px;
-    text-align: center;
+    height: 25vh;
+    width: 25vw;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    font-size: 5vh;
+}
+
+.collection-display:hover {
+    border-color: white;
+    background-color: black;
+    color: white;
+}
+
+.collection-display > a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.collection-display > a:hover {
+    color: white;
 }
 
 </style>

@@ -10,7 +10,7 @@
       </button>
       <div class="dropdown-content">
         <form v-show="showForm" v-on:submit.prevent="addToCollection">
-          <label>Select Collection</label>
+          <label>Select Collection:</label>
           <select v-model="selectedCollectionId">
             <option
               v-bind:value="collection.collectionId"
@@ -64,6 +64,24 @@ export default {
 .dropdown-content {
   display: flex;
   flex-direction: column;
+}
+
+.dropdown-content > form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+} 
+
+.dropdown-content > form > label {
+  font-size: 12pt;
+
+}
+
+.dropdown-content > form > button {
+  display: flex;
+  justify-content: center;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 select {

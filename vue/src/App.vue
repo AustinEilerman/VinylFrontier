@@ -10,10 +10,6 @@
         <router-link v-bind:to="{ name: 'getAllCollections' }">Collections</router-link>
         <router-link v-bind:to="{ name: 'logout' }">Logout</router-link>
       </div>
-      <div id="search" v-if="this.$route.name === 'home'">
-        <input type="text" class="search-term" placeholder="Search Collections...">
-        <button type="submit" class="search-button">Search</button>
-      </div>
     </div>
     <router-view />
   </div>
@@ -62,14 +58,5 @@
   background-color: black;
   border-color: white;
   color: white;
-}
-
-#search {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding-right: 20px;
-  gap: 10px;
-  margin-left: 50px;
 }
 </style>
