@@ -11,6 +11,8 @@
               <h1>{{record.title}}</h1>
               <p>Artist: {{ record.artist }}</p>
               <p>Genre: {{ record.genre }}</p>
+              <p>Rating: {{record.userRating}} out of 5</p>
+              <p>Notes: {{record.userNotes}}</p>
             </router-link>
           </div>
         </div>

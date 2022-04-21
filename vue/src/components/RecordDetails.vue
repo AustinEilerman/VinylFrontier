@@ -17,14 +17,11 @@
 </template>
 
 <script>
-import DeleteRecord from "./DeleteRecord.vue";
+import DeleteRecord from "./DeleteRecord.vue"
 import UpdateNotes from './UpdateNotes.vue'
-import AddRecordToCollection from "../components/AddRecordToCollection.vue";
+import AddRecordToCollection from "../components/AddRecordToCollection.vue"
 export default {
   components: { DeleteRecord, AddRecordToCollection, UpdateNotes },
-  methods: {
-
-  },
   data() {
     return {
       showForm: false,
@@ -43,7 +40,7 @@ export default {
 <style>
 .record-details {
   font-family: monospace, sans-serif;
-  font-size: 5vh;
+  font-size: 4vh;
   background-color: rgba(255,255,255,0.6);
   margin-top: 20vh;
   border-radius: 20px;

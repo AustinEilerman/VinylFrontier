@@ -55,9 +55,10 @@ export default {
 
 <style>
 .noteText > input[type="text"] {
-  font-size: 5vh;
+  font-size: 4vh;
   font-family: monospace, sans-serif;
 }
+
 #update-notes {
   display: flex;
   gap: 40px;

@@ -48,5 +48,5 @@ public class CollectionController {
     public List<Record> getRecordsForCollection(@PathVariable int collectionId) {
         return recordDao.getAllRecordsByCollectionId(collectionId);
     }
-    
+
 }

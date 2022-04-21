@@ -1,7 +1,7 @@
 <template>
   <div class= "collection-details">
-    
-    <records-list v-bind:records="records" />
+    <h1>{{collection.collectionName}}</h1>
+    <records-list v-bind:records="records"/>
   </div>
 </template>
 
@@ -14,14 +14,11 @@ export default {
         RecordsList
     },    
     name: "collection-details",
-    props: ['collections'],
     data() {
-
         return {
-            // records: this.$store.state.currentRecordsInCollection,
             collectionId: this.$route.params.collectionId,
-            records: []
-
+            records: [],
+            collection: {},
         }
     },
     methods: {
@@ -30,14 +27,14 @@ export default {
                 if (response.status === 200) {
                     this.records = response.data;
                 }
-               
             })
         },
-
     },
     created() {
         this.getRecordsInCollection();
-        
+        CollectionService.getCollection(this.collectionId).then(response => {
+          this.collection = response.data;
+        });
     }
 }
 

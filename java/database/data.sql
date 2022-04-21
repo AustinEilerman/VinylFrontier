@@ -40,6 +40,15 @@ INSERT INTO records(record_user_id, record_title, record_artist, record_genre, r
 (104, 'Led Zeppelin IV', 'Led Zeppelin', 'Classic Rock', 3600, 4, 'https://static.metacritic.com/images/products/music/1/e27fcd31b1e3738b78e9ea34a9663f57.jpg'),
 (104, '?', 'XXXTENTACION', 'Rap', 2400, 4, 'https://images.genius.com/0152d9262bbd6ca0edebe7013285a1d8.640x640x1.jpg');
 
+-- Premium User
+INSERT INTO records((record_user_id, record_title, record_artist, record_genre, record_length_in_sec, record_user_rating, record_art_url) VALUES
+(),
+					
+					
+-- Standard User					
+INSERT INTO records((record_user_id, record_title, record_artist, record_genre, record_length_in_sec, record_user_rating, record_art_url) VALUES
+(),
+
 /* Setup for collections. */
 INSERT INTO collections(collection_user_id, is_public, collection_name)
 VALUES 

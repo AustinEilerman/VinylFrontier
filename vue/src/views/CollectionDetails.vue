@@ -7,7 +7,6 @@
 <script>
 import CollectionDetails from "@/components/CollectionDetails.vue";
 export default {
-  
   components: {
     CollectionDetails
   }

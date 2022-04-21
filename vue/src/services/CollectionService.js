@@ -8,7 +8,7 @@ export default {
     },
 
     getCollection(collectionId) {
-        return axios.get(`/collections/${collectionId}`);
+        return axios.get(`/collection/${collectionId}`);
     },
 
     getCollectionsByUserId(userId) {

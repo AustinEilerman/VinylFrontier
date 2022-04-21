@@ -72,12 +72,13 @@ export default {
 
 .dropdown-content {
   display: flex;
+  flex-direction: column;
 }
 
 select {
-  color: white;
+  color: black;
   font-family: monospace, sans-serif;
-  background-color: black;
+  background-color: white;
 }
 
 #add-to-collection {
