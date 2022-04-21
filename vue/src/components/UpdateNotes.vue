@@ -65,6 +65,9 @@ export default {
   font-family: monospace, sans-serif;
 }
 #update-notes > button {
-margin-top: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  align-items: center;
 }
+
 </style>
