@@ -62,4 +62,32 @@ INSERT INTO records(record_user_id, record_title, record_artist, record_genre, r
 INSERT INTO collections(collection_user_id, is_public, collection_name)
 VALUES 
 (101, 'true', 'Tyes Public Collection'),
+(102, 'true', 'Jeremys Public Collection'),
 (103, 'true', 'Virginias Public Collection');
+
+-- Fill Tyes Public Collection with records
+INSERT INTO records_collections(record_id, collection_id)
+VALUES
+(1000, 2000),
+(1002, 2000),
+(1003, 2000);
+
+-- Fill Jeremys Public Collection with records
+INSERT INTO records_collections(record_id, collection_id)
+VALUES
+(1040, 2001),
+(1034, 2001),
+(1038, 2001),
+(1031, 2001),
+(1008, 2001),
+(1010, 2001),
+(1013, 2001),
+(1017, 2001);
+
+-- Fill Virginias Public Collection with records
+INSERT INTO records_collections(record_id, collection_id)
+VALUES
+(1004, 2002),
+(1005, 2002),
+(1006, 2002);
+
