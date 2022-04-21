@@ -47,6 +47,7 @@ export default {
         .then((response) => {
           if (response.status === 201) {
             alert("Record successfully added to collection.");
+            this.$router.push(`/collections/${this.selectedCollectionId}/records`);
           }
         });
     },
