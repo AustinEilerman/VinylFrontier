@@ -35,8 +35,8 @@
         v-model="user.password"
         required
       />
-      <button type="submit">Sign in</button>
-      <router-link :to="{ name: 'register' }">Register</router-link>
+      <button class="button" type="submit">Sign in</button>
+      <router-link class="button" :to="{ name: 'register' }">Register</router-link>
     </form>
     <div class="signed-in" v-if="$store.state.token != ''">
       You are signed in as {{this.$store.state.user.username}}.
@@ -152,20 +152,22 @@ body {
   font-size: 15pt;
 }
 
-.form-signin > a {
+.form-signin > .button {
   display: flex;
   border: 2pt solid black;
   border-radius: 10px;
   text-decoration: none;
   justify-content: center;
   background-color: white;
+  font-family: monospace, sans-serif;
+  color: #551A8B;
   margin-left: 30%;
   margin-right: 30%;
   padding-top: 5px;
   padding-bottom: 5px;
 }
 
-.form-signin > a:hover {
+.form-signin > .button:hover {
   background-color: black;
   border-color: white;
   color: white;
