@@ -34,24 +34,30 @@ INSERT INTO records(record_user_id, record_title, record_artist, record_genre, r
 (100, 'Nectar', 'Joji', 'Emotional', 3180, 5, 'https://dailytargum.imgix.net/images/55c8ea14-b88c-46a2-9b39-23b5b2d325f8.png'),
 (100, 'Starboy', 'The Weeknd', 'Pop', 4140, 4, 'https://m.media-amazon.com/images/I/819e05qxPEL._SL1500_.jpg'),
 (100, 'GINGER', 'BROCKHAMPTON', 'Rap', 2640, 4, 'https://i.pinimg.com/originals/3e/67/21/3e6721d83478bb63f2fd0ddce5e0b9bc.jpg'),
-(100, 'DAMN','Kendrick Lamar', 'Rap', 3300, 5, 'https://m.media-amazon.com/images/I/71FvMBLmheL._SL1200_.jpg'),
-(104, 'The End Is Not the End', 'House of Heroes', 'Rock', 3300, 5, 'https://m.media-amazon.com/images/I/91eXiiyvPFL._SL1500_.jpg'),
-(104, 'Californication', 'Red Hot Chili Peppers', 'Alt Rock', 2380, 5, 'https://m.media-amazon.com/images/I/81x1drakpHS._SL1500_.jpg'),
-(104, 'Led Zeppelin IV', 'Led Zeppelin', 'Classic Rock', 3600, 4, 'https://static.metacritic.com/images/products/music/1/e27fcd31b1e3738b78e9ea34a9663f57.jpg'),
-(104, '?', 'XXXTENTACION', 'Rap', 2400, 4, 'https://images.genius.com/0152d9262bbd6ca0edebe7013285a1d8.640x640x1.jpg');
+(100, 'DAMN','Kendrick Lamar', 'Rap', 3300, 5, 'https://m.media-amazon.com/images/I/71FvMBLmheL._SL1200_.jpg');
 
 -- Premium User
 INSERT INTO records(record_user_id, record_title, record_artist, record_genre, record_length_in_sec, record_user_rating, record_art_url) VALUES
-(102, 'The Animals', 'The Animals', 'Blues Rock', 3600, 4, 'https://i.discogs.com/8s8FEhWf67eeOIOoseceL5pyO7aBnuCAt3Wj6m_V2aE/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTcwNjY4/Ny0xNDUzOTQwNzMz/LTUzMTEuanBlZw.jpeg'),
-(102, 'King Of The Blues', 'B.B. King', 'East Coast Blues', 3600, 4, 'https://i.discogs.com/Y8_Nej4q-qMfcFkFBAu4wHmjxWyj9yQAI3bUOwBq8PM/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM5Njkw/MzYtMTM1MTEyOTUy/OS0zNTYwLmpwZWc.jpeg'),
-(102, 'Synchronicity', 'The Police', 'Pop Rock', 3600, 4, 'https://i.discogs.com/jWCUYdRMJfn8TVxSy-NioO0FNqccny3XuHE4tXOOkyw/rs:fit/g:sm/q:90/h:480/w:469/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM3NTQ5/OTctMTM0MzA1OTgx/MC03MTEwLmpwZWc.jpeg'),
-(102, 'Fly Like An Eagle', 'Steve Miller Band', 'Classic Rock', 3600, 4, 'https://i.discogs.com/-g5_7QhSIOfgkYuVyDj6W7cmlprY2GA-wFs9LSElJL0/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTUzNzA0/Ny0xNDI3MDUzMDE3/LTYzNTMucG5n.jpeg'),
-(102, 'Slow Hand', 'Eric Clapton', 'Rock', 3600, 4, 'https://i.discogs.com/cXLJg1gDAc8Aj1P2at785y39UxolTd4XPF37Yw-cYz8/rs:fit/g:sm/q:90/h:316/w:316/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTYzNTQ4/ODEtMTQxNzIwNDI0/MC04NDY0LmpwZWc.jpeg'),
-(102, 'Abbey Road', 'The Beatles', 'Pop Rock', 3600, 4, 'https://i.discogs.com/M2yc5OJZPdVoDm2_UlRRXuDlDguamLLSdnbziNmZoQI/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI2MDc0/MjQtMTYzMDYwMTA4/Ny0xMTk5LmpwZWc.jpeg'),
-(102, 'Hotel California', 'Eagles', 'Classic Rock', 3600, 4, 'https://i.discogs.com/2JRfmUxxKRn1L1g5bJQ3Z7urblnqF2K17zg2SrBzON0/rs:fit/g:sm/q:90/h:600/w:596/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MzQz/NjctMTM4MzkwODQz/OC00MTc1LmpwZWc.jpeg'),
-(102, 'Johnny Cash At San Quentin', 'Johnny Cash', 'Country Rock', 3600, 4, 'https://i.discogs.com/gHMYRm47NTP8aJ8g45AnWTz9yxsTHa5SazhBo9h_mE8/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE1OTU2/NDctMTQzMzgyOTk1/NC04MDMzLmpwZWc.jpeg'),
-(102, 'Aftermath', 'The Rolling Stones', 'Blues Rock', 3600, 4, 'https://i.discogs.com/mNG52ihXU1u-eSgs5yCvPJ4H9jQJR_rFl2whrh105mY/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMwMjk4/NTUtMTMxMjQ2MjE3/OS5qcGVn.jpeg'),
-(102, 'Willy And The Poor Boys', 'Creedence Clearwater Revival', 'Rock & Roll', 3600, 4, 'https://i.discogs.com/jQUu2-eMl0XOJ4SDaMbsww0hQJiQOGhz9WZHcz7I0rU/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzMzE3/MDMtMTIyNTYzNjEz/MC5qcGVn.jpeg');
+(101, 'The Animals', 'The Animals', 'Blues Rock', 3600, 4, 'https://i.discogs.com/8s8FEhWf67eeOIOoseceL5pyO7aBnuCAt3Wj6m_V2aE/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTcwNjY4/Ny0xNDUzOTQwNzMz/LTUzMTEuanBlZw.jpeg'),
+(101, 'King Of The Blues', 'B.B. King', 'East Coast Blues', 3600, 4, 'https://i.discogs.com/Y8_Nej4q-qMfcFkFBAu4wHmjxWyj9yQAI3bUOwBq8PM/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM5Njkw/MzYtMTM1MTEyOTUy/OS0zNTYwLmpwZWc.jpeg'),
+(101, 'Synchronicity', 'The Police', 'Pop Rock', 3600, 4, 'https://i.discogs.com/jWCUYdRMJfn8TVxSy-NioO0FNqccny3XuHE4tXOOkyw/rs:fit/g:sm/q:90/h:480/w:469/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM3NTQ5/OTctMTM0MzA1OTgx/MC03MTEwLmpwZWc.jpeg'),
+(101, 'Fly Like An Eagle', 'Steve Miller Band', 'Classic Rock', 3600, 4, 'https://i.discogs.com/-g5_7QhSIOfgkYuVyDj6W7cmlprY2GA-wFs9LSElJL0/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTUzNzA0/Ny0xNDI3MDUzMDE3/LTYzNTMucG5n.jpeg'),
+(101, 'Slow Hand', 'Eric Clapton', 'Rock', 3600, 4, 'https://i.discogs.com/cXLJg1gDAc8Aj1P2at785y39UxolTd4XPF37Yw-cYz8/rs:fit/g:sm/q:90/h:316/w:316/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTYzNTQ4/ODEtMTQxNzIwNDI0/MC04NDY0LmpwZWc.jpeg'),
+(101, 'Abbey Road', 'The Beatles', 'Pop Rock', 3600, 4, 'https://i.discogs.com/M2yc5OJZPdVoDm2_UlRRXuDlDguamLLSdnbziNmZoQI/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI2MDc0/MjQtMTYzMDYwMTA4/Ny0xMTk5LmpwZWc.jpeg'),
+(101, 'Hotel California', 'Eagles', 'Classic Rock', 3600, 4, 'https://i.discogs.com/2JRfmUxxKRn1L1g5bJQ3Z7urblnqF2K17zg2SrBzON0/rs:fit/g:sm/q:90/h:600/w:596/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MzQz/NjctMTM4MzkwODQz/OC00MTc1LmpwZWc.jpeg'),
+(101, 'Johnny Cash At San Quentin', 'Johnny Cash', 'Country Rock', 3600, 4, 'https://i.discogs.com/gHMYRm47NTP8aJ8g45AnWTz9yxsTHa5SazhBo9h_mE8/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE1OTU2/NDctMTQzMzgyOTk1/NC04MDMzLmpwZWc.jpeg'),
+(101, 'Aftermath', 'The Rolling Stones', 'Blues Rock', 3600, 4, 'https://i.discogs.com/mNG52ihXU1u-eSgs5yCvPJ4H9jQJR_rFl2whrh105mY/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMwMjk4/NTUtMTMxMjQ2MjE3/OS5qcGVn.jpeg'),
+(101, 'Willy And The Poor Boys', 'Creedence Clearwater Revival', 'Rock & Roll', 3600, 4, 'https://i.discogs.com/jQUu2-eMl0XOJ4SDaMbsww0hQJiQOGhz9WZHcz7I0rU/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzMzE3/MDMtMTIyNTYzNjEz/MC5qcGVn.jpeg'),
+(101, 'The End Is Not the End', 'House of Heroes', 'Rock', 3300, 5, 'https://m.media-amazon.com/images/I/91eXiiyvPFL._SL1500_.jpg'),
+(101, 'Californication', 'Red Hot Chili Peppers', 'Alt Rock', 2380, 5, 'https://m.media-amazon.com/images/I/81x1drakpHS._SL1500_.jpg'),
+(101, 'Led Zeppelin IV', 'Led Zeppelin', 'Classic Rock', 3600, 4, 'https://static.metacritic.com/images/products/music/1/e27fcd31b1e3738b78e9ea34a9663f57.jpg'),
+(101, '?', 'XXXTENTACION', 'Rap', 2400, 4, 'https://images.genius.com/0152d9262bbd6ca0edebe7013285a1d8.640x640x1.jpg'),
+(101, 'Brothers', 'The Black Keys', 'Blues Rock', 3600, 4, 'https://i.discogs.com/dgeIQthq592hFeh1zaHhD7V0JkyimazrFvefhWgwhkw/rs:fit/g:sm/q:90/h:534/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIyODE5/MDItMTQ3OTg3NjU1/MS0zNjYyLmpwZWc.jpeg'),
+(101, 'White Blood Cells', 'The White Stripes', 'Indie Rock', 3600, 4, 'https://i.discogs.com/oGZtoQVo2EvITTFCCf82vaOO82pqX1_0eacu-RaLY5Y/rs:fit/g:sm/q:90/h:432/w:433/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI1OTU2/ODAtMTI5MjI5Njcz/My5qcGVn.jpeg'),
+(101, 'Honky Château', 'Elton John', 'Pop Rock', 3600, 4, 'https://i.discogs.com/eAdTCoGnTKeDtrMoHIofVDcW4j6gc8mS8S-eHowzbuo/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ3MjMy/NC0xMzI0MjE3NTUw/LmpwZWc.jpeg'),
+(101, 'The Doors', 'The Doors', 'Psychedelic Rock', 3600, 4, 'https://i.discogs.com/f31e2UCcsm9atjquzCFgm1AVBQjJ6mVrD7fr40s_T-Q/rs:fit/g:sm/q:90/h:590/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExODIx/NjYyLTE2MjM3NTkz/NzEtODU1Ny5qcGVn.jpeg'),
+(101, 'Is This It', 'The Strokes', 'Indie Rock', 3600, 4, 'https://i.discogs.com/I-5W0fpyfiabeWAXjTY0DdQ_0-PibB8kINZLXI8EiV0/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTY2Nzg5/Mi0xMjQ5NTQ4OTc5/LmpwZWc.jpeg'),
+(101, 'Combat Rock', 'The Clash', 'Punk', 3600, 4, 'https://i.discogs.com/j1gW9ye1f7hlWI79Ml8XNqN4RxN4e5YZXdbMfpDKPSc/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQxMjY1/MTktMTQ1NjE5MjUz/MS0xMTE0LmpwZWc.jpeg');
 					
 					
 -- Standard User					
