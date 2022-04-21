@@ -4,7 +4,7 @@
     <h1>{{ record.title }}</h1>
     <p>Artist: {{ record.artist }}</p>
     <p>Genre: {{ record.genre }}</p>
-    <p>Runtime: {{ (record.length)/60 }} Minutes</p>
+    <p>Runtime: {{ Math.trunc((record.length)/60) }} Minutes</p>
     <p>
       Notes: <update-notes v-bind:record="record"/>
     </p>
