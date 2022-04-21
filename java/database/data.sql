@@ -55,8 +55,30 @@ INSERT INTO records(record_user_id, record_title, record_artist, record_genre, r
 					
 					
 -- Standard User					
+INSERT INTO records(record_user_id, record_title, record_artist, record_genre, record_length_in_sec, record_user_rating, record_art_url) VALUES
+(100, 'Black Cab', 'Higher Brothers', 'Hip-Hop', 3253, 4, 'https://i.discogs.com/SpID7kBFELkbiQovAFnwP-9EQTbhpd3fH3GZyqg3V7U/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExOTI5/ODE3LTE1MjQ5NDIz/MjgtNDY1My5qcGVn.jpeg'),
+(100, 'BALLADS1', 'Joji', '	Electronic, Hip Hop, Rock, Funk / Soul, Pop', 2111, 4, 'https://i.discogs.com/Jh6Kf3_Yl2nqraNNPGcHWqdSHQ6KunAAy7DCbOoSXS0/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyNzEw/NTkxLTE1NDA0OTc3/MTEtNjA2OC5qcGVn.jpeg'),
+(100, 'Gaussian', 'Youra', 'Indie, R&B, soul, electronic', 1140, 4, 'https://i.discogs.com/PllYSq3fXNujY_4wRFJcfzTPtDFowcsPoxdKDmABBqA/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE4NDI3/MTE3LTE2MTkxOTc1/MjUtNDUwMi5wbmc.jpeg'),
+(100, 'Love Language', 'UMI', 'R&B/Soul', 727, 4, 'https://i.discogs.com/UzaaNKnYAco3TT773_SMqHuMbNeGfCWZklZL1e74aC4/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2MDA4/NjIyLTE2MDE4MDQw/MTYtMjI3Ny5qcGVn.jpeg'),
+(100, 'Shang-Chi and The Legend of The Ten Rings', 'Various Artists', 'Hip-Hop, Stage & Screen', 3601, 4, 'https://i.discogs.com/vUpk-CpjaqmFe2qK3-rFRXGmcVpdKF11haBIWRNA0jU/rs:fit/g:sm/q:90/h:599/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIwMTgx/OTAxLTE2MzEyODIz/NTUtMzMyMS5qcGVn.jpeg'),
+(100, 'ALL OUT', 'K/DA', 'K-pop, Dance-pop', 978, 5, 'https://i.discogs.com/x5thIz1KkPplA2Ak6a4aIEecPEmXYLXGH-mYgkicEd0/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2MjQ0/NTM2LTE2MDU4OTMw/MjEtMjYyNi5qcGVn.jpeg'),
+(100, 'Modal Soul', 'Nujabes', 'Electronic, Hip-Hop, Jazz', 3780, 5, 'https://i.discogs.com/h_teN6QC6tVEa2K6ZnEjTrqSUHTmYqVkaA1FVL5Yaik/rs:fit/g:sm/q:90/h:530/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI2MzY5/OTYtMTU2Mzk0MjA0/NS0yMjM0LmpwZWc.jpeg'),
+(100, 'ANTI', 'Rihanna', 'Hip-Hop, Pop', 3058, 4, 'https://i.discogs.com/pNLZp8KWvBloPl1d9msktWcvdUTEP6JyrLd5EqLTGTA/rs:fit/g:sm/q:90/h:507/w:450/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTgwNzc5/OTAtMTQ1NDcxMDgw/OC0zODA0LmpwZWc.jpeg'),
+(100, 'Arcane League of Legends', 'Various Artists', 'Hip-Hop, Rock, Pop, Stage & Screen', 2220, 5, 'https://i.discogs.com/b3fDoY1c1bLBDXFP4STjiR9YIN_JNkKyRpv1JcrSRSY/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIxMDUy/NzMyLTE2Mzc0MDM3/NDMtNjg1Mi5qcGVn.jpeg'),
+(100, 'FIRE ON MARZZ', 'BENEE', 'Funk/Soul, Pop', 1258, 4, 'https://i.discogs.com/NapVLrsKyXZKid0K-EmTxTDS9DJUkBXwe2yGuMG3zY4/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0NDIx/MzQ5LTE1NzQxOTA1/MjctMjAyMi5qcGVn.jpeg'),
+(100, 'Worlds', 'Porter Robinson', 'Electronic', 3474, 5, 'https://i.discogs.com/3jbfXPozuZ0CHKvr7TWgciWzb-qYdTfkycvSPr_aQVk/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU5ODc1/OTAtMTQwODE2MjU2/My01NTEwLmpwZWc.jpeg'),
+(100, 'thank u, next', 'Ariana Grande', 'Hip-Hop, Funk/Soul, Pop', 2470, 4, 'https://i.discogs.com/vg0yxrj9eVgR3GsSNM8jlP2971a6Nkx0_YCSxgdgl6U/rs:fit/g:sm/q:90/h:529/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzMTc4/MTkwLTE1NDk3NTM3/MzctNjAzNC5wbmc.jpeg'),
+(100, 'The Perfect Red Velvet', 'Red Velvet', 'K-Pop', 2496, 4, 'https://i.discogs.com/_OcTsiO-SByZ6Qh3VZ7zcEqe3MBlWebgTvVCOCnUtsw/rs:fit/g:sm/q:90/h:520/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyOTEy/MzgzLTE1NDQzNzg4/OTUtNDczMC5qcGVn.jpeg'),
+(100, 'NeON', 'Unlimits', 'J-Rock, J-Pop', 2834, 4, 'https://i.discogs.com/PU74oJcnu9QIP8-YkonOLr9zk-ysMdwv8N86--BvOoY/rs:fit/g:sm/q:90/h:300/w:300/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ5NjM4/MDYtMTM4MDc0ODQ1/Mi01MDU2LmpwZWc.jpeg'),
+(100, 'Planet Her', 'Doja Cat', 'Hip Hop, Funk/Soul, Pop', 2646, 4, 'https://i.discogs.com/UCAqYwgLfImPHgU0f8J6vZn1io4jvSr6hRlBctH9dUg/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MjY2/NzQ4LTE2Mzk4NjUx/MDMtMTY3My5qcGVn.jpeg'),
+(100, 'Her', 'DPR LIVE', 'Hip-Hop, Rap', 737, 4, 'https://images.genius.com/70a533447f7fbba9c6001369e7e74abf.999x999x1.jpg'),
+(100, 'ASTROWORLD', 'Travis Scott', 'Hip-Hop', 3522, 4, 'https://i.discogs.com/IVTJPd80XDybfPLVKOC-rROuf5ymTGgb4knFHupVTLw/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyMzU4/OTcxLTE1OTc4NzQ1/OTEtOTU2My5qcGVn.jpeg'),
+(100, 'Black Panther The Album', 'Various Artists', 'Hip-Hop, Rap, Funk/Soul, Stage & Screen', 2958, 5, 'https://i.discogs.com/reRQkduSI_K5gBrFSJyLjtwyVvQWd0ckTxgC4JxVW6Q/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExNTUy/Mzc1LTE1MTgzNzEx/ODEtOTg5Mi5qcGVn.jpeg'),
+(100, 'After Hours', 'The Weeknd', 'Electronic, Hip Hop, Funk/Soul, Pop', 3377, 4, 'https://i.discogs.com/esac3iVLAarhOBGidnYcm3dnxyW4BI5-tmTqVi5bMzc/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0OTU4/NTAwLTE1ODUzOTIx/ODAtNDI3NS5qcGVn.jpeg');
+
 -- INSERT INTO records(record_user_id, record_title, record_artist, record_genre, record_length_in_sec, record_user_rating, record_art_url) VALUES
 -- ();
+
 
 /* Setup for collections. */
 INSERT INTO collections(collection_user_id, is_public, collection_name)
