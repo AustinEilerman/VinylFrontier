@@ -46,7 +46,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: stretch;
-    font-size: 4vh;
+    font-size: 3vh;
 }
 
 .collection-display:hover {
@@ -60,6 +60,8 @@ export default {
     align-items: center;
     text-decoration: none;
     max-width: 25vw;
+    padding-left: 5%;
+    padding-right: 5%;
     overflow-wrap: break-word;
 }
 

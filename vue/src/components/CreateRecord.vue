@@ -42,14 +42,16 @@
         <label for="recordArtUrl">Cover Art URL:</label>
         <input type="text" v-model="record.coverArtUrl" />
       </div>
-      <button class="submit-buttons" type="submit">Save To Library</button>
-      <button
-        class="submit-buttons"
-        type="button"
-        v-on:click.prevent="showForm = false"
-      >
-        Cancel
-      </button>
+      <div class="submit-button-container">
+        <button class="submit-buttons" type="submit">Save To Library</button>
+        <button
+          class="submit-buttons"
+          type="button"
+          v-on:click.prevent="showForm = false"
+        >
+          Cancel
+        </button>
+      </div>
     </form>
   </div>
 </template>
@@ -103,17 +105,16 @@ form > div {
 }
 
 .submit-buttons {
+  display: flex;
   gap: 10px;
   color: #551a8b;
-  margin-left: 40px;
   margin-top: 10px;
-  margin-right: 50px;
   font-family: monospace, sans-serif;
   background-color: white;
   border: 2px solid black;
   border-radius: 10px;
   padding: 10px;
-  margin-right: 10px;
+  margin: 0;
 }
 
 .add-record {
@@ -125,12 +126,15 @@ form > div {
   border: 2px solid black;
   border-radius: 10px;
   padding: 10px;
-  margin-right: 10px;
 }
 
 .add-record:hover {
   color: white;
   background-color: black;
   border-color: white;
+}
+
+.create-record {
+  display: flex;
 }
 </style>
