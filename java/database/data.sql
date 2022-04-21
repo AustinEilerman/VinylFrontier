@@ -41,13 +41,22 @@ INSERT INTO records(record_user_id, record_title, record_artist, record_genre, r
 (104, '?', 'XXXTENTACION', 'Rap', 2400, 4, 'https://images.genius.com/0152d9262bbd6ca0edebe7013285a1d8.640x640x1.jpg');
 
 -- Premium User
-INSERT INTO records((record_user_id, record_title, record_artist, record_genre, record_length_in_sec, record_user_rating, record_art_url) VALUES
-(),
+INSERT INTO records(record_user_id, record_title, record_artist, record_genre, record_length_in_sec, record_user_rating, record_art_url) VALUES
+(102, 'The Animals', 'The Animals', 'Blues Rock', 3600, 4, 'https://i.discogs.com/8s8FEhWf67eeOIOoseceL5pyO7aBnuCAt3Wj6m_V2aE/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTcwNjY4/Ny0xNDUzOTQwNzMz/LTUzMTEuanBlZw.jpeg'),
+(102, 'King Of The Blues', 'B.B. King', 'East Coast Blues', 3600, 4, 'https://i.discogs.com/Y8_Nej4q-qMfcFkFBAu4wHmjxWyj9yQAI3bUOwBq8PM/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM5Njkw/MzYtMTM1MTEyOTUy/OS0zNTYwLmpwZWc.jpeg'),
+(102, 'Synchronicity', 'The Police', 'Pop Rock', 3600, 4, 'https://i.discogs.com/jWCUYdRMJfn8TVxSy-NioO0FNqccny3XuHE4tXOOkyw/rs:fit/g:sm/q:90/h:480/w:469/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM3NTQ5/OTctMTM0MzA1OTgx/MC03MTEwLmpwZWc.jpeg'),
+(102, 'Fly Like An Eagle', 'Steve Miller Band', 'Classic Rock', 3600, 4, 'https://i.discogs.com/-g5_7QhSIOfgkYuVyDj6W7cmlprY2GA-wFs9LSElJL0/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTUzNzA0/Ny0xNDI3MDUzMDE3/LTYzNTMucG5n.jpeg'),
+(102, 'Slow Hand', 'Eric Clapton', 'Rock', 3600, 4, 'https://i.discogs.com/cXLJg1gDAc8Aj1P2at785y39UxolTd4XPF37Yw-cYz8/rs:fit/g:sm/q:90/h:316/w:316/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTYzNTQ4/ODEtMTQxNzIwNDI0/MC04NDY0LmpwZWc.jpeg'),
+(102, 'Abbey Road', 'The Beatles', 'Pop Rock', 3600, 4, 'https://i.discogs.com/M2yc5OJZPdVoDm2_UlRRXuDlDguamLLSdnbziNmZoQI/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI2MDc0/MjQtMTYzMDYwMTA4/Ny0xMTk5LmpwZWc.jpeg'),
+(102, 'Hotel California', 'Eagles', 'Classic Rock', 3600, 4, 'https://i.discogs.com/2JRfmUxxKRn1L1g5bJQ3Z7urblnqF2K17zg2SrBzON0/rs:fit/g:sm/q:90/h:600/w:596/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5MzQz/NjctMTM4MzkwODQz/OC00MTc1LmpwZWc.jpeg'),
+(102, 'Johnny Cash At San Quentin', 'Johnny Cash', 'Country Rock', 3600, 4, 'https://i.discogs.com/gHMYRm47NTP8aJ8g45AnWTz9yxsTHa5SazhBo9h_mE8/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE1OTU2/NDctMTQzMzgyOTk1/NC04MDMzLmpwZWc.jpeg'),
+(102, 'Aftermath', 'The Rolling Stones', 'Blues Rock', 3600, 4, 'https://i.discogs.com/mNG52ihXU1u-eSgs5yCvPJ4H9jQJR_rFl2whrh105mY/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMwMjk4/NTUtMTMxMjQ2MjE3/OS5qcGVn.jpeg'),
+(102, 'Willy And The Poor Boys', 'Creedence Clearwater Revival', 'Rock & Roll', 3600, 4, 'https://i.discogs.com/jQUu2-eMl0XOJ4SDaMbsww0hQJiQOGhz9WZHcz7I0rU/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzMzE3/MDMtMTIyNTYzNjEz/MC5qcGVn.jpeg');
 					
 					
 -- Standard User					
-INSERT INTO records((record_user_id, record_title, record_artist, record_genre, record_length_in_sec, record_user_rating, record_art_url) VALUES
-(),
+-- INSERT INTO records(record_user_id, record_title, record_artist, record_genre, record_length_in_sec, record_user_rating, record_art_url) VALUES
+-- -- ();
 
 /* Setup for collections. */
 INSERT INTO collections(collection_user_id, is_public, collection_name)
