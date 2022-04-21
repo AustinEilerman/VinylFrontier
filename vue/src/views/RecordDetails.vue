@@ -1,5 +1,4 @@
 <template>
-
     <div class="record-details-view">
       <record-details/>  
     </div>

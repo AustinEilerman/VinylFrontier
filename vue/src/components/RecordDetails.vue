@@ -4,7 +4,7 @@
     <h1>{{ record.title }}</h1>
     <p>Artist: {{ record.artist }}</p>
     <p>Genre: {{ record.genre }}</p>
-    <p>Runtime: {{ (record.length)/60 }} Minutes</p>
+    <p>Runtime (s): {{ (record.length)/60 }} Minutes</p>
     <p>
       Notes: <update-notes v-bind:record="record"/>
     </p>
@@ -17,23 +17,11 @@
 </template>
 
 <script>
-import DeleteRecord from "./DeleteRecord.vue";
+import DeleteRecord from "./DeleteRecord.vue"
 import UpdateNotes from './UpdateNotes.vue'
-import AddRecordToCollection from "../components/AddRecordToCollection.vue";
-//import recordService from "../services/RecordService.js";
+import AddRecordToCollection from "../components/AddRecordToCollection.vue"
 export default {
   components: { DeleteRecord, AddRecordToCollection, UpdateNotes },
-  methods: {
-    // updateRecord(record) {
-    //   recordService
-    //     .updateRecordNote(record.recordId, record)
-    //     .then((response) => {
-    //       if (response.status === 200) {
-    //         alert("Note updated");
-    //       }
-    //     });
-    // },
-  },
   data() {
     return {
       showForm: false,
@@ -52,7 +40,7 @@ export default {
 <style>
 .record-details {
   font-family: monospace, sans-serif;
-  font-size: 5vh;
+  font-size: 4vh;
   background-color: rgba(255,255,255,0.6);
   margin-top: 20vh;
   border-radius: 20px;
