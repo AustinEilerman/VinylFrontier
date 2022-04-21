@@ -2,7 +2,7 @@
 INSERT INTO users(user_id, username, password_hash, role) VALUES 
 (100, 'jay', '$2a$10$V86opwE0drGKcLWfrNoVLuPnkz1swOjo/aBA4gca2dWY641cPxxSu', 'ROLE_USER'),
 (101, 'tye', '$2a$10$aESI2fEzX1yXZ7SyvGHqaOXksJ9gesx4K/fzlFdsihsVJDKtdB3KG', 'ROLE_PREMIUM'),
-(102, 'jeremy', '$2a$10$aESI2fEzX1yXZ7SyvGHqaOXksJ9gesx4K/fzlFdsihsVJDKtdB3KG', 'ROLE_USER'),
+(102, 'jeremy', '$2a$10$aESI2fEzX1yXZ7SyvGHqaOXksJ9gesx4K/fzlFdsihsVJDKtdB3KG', 'ROLE_PREMIUM'),
 (103, 'virginia', '$2a$10$hU7sWWGKojkLTSActaCEEuRzXytSXGsnYP0huieq0tGrjQ1vnRROy', 'ROLE_PREMIUM'),
 (104, 'austin', '$2a$10$zXZPTbVMGrGOaaLBWZa00e.30LMJWrJ9iuyzh0XISPeQaGSDCMNaO', 'ROLE_USER');
 
@@ -18,9 +18,18 @@ INSERT INTO records(record_user_id, record_title, record_artist, record_genre, r
 (103, 'I Love You, Honeybear', 'Father John Misty', 'Folk', 2700, 5, 'https://i.discogs.com/eWM_-z0UAtUXZAbj_LM3XpywpVbsuqduE4hQb_LCkmM/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTY2MzYy/OTQtMTU2MjYyMzc2/OC05MjQzLmpwZWc.jpeg'),
 (102, 'Flood', 'They Might be Giants', 'Alternative Rock', 2604, 4, 'https://upload.wikimedia.org/wikipedia/en/3/34/Flood_album_cover.jpg'),
 (102, 'On the Beach', 'Neil Young', 'Folk Rock', 2380, 4, 'https://upload.wikimedia.org/wikipedia/en/3/34/Neil_Young_-_On_the_Beach.png'),
-(102, 'Dookie', 'Green Day', 'Punk Rock', 2374, 5, 'https://upload.wikimedia.org/wikipedia/en/thumb/4/4b/Green_Day_-_Dookie_cover.jpg/220px-Green_Day_-_Dookie_cover.jpg'),
+(102, 'Dookie', 'Green Day', 'Punk Rock', 2374, 5, 'https://m.media-amazon.com/images/I/91kny7EUh5L._SL1425_.jpg'),
 (102, 'Kicking Against the Pricks', 'Nick Cave & the Bad Seeds', 'Post Punk', 2728, 4, 'https://upload.wikimedia.org/wikipedia/en/e/e5/Kickingagainstthepricks.jpeg'),
 (102, 'Designing a Nervous Breakdown', 'The Anniversary', 'Indie Rock', 2399, 3, 'https://upload.wikimedia.org/wikipedia/en/8/84/Designing_a_Nervous_Breakdown_album_cover.jpg'),
+(102, 'Rubberneck', 'Toadies', 'Grunge', 2181, 4, 'https://upload.wikimedia.org/wikipedia/en/3/3c/Rubberneck_album_cover.jpg'),
+(102, 'Blood on the Tracks', 'Bob Dylan', 'Folk Rock', 3102, 5, 'https://upload.wikimedia.org/wikipedia/en/thumb/f/fa/Bob_Dylan_-_Blood_on_the_Tracks.jpg/220px-Bob_Dylan_-_Blood_on_the_Tracks.jpg'),
+(102, 'Live at the Old Quarter, Houston, Texas', 'Townes Van Zandt', 'Folk', 5560, 4, 'https://m.media-amazon.com/images/I/81wVp+rgpHL._SY355_.jpg'),
+(102, 'Emmaar', 'Tinariwen', 'African Blues, World', 3710, 3, 'https://upload.wikimedia.org/wikipedia/en/a/af/Tinariwen_Emmaar.jpg'),
+(102, 'I, Jonathan', 'Jonathan Richman', 'Americana', 2251, 3, 'https://media.pitchfork.com/photos/5ad4bfdaef431113fa5a0c85/1:1/w_600/Jonathan%20Richman-%20I,%20Jonathan.jpg'),
+(102, 'All Things Shall Pass', 'George Harrison', 'Folk Rock', 6360, 4, 'https://upload.wikimedia.org/wikipedia/en/a/a1/All_Things_Must_Pass_1970_cover.jpg'),
+(102, 'Sweetheart of the Rodeo', 'The Byrds', 'Country Rock', 1955, 4, 'https://upload.wikimedia.org/wikipedia/en/e/ed/TheByrdsSweetheartoftheRodeo.jpg'),
+(102, 'Mexican Coke', 'Denney and The Jets', 'Indie Rock', 2399, 3, 'https://f4.bcbits.com/img/a0359381746_10.jpg'),
+(102, 'Q: Are We Not Men? A: We Are Devo!', 'Devo', 'New Wave', 2064, 3, 'https://upload.wikimedia.org/wikipedia/en/5/54/Are_We_Not_Men_We_Are_Devo%21.jpg'),
 (100, 'Can I Heat?', 'Cosmic Boy', 'Rap', 1600, 5, 'https://hiphopkr.com/wp-content/uploads/2020/01/cosmic-boy-can-i-heat.jpg'),
 (100, 'Nectar', 'Joji', 'Emotional', 3180, 5, 'https://dailytargum.imgix.net/images/55c8ea14-b88c-46a2-9b39-23b5b2d325f8.png'),
 (100, 'Starboy', 'The Weeknd', 'Pop', 4140, 4, 'https://m.media-amazon.com/images/I/819e05qxPEL._SL1500_.jpg'),
