@@ -61,7 +61,6 @@ export default {
   text-align: center;
 }
 
-
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
@@ -93,7 +92,9 @@ export default {
 .flip-card-back > a > p {
   padding-left: 2em;
   padding-right: 2em;
-  overflow-wrap: normal;
+  overflow-wrap: break-word;
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
 
 .flip-card-back > a > h1 {
