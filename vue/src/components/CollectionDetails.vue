@@ -1,5 +1,6 @@
 <template>
   <div class= "collection-details">
+     
     
     <records-list v-bind:records="records" />
   </div>
